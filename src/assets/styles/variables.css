@@ -1,0 +1,20 @@
+:root {
+  /* Color and Backgrounds */
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --primary-color: hsl(260, 70%, 15%);
+  --secondary-color: hsl(174, 80%, 45%);
+  --tertiary-color: hsl(260, 70%, 30%);
+
+  /* Transform */
+  --menu-translate-y: -20px;
+
+  /* Animations */
+  --menu-animation: opacity 0.3s ease-in-out, transform 0.3s ease-in-out,
+    visibility 0.3s ease-in-out;
+  --translate-y: -20px;
+
+  /* padding, margin */
+  --logo-padding-left: 16px;
+  --padding-menu-items: 25px;
+}
