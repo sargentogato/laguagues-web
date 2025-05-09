@@ -35,5 +35,21 @@
     "titleBar.inactiveBackground": "#e67e2299",
     "titleBar.inactiveForeground": "#15202b99"
   },
-  "peacock.color": "#E67E22"
+  "peacock.color": "#E67E22",
+  "files.autoSave": "onWindowChange",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
+  }
 }
