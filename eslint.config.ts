@@ -16,19 +16,58 @@ export default defineConfigWithVueTs(
     files: ['**/*.{ts,mts,tsx,vue}'],
   },
 
-  globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**']),
+  globalIgnores([
+    '**/node_modules/**',
+    '**/dist/**',
+    '**/dist-ssr/**',
+    '**/coverage/**',
+    '**/.vscode/**',
+    '**/.git/**',
+    '**/public/**',
+    '**/assets/**',
+    '**/vitest.config.ts',
+    '**/vite.config.ts',
+    '**/vueDevTools.config.ts',
+    '**/eslint.config.ts',
+    '**/playwright.config.ts',
+    '**/tsconfig.json',
+    '**/tsconfig.*.json',
+    '**/package.json',
+    '**/package-lock.json',
+    '**/pnpm-lock.yaml',
+    '**/yarn.lock',
+    '**/README.md',
+    '**/*.d.ts',
+    '**/shims-vue.d.ts',
+    '**/env.d.ts',
+    '**/*.config.js',
+    '**/*.config.ts',
+  ]),
 
   pluginVue.configs['flat/essential'],
   vueTsConfigs.recommended,
-  
+
   {
     ...pluginVitest.configs.recommended,
     files: ['src/**/__tests__/*'],
   },
-  
+
   {
     ...pluginPlaywright.configs['flat/recommended'],
     files: ['e2e/**/*.{test,spec}.{js,ts,jsx,tsx}'],
   },
   skipFormatting,
-)
+
+  {
+    rules: {
+      'key-spacing': [
+        'error',
+        {
+          beforeColon: false,
+          afterColon: true,
+          align: 'value',
+        },
+      ],
+    },
+  },
+);
