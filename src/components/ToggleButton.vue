@@ -26,7 +26,7 @@
   display: inline-block;
   cursor: pointer;
   transition-property: opacity, filter;
-  transition-duration: 0.15s;
+  transition-duration: 0.5s;
   transition-timing-function: linear;
   font: inherit;
   color: inherit;
