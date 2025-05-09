@@ -16,5 +16,5 @@
 
   /* padding, margin */
   --logo-padding-left: 16px;
-  --padding-menu-items: 25px;
+  --padding-menu-items: 5px 25px 25px 25px;
 }
