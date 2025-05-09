@@ -13,7 +13,7 @@
 </script>
 
 
-<style scoped lang="scss">
+<style scoped>
 /*!
  * Hamburgers
  * @description Tasty CSS-animated hamburgers
@@ -48,7 +48,7 @@
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after {
-  background-color: $tertiary-color;
+  background-color: var(--tertiary-color);
 }
 
 .hamburger-box {
@@ -69,7 +69,7 @@
 .hamburger-inner::after {
   width: 40px;
   height: 4px;
-  background-color: $tertiary-color;
+  background-color: var(--tertiary-color);
   border-radius: 4px;
   position: absolute;
   transition-property: transform;

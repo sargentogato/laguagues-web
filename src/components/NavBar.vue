@@ -46,10 +46,10 @@ const openCloseMenu = () => {
 
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .menu {
   align-items: center;
-  background-color: $white;
+  background-color: var(--white);
   display: flex;
   justify-content: space-between;
   max-height: 56px;
@@ -60,7 +60,7 @@ const openCloseMenu = () => {
   align-items: center;
   display: flex;
   gap: 5px;
-  padding-left: $logo-padding-left;
+  padding-left: var(--logo-padding-left);
 
   img {
     width: 120px;
@@ -73,11 +73,11 @@ const openCloseMenu = () => {
   flex-direction: column;
   gap: 20px;
   opacity: 0;
-  padding: $padding-menu-items;
+  padding: var(--padding-menu-items);
   position: absolute;
   top: 101%;
   transform: translateY(var(--translate-y));
-  transition: $menu-animation;
+  transition: var(--menu-animation);
   visibility: hidden;
   width: 100vw;
 
@@ -92,14 +92,14 @@ const openCloseMenu = () => {
 }
 
 .menu--hidden {
-  background-color: $white;
-  transform: translateY($translate-y);
-  transition: $menu-animation;
+  background-color: var(--white);
+  transform: translateY(var(--translate-y));
+  transition: var(--menu-animation);
   z-index: 1;
 }
 
 .menu--visible {
-  background-color: $white;
+  background-color: var(--white);
   opacity: 1;
   transform: translateY(0);
   visibility: visible;
