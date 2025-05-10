@@ -7,17 +7,17 @@
     <ul ref="menuRef" class="menu__items" :class="classToApply">
       <li class="menu__item">
         <a href="#" class="menu__item-link">
-          <p class="menu__item-text" data-text="Aventura">Aventura</p>
+          <p class="menu__item-text" data-text="Aventura">{{ $t("menu.adventure") }}</p>
         </a>
       </li>
       <li class="menu__item">
         <a href="#" class="menu__item-link">
-          <p class="menu__item-text" data-text="Destinos">Destinos</p>
+          <p class="menu__item-text" data-text="Destinos">{{ $t('menu.destiny') }}</p>
         </a>
       </li>
       <li class="menu__item">
         <a href="#" class="menu__item-link">
-          <p class="menu__item-text" data-text="Alojamiento">Nuestros cursos</p>
+          <p class="menu__item-text" data-text="Alojamiento">{{ $t('menu.ourCourses') }}</p>
         </a>
       </li>
       <li class="menu__item">
