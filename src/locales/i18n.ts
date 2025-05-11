@@ -1,12 +1,10 @@
-// import  eng from './eng';
 import { createI18n } from 'vue-i18n';
-import eng from './eng.json';
-import es from './es.json'
+import {messages }from './translations';
 
 export default createI18n({
-  locale:          'eng',
-  fallbackLocale:  'eng',
+  locale:          'en',
+  fallbackLocale:  'en',
   legacy:          false,
   globalInjection: true,
-  messages:        { eng, es }
+  messages:        messages
 })

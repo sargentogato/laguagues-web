@@ -51,5 +51,8 @@
   },
   "[vue]": {
     "editor.defaultFormatter": "Vue.volar"
+  },
+  "[svg]": {
+    "editor.defaultFormatter": "jock.svg"
   }
 }
