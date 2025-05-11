@@ -17,4 +17,8 @@
   /* padding, margin */
   --logo-padding-left: 16px;
   --padding-menu-items: 5px 25px 25px 25px;
+
+  /* images size */
+  --flags-width-size: 20px;
+  --flags-height-size: 15px;
 }
