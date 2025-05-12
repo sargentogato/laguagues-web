@@ -98,8 +98,6 @@ const openCloseMenu = () => {
   width: 100vw;
   transform: translateY(var(--translate-y));
   font-weight: 500;
-  background-color: var(--tertiary-color);
-
 }
 
 .menu__item {
@@ -151,6 +149,11 @@ const openCloseMenu = () => {
   .menu {
     max-height: 80px;
     padding: 15px 32px;
+  }
+
+  .menu__logo {
+    padding-left: 0;
+
   }
 
   .menu--hidden {
