@@ -1,7 +1,9 @@
 <template>
   <nav id="menu" aria-label="Menu principal" class="menu">
+
     <div class="menu__logo">
-      LOGO
+      <LogoImage />
+      <LogoText />
     </div>
 
     <ul ref="menuRef" class="menu__items" :class="classToApply">
@@ -38,6 +40,8 @@
 import { ref } from 'vue';
 import ToggleButton from './ToggleButton.vue';
 import SelectLang from './SelectLang.vue';
+import LogoImage from './logo/LogoImage.vue';
+import LogoText from './logo/LogoText.vue';
 
 const isOpen = ref(false);
 const classToApply = ref("");
@@ -71,6 +75,7 @@ const openCloseMenu = () => {
   justify-content: space-between;
   max-height: 56px;
   position: relative;
+  background-color: var(--primary-color);
 }
 
 .menu__logo {
@@ -78,10 +83,6 @@ const openCloseMenu = () => {
   display: flex;
   gap: 5px;
   padding-left: var(--logo-padding-left);
-
-  img {
-    width: 120px;
-  }
 }
 
 .menu__items {
@@ -92,11 +93,13 @@ const openCloseMenu = () => {
   opacity: 0;
   padding: var(--padding-menu-items);
   position: absolute;
-  top: 101%;
+  top: 100%;
   visibility: hidden;
   width: 100vw;
   transform: translateY(var(--translate-y));
   font-weight: 500;
+  background-color: var(--tertiary-color);
+
 }
 
 .menu__item {
@@ -105,7 +108,7 @@ const openCloseMenu = () => {
 }
 
 .menu__item-link {
-  color: var(--black)
+  color: var(--white)
 }
 
 .menu__item-text:hover {
@@ -117,6 +120,8 @@ const openCloseMenu = () => {
   transform: translateY(var(--translate-y));
   transition: var(--menu-animation);
   z-index: 1;
+  background-color: var(--tertiary-color);
+
 }
 
 .menu--visible {
@@ -126,6 +131,7 @@ const openCloseMenu = () => {
   transform: translateY(0);
   visibility: visible;
   z-index: 3;
+  background-color: var(--tertiary-color);
 }
 
 /* Media Queries */
