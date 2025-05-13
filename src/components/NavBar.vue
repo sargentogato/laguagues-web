@@ -132,19 +132,6 @@ const openCloseMenu = () => {
   background-color: var(--tertiary-color);
 }
 
-/* Media Queries */
-@media screen and (min-width: 576px) {
-  .menu {
-    min-height: 80px;
-  }
-
-  .menu__logo {
-    img {
-      width: 150px;
-    }
-  }
-}
-
 @media screen and (min-width: 768px) {
   .menu {
     max-height: 80px;
