@@ -37,7 +37,6 @@
     "jiti": "^2.4.2",
     "jsdom": "^26.0.0",
     "npm-run-all2": "^7.0.2",
-    "postcss-nesting": "^13.0.1",
     "prettier": "3.5.3",
     "push-dir": "^0.4.1",
     "typescript": "~5.8.0",
