@@ -22,4 +22,7 @@
   --flags-width-size: 20px;
   --flags-height-size: 15px;
   --logo-size: 40px;
+
+  /* Fonts */
+  --header-title: 4rem;
 }
