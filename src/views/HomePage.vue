@@ -7,8 +7,8 @@
 </template>
 
 <script setup lang="ts">
-import NavBar from '@/components/NavBar.vue';
-import HeaderPage from '@/components/HeaderPage.vue';
+import HeaderPage from '@/components/header/HeaderComponent.vue';
+import NavBar from '@/components/menu/NavBar.vue';
 
 </script>
 

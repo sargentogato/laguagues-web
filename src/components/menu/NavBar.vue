@@ -40,8 +40,8 @@
 import { ref } from 'vue';
 import ToggleButton from './ToggleButton.vue';
 import SelectLang from './SelectLang.vue';
-import LogoImage from './logo/LogoImage.vue';
-import LogoText from './logo/LogoText.vue';
+import LogoImage from '../logo/LogoImage.vue';
+import LogoText from '../logo/LogoText.vue';
 
 const isOpen = ref(false);
 const classToApply = ref("");
