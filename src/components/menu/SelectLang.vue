@@ -14,7 +14,6 @@ import { reactive } from 'vue';
 
 const { locale } = useI18n();
 
-
 const flags = reactive<Record<string, string>>({
   es: "images/langs/es.webp",
   en: "images/langs/en.webp"
