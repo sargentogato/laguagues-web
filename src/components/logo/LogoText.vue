@@ -16,13 +16,22 @@
   font-weight: 600;
 }
 
-
-
 .logo__text-one {
   color: var(--white);
 }
 
 .logo__text-two {
   color: var(--secondary-color);
+}
+
+span[class^="logo__text"] {
+  display: none;
+}
+
+
+@media screen and (min-width: 768px) {
+  span[class^="logo__text"] {
+    display: block;
+  }
 }
 </style>

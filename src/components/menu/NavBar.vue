@@ -40,8 +40,8 @@
 import { ref } from 'vue';
 import ToggleButton from './ToggleButton.vue';
 import SelectLang from './SelectLang.vue';
-import LogoImage from './logo/LogoImage.vue';
-import LogoText from './logo/LogoText.vue';
+import LogoImage from '../logo/LogoImage.vue';
+import LogoText from '../logo/LogoText.vue';
 
 const isOpen = ref(false);
 const classToApply = ref("");
@@ -130,19 +130,6 @@ const openCloseMenu = () => {
   visibility: visible;
   z-index: 3;
   background-color: var(--tertiary-color);
-}
-
-/* Media Queries */
-@media screen and (min-width: 576px) {
-  .menu {
-    min-height: 80px;
-  }
-
-  .menu__logo {
-    img {
-      width: 150px;
-    }
-  }
 }
 
 @media screen and (min-width: 768px) {

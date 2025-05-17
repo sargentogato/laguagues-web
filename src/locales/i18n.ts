@@ -1,5 +1,5 @@
 import { createI18n } from 'vue-i18n';
-import {messages }from './translations';
+import { messages }from './translations';
 
 export default createI18n({
   locale:          'en',

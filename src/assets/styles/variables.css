@@ -22,4 +22,11 @@
   --flags-width-size: 20px;
   --flags-height-size: 15px;
   --logo-size: 40px;
+
+  /* Fonts */
+  --header-title-desktop: 3.8rem;
+  --image-header-title-mobile:1.2rem;
+  --padding-header-x:35px;
+  --padding-header-y:50px;
+  
 }
