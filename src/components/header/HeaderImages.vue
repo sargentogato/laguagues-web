@@ -44,15 +44,18 @@ const props = defineProps({
 
 <style scoped>
 .header__image-box {
+  background-color: var(--tertiary-color);
   flex-basis: 60%;
   flex-grow: 1;
-  background-color: var(--tertiary-color);
+  flex-shrink: 3;
 }
 
 .image__title {
   font-size: var(--image-header-title-mobile);
+  padding-bottom: 25px;
   padding-left: 20px;
-  /* padding: 5px 0 0 80px; */
+  padding-top: 25px;
+  text-transform: uppercase;
 }
 
 .image__items-box {
@@ -64,16 +67,51 @@ const props = defineProps({
 }
 
 .image__caption-box {
+  left: 0;
+  margin: auto;
   position: absolute;
   right: 0;
-  left: 0;
   top: 50%;
   width: 80%;
-  margin: auto;
-  
+
   .image__caption {
     font-size: 1rem;
     font-weight: 500;
+    text-transform: uppercase;
+  }
+}
+
+@media screen and (min-width:400px) {
+  .image__caption-box {
+    top: 60%;
+
+    .image__caption {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media screen and (min-width:576px) {
+  .image__caption-box {
+    top: 80%;
+  }
+}
+
+@media screen and (min-width:779px) {
+  .image__caption-box {
+    top: 60%;
+
+    .image__caption {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media screen and (min-width:1200px) {
+  .image__caption-box {
+    .image__caption {
+      font-size: 1.5rem;
+    }
   }
 }
 </style>

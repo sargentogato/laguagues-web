@@ -24,9 +24,9 @@
   --logo-size: 40px;
 
   /* Fonts */
-  --header-title-descktop: 4rem;
+  --header-title-desktop: 3.8rem;
+  --image-header-title-mobile:1.2rem;
   --padding-header-x:35px;
   --padding-header-y:50px;
-  --image-header-title-mobile:1.2rem;
   
 }

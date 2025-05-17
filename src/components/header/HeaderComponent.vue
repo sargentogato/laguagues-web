@@ -45,4 +45,10 @@ const textImageBox = "header.textImageBox"
   /* padding-left: var(--padding-header-x);
   padding-right: var(--padding-header-x); */
 }
+
+@media screen and (min-width:780px) {
+  .header {
+    flex-direction: row;
+  }
+}
 </style>
