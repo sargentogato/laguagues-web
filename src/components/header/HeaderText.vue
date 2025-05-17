@@ -1,4 +1,3 @@
-import { computed, onMounted, onBeforeUnmount, watch } from 'vue';
 <template>
   <div class="header__text-box">
     <div class="header__text">
@@ -11,9 +10,7 @@ import { computed, onMounted, onBeforeUnmount, watch } from 'vue';
         </h1>
       </Transition>
       <h3 class="header__subtitle" :style="{ color: subtitleColor }">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim delectus fugiat voluptatibus
-        necessitatibus recusandae beatae nesciunt impedit omnis, optio voluptates corporis accusamus
-        assumenda eos nulla perferendis, velit consequuntur unde provident.
+        {{ $t(`${subtitle}`) }}
       </h3>
     </div>
     
@@ -21,13 +18,19 @@ import { computed, onMounted, onBeforeUnmount, watch } from 'vue';
 </template>
 
 <script setup lang="ts">
-import useMessagesRotator from '@/composables/useMessagesRotator';
+import { useMessagesRotator } from '@/composables/useMessagesRotator';
 import type { PropType } from 'vue';
 
 const props = defineProps({
   title: {
-    type:    String,
-    default: "",
+    type:     String,
+    default:  "",
+    required: true
+  },
+  subtitle: {
+    type:      String,
+    default:   "Add a subtitle",
+    reequired: true, 
   },
   messages: {
     type:    Array as PropType<string[]>,
@@ -62,6 +65,11 @@ const { currentMessageIndex, currentMessage  } = useMessagesRotator(props.messag
 </script>
 
 <style scoped>
+.header__text-box {
+  padding-left: var(--padding-header-x);
+  padding-right: var(--padding-header-x);
+}
+
 .header__text {
   max-width: 430px;
 }
@@ -69,22 +77,29 @@ const { currentMessageIndex, currentMessage  } = useMessagesRotator(props.messag
 .header__text-box {
   flex-basis: 40%;
   flex-grow: 1;
-      display: flex
-;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .header__title-bottom {
-  min-height: 1.5em;
   transition: translate 0.3s ease;
 }
 
 [class^='header__title'] {
-  font-size: 4rem;
+  font-size: 2.2rem;
   font-weight: 600;
   line-height: 61px;
+  text-transform: uppercase;
+  line-height: 1;
 }
 
+.header__subtitle {
+  padding-top: var(--padding-header-y);
+  font-weight: normal;
+}
+
+
+/* Text Effect */
 .slide-fade-enter-from,
 .slide-fade-leave-to {
   opacity: 0;

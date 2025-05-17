@@ -1,7 +1,7 @@
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 
 
-const useMessagesRotator = (messages:string[], interval: number) => {
+export const useMessagesRotator = (messages:string[], interval: number) => {
 
 
 const currentMessageIndex = ref(0);
@@ -56,8 +56,6 @@ return {
 }
 
 }
-
-export default useMessagesRotator;
 
 
 

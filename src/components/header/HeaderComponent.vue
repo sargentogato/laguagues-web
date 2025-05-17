@@ -1,9 +1,7 @@
 <template>
   <div class="header">
-    <div class="header-box">
-      <HeaderText :title="title" :messages="messages" :interval="interval" />
+      <HeaderText :title="title" :subtitle="subtitle" :messages="messages" :interval="interval" />
       <HeaderImages :images="images" :textImageBox="textImageBox"/>
-    </div>
   </div>
 </template>
 
@@ -12,6 +10,7 @@ import HeaderImages from './HeaderImages.vue';
 import HeaderText from './HeaderText.vue';
 
 const title = "header.title";
+const subtitle = "header.subtitle"
 const messages = ["header.message1", "header.message2", "header.message3"];
 const interval = 3000;
 
@@ -39,14 +38,11 @@ const textImageBox = "header.textImageBox"
 <style scoped>
 .header {
   background-color: var(--primary-color);
-  padding: 64px 0 0 34px;
   display: flex;
-  justify-content: center;
-}
-
-
-.header-box {
-  display: flex;
-  gap:120px;
+  flex-direction: column;
+  gap: 60px;
+  padding-top: var(--padding-header-y);
+  /* padding-left: var(--padding-header-x);
+  padding-right: var(--padding-header-x); */
 }
 </style>
