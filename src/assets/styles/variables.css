@@ -24,9 +24,12 @@
   --logo-size: 40px;
 
   /* Fonts */
+  --header-title-mobile:2.2rem;
   --header-title-desktop: 3.8rem;
   --image-header-title-mobile:1.2rem;
   --padding-header-x:35px;
   --padding-header-y:50px;
-  
+  --image-caption-size-mobile:0.8rem;
+  --image-caption-size-tablet:0.9rem;
+  --image-caption-size-desktop:1.4rem;
 }

@@ -71,11 +71,11 @@ const props = defineProps({
   margin: auto;
   position: absolute;
   right: 0;
-  top: 50%;
+  top: 60%;
   width: 80%;
 
   .image__caption {
-    font-size: 1rem;
+    font-size: var(--image-caption-size-mobile);
     font-weight: 500;
     text-transform: uppercase;
   }
@@ -83,35 +83,36 @@ const props = defineProps({
 
 @media screen and (min-width:400px) {
   .image__caption-box {
-    top: 60%;
-
     .image__caption {
-      font-size: 1.2rem;
+      font-size: var(--image-caption-size-tablet);
     }
   }
 }
 
 @media screen and (min-width:576px) {
   .image__caption-box {
-    top: 80%;
+    top: 70%;
   }
 }
 
 @media screen and (min-width:779px) {
   .image__caption-box {
     top: 60%;
-
-    .image__caption {
-      font-size: 1rem;
-    }
   }
 }
 
 @media screen and (min-width:1200px) {
   .image__caption-box {
+    top: 60%;
     .image__caption {
-      font-size: 1.5rem;
+      font-size: var(--image-caption-size-desktop);
     }
+  }
+}
+
+@media screen and (min-width:1300px) {
+  .image__caption-box {
+    top:70%;
   }
 }
 </style>
