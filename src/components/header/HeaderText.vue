@@ -61,7 +61,7 @@ if (import.meta.env.DEV) {
 }
 
 
-// const { currentMessageIndex, currentMessage } = useMessagesRotator(props.messages, props.interval);
+const { currentMessageIndex, currentMessage } = useMessagesRotator(props.messages, props.interval);
 </script>
 
 <style scoped>
@@ -117,12 +117,6 @@ if (import.meta.env.DEV) {
     padding-top: 50px;
   }
 }
-
-/* @media screen and (min-width:992px) {
-  [class^='header__title'] {
-    font-size: 3.4rem;
-  }
-} */
 
 @media screen and (min-width: 1200px) {
   .header__text-box {
