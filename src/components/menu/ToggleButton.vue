@@ -1,6 +1,6 @@
 <template>
   <div id="toggleButton" class="menu__tooggleButton">
-    <button class="hamburger hamburger--spin" onclick="this.classList.toggle('is-active')" type="button" @click="$emit('openClosed')">
+    <button class="hamburger hamburger--spin" type="button" :class="{'is-active': isActive}" @click="handlerEmits(); handleClick()">
       <span class="hamburger-box">
         <span class="hamburger-inner"></span>
       </span>
@@ -9,6 +9,26 @@
 </template>
 
 <script setup lang="ts">
+import { defineExpose, ref, type Ref } from 'vue';
+
+const isActive: Ref<boolean, boolean> = ref(false);
+const emit = defineEmits<{
+  (e:'openClosed'): void
+  (e: 'handleClick', fn:() => void) : void
+}>();
+
+const handleClick = () => {
+  console.log("desde fuera");
+  isActive.value = !isActive.value;
+}
+
+const handlerEmits = () => {
+  emit('openClosed');
+}
+
+defineExpose({
+  handleClick
+})
 
 </script>
 
