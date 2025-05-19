@@ -61,7 +61,7 @@ if (import.meta.env.DEV) {
 }
 
 
-const { currentMessageIndex, currentMessage } = useMessagesRotator(props.messages, props.interval);
+// const { currentMessageIndex, currentMessage } = useMessagesRotator(props.messages, props.interval);
 </script>
 
 <style scoped>
@@ -75,7 +75,7 @@ const { currentMessageIndex, currentMessage } = useMessagesRotator(props.message
 }
 
 .header__text {
-  max-width: 430px;
+  max-width: 500px;
 }
 
 .header__title-bottom {
@@ -83,7 +83,11 @@ const { currentMessageIndex, currentMessage } = useMessagesRotator(props.message
 }
 
 [class^='header__title'] {
-  font-size: 2.2rem;
+  font-size: clamp(
+    2.2rem,
+    8vw - 1.75rem,
+    3.8rem
+  );
   font-weight: 600;
   line-height: 1;
   text-transform: uppercase;
@@ -114,19 +118,15 @@ const { currentMessageIndex, currentMessage } = useMessagesRotator(props.message
   }
 }
 
-@media screen and (min-width:992px) {
+/* @media screen and (min-width:992px) {
   [class^='header__title'] {
     font-size: 3.4rem;
   }
-}
+} */
 
 @media screen and (min-width: 1200px) {
   .header__text-box {
     justify-content: flex-end;
-  }
-
-  .header__text {
-    max-width: 500px;
   }
 
   [class^='header__title'] {

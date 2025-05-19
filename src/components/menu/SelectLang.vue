@@ -28,7 +28,7 @@ const changeLang = (lang: string) => {
 <style scoped>
 .btn__box {
   display: flex;
-  gap: 5px;
+  gap: 8px;
 }
 
 .btn {
