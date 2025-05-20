@@ -69,6 +69,8 @@ const openCloseMenu = () => {
 };
 
 function handerlClickOutside (eventTriggered:MouseEvent) {
+  console.log(eventTriggered);
+  
   if(menu.value && !menu.value.contains(eventTriggered.target as Node)){
     openCloseMenu()
     childRef.value.handleClick()
@@ -87,7 +89,6 @@ const cleanEventListener = () => {
     listeningEvent.value = null
   }
 }
-
 
 </script>
 
