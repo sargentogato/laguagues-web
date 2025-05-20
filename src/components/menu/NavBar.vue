@@ -1,12 +1,12 @@
 <template>
-  <nav id="menu" aria-label="Menu principal" class="menu">
+  <nav id="menu" ref="menu" aria-label="Menu principal" class="menu">
 
     <div class="menu__logo">
       <LogoImage />
       <LogoText />
     </div>
 
-    <ul ref="menuRef" class="menu__items" :class="classToApply">
+    <ul class="menu__items" :class="classToApply">
       <li class="menu__item">
         <a href="#" class="menu__item-link">
           <p class="menu__item-text" data-text="Aventura">{{ $t("menu.adventure") }}</p>
@@ -31,20 +31,23 @@
       </li>
     </ul>
     <SelectLang />
-    <ToggleButton @openClosed="openCloseMenu" />
+    <ToggleButton ref="childRef" @openClosed="openCloseMenu" />
 
   </nav>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import ToggleButton from './ToggleButton.vue';
-import SelectLang from './SelectLang.vue';
 import LogoImage from '../logo/LogoImage.vue';
 import LogoText from '../logo/LogoText.vue';
+import SelectLang from './SelectLang.vue';
+import ToggleButton from './ToggleButton.vue';
 
 const isOpen = ref(false);
 const classToApply = ref("");
+const menu = ref<HTMLElement | null>()
+const listeningEvent = ref<((e:MouseEvent) => void)| null>(null);
+const childRef = ref();
 
 const avoidTransitionMediaQueries = () => {
   setTimeout(() => {
@@ -57,13 +60,35 @@ const openCloseMenu = () => {
 
   if (isOpen.value) {
     classToApply.value = "menu--visible";
+    startEventListenerToCloseMenu()
   } else {
     classToApply.value = "menu--hidden";
     avoidTransitionMediaQueries();
+    cleanEventListener()
   }
 };
 
+function handerlClickOutside (eventTriggered:MouseEvent) {
+  console.log(eventTriggered);
+  
+  if(menu.value && !menu.value.contains(eventTriggered.target as Node)){
+    openCloseMenu()
+    childRef.value.handleClick()
+  }
+}
 
+const startEventListenerToCloseMenu = () => {
+  listeningEvent.value = handerlClickOutside;
+  
+  document.addEventListener('click', listeningEvent.value)
+}
+
+const cleanEventListener = () => {
+  if(listeningEvent.value) {
+    document.removeEventListener('click', listeningEvent.value);
+    listeningEvent.value = null
+  }
+}
 
 </script>
 
