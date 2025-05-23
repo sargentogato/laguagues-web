@@ -8,5 +8,7 @@
   "singleAttributePerLine": true,
   "vueIndentScriptAndStyle": true,
   "prettier.bracketSpacing": false,
-  "align-object-properties": true
+  "align-object-properties": true,
+  "bracketSameLine": false,
+  "htmlWhitespaceSensitivity": "ignore"
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="header">
-      <HeaderText :title="title" :subtitle="subtitle" :messages="messages" :interval="interval" />
-      <HeaderImages :images="images" :textImageBox="textImageBox"/>
+    <HeaderText :title="title" :subtitle="subtitle" :messages="messages" :interval="interval" />
+    <HeaderImages :images="images" :textImageBox="textImageBox" />
   </div>
 </template>
 
@@ -11,7 +11,7 @@ import HeaderText from './HeaderText.vue';
 
 const title = "header.title";
 const subtitle = "header.subtitle"
-const messages = ["header.message1", "header.message2", "header.message3"];
+const messages = ["header.headerMessage1", "header.headerMessage2", "header.headerMessage3"];
 const interval = 3000;
 
 const images = [
@@ -30,10 +30,7 @@ const images = [
 ]
 
 const textImageBox = "header.textImageBox"
-
 </script>
-
-
 
 <style scoped>
 .header {
@@ -42,8 +39,6 @@ const textImageBox = "header.textImageBox"
   flex-direction: column;
   gap: 60px;
   padding-top: var(--padding-header-y);
-  /* padding-left: var(--padding-header-x);
-  padding-right: var(--padding-header-x); */
 }
 
 @media screen and (min-width:780px) {
