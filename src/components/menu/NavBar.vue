@@ -1,5 +1,58 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import LogoImage from '../logo/LogoImage.vue';
+import LogoText from '../logo/LogoText.vue';
+import SelectLang from './SelectLang.vue';
+import ToggleButton from './ToggleButton.vue';
+
+const isOpen = ref(false);
+const classToApply = ref("");
+const menu = ref<HTMLElement | null>();
+const listeningEvent = ref<((e: MouseEvent) => void) | null>(null);
+const childRef = ref();
+
+const avoidTransitionMediaQueries = () => {
+  setTimeout(() => {
+    classToApply.value = "";
+  }, 500);
+};
+
+const openCloseMenu = () => {
+  isOpen.value = !isOpen.value;
+
+  if (isOpen.value) {
+    classToApply.value = "menu--visible";
+    startEventListenerToCloseMenu();
+  } else {
+    classToApply.value = "menu--hidden";
+    avoidTransitionMediaQueries();
+    cleanEventListener();
+  }
+};
+
+function handerlClickOutside(eventTriggered: MouseEvent) {
+  if (menu.value && !menu.value.contains(eventTriggered.target as Node)) {
+    openCloseMenu();
+    childRef.value.handleClick();
+  }
+}
+
+const startEventListenerToCloseMenu = () => {
+  listeningEvent.value = handerlClickOutside;
+
+  document.addEventListener('click', listeningEvent.value);
+};
+
+const cleanEventListener = () => {
+  if (listeningEvent.value) {
+    document.removeEventListener('click', listeningEvent.value);
+    listeningEvent.value = null;
+  }
+}
+</script>
+
 <template>
-  <nav id="menu" ref="menu" aria-label="Menu principal" class="menu">
+  <nav id="menu" ref="menu" aria-label="Menu principal" class="menu menu-top">
 
     <div class="menu__logo">
       <LogoImage />
@@ -36,60 +89,6 @@
   </nav>
 </template>
 
-<script setup lang="ts">
-import { ref } from 'vue';
-import LogoImage from '../logo/LogoImage.vue';
-import LogoText from '../logo/LogoText.vue';
-import SelectLang from './SelectLang.vue';
-import ToggleButton from './ToggleButton.vue';
-
-const isOpen = ref(false);
-const classToApply = ref("");
-const menu = ref<HTMLElement | null>()
-const listeningEvent = ref<((e:MouseEvent) => void)| null>(null);
-const childRef = ref();
-
-const avoidTransitionMediaQueries = () => {
-  setTimeout(() => {
-    classToApply.value = "";
-  }, 500);
-};
-
-const openCloseMenu = () => {
-  isOpen.value = !isOpen.value;
-
-  if (isOpen.value) {
-    classToApply.value = "menu--visible";
-    startEventListenerToCloseMenu()
-  } else {
-    classToApply.value = "menu--hidden";
-    avoidTransitionMediaQueries();
-    cleanEventListener()
-  }
-};
-
-function handerlClickOutside (eventTriggered:MouseEvent) {
-  if(menu.value && !menu.value.contains(eventTriggered.target as Node)){
-    openCloseMenu()
-    childRef.value.handleClick()
-  }
-}
-
-const startEventListenerToCloseMenu = () => {
-  listeningEvent.value = handerlClickOutside;
-  
-  document.addEventListener('click', listeningEvent.value)
-}
-
-const cleanEventListener = () => {
-  if(listeningEvent.value) {
-    document.removeEventListener('click', listeningEvent.value);
-    listeningEvent.value = null
-  }
-}
-
-</script>
-
 <style scoped>
 .menu {
   align-items: center;
@@ -99,6 +98,11 @@ const cleanEventListener = () => {
   max-height: 56px;
   position: relative;
   background-color: var(--primary-color);
+}
+.menu-top {
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
 .menu__logo {

@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import IconForWho from './icons/IconForWho.vue';
-import IconWorld from './icons/IconWorld.vue';
-import IconGoals from './icons/IconGoals.vue';
-import IconMethod from './icons/IconMethod.vue';
-import IconObjectives from './icons/IconObjectives.vue';
-import IconResults from './icons/IconResults.vue';
+import IconForWho from './IconForWho.vue';
+import IconGoals from './IconGoals.vue';
+import IconMethod from './IconMethod.vue';
+import IconObjectives from './IconObjectives.vue';
+import IconResults from './IconResults.vue';
+import IconWorld from './IconWorld.vue';
 
 const iconMap = {
   IconWorld,
