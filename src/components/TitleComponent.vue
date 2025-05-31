@@ -31,7 +31,7 @@ const props = defineProps({
     type:    String,
     default: '500',
   },
-  fontType: {
+  textTransform: {
     type: String,
   },
   lineHeight: {
@@ -44,7 +44,7 @@ const props = defineProps({
 const dynamicStyles = computed(() => ({
   color:         props.textColor,
   fontWeight:    props.fontWeight,
-  textTransform: props.fontType,
+  textTransform: props.textTransform,
   lineHeight:    props.lineHeight
 }))
 
