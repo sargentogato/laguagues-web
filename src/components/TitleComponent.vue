@@ -27,25 +27,25 @@ const props = defineProps({
     type:    String,
     default: '#fff'
   },
-  textSize: {
-    type:    [String, Number],
-    default: 1
-  },
   fontWeight: {
     type:    String,
-    default: '600',
+    default: '500',
+  },
+  fontType: {
+    type: String,
+  },
+  lineHeight: {
+    type:    Number,
+    default: 1.5,
   }
 })
 
 /* return implicito, por eso los ({}) */
 const dynamicStyles = computed(() => ({
-  fontSize:   `${props.textSize}rem`,
-  color:      props.textColor,
-  fontWeight: props.fontWeight
+  color:         props.textColor,
+  fontWeight:    props.fontWeight,
+  textTransform: props.fontType,
+  lineHeight:    props.lineHeight
 }))
 
 </script>
-
-<style scoped>
-
-</style>

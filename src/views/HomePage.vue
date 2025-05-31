@@ -17,31 +17,31 @@ const cardInfo: Array<{
     iconName:   "IconWorld",
     title:      ["why.titleLanguage"],
     text:       ["why.languageTeam"],
-    fontWeight: '500'
+    fontWeight: '400',
   },
   {
-    iconName:   "IconWorld",
+    iconName:   "IconMethod",
     title:      ["why.titleTransversal"],
     text:       ["why.transversalMethods"],
-    fontWeight: '500'
+    fontWeight: '400',
   },
   {
-    iconName:   "IconWorld",
+    iconName:   "IconForWho",
     title:      ["why.titleForWhom"],
     text:       ["why.forWhom"],
-    fontWeight: '500'
+    fontWeight: '400',
   },
   {
-    iconName:   "IconWorld",
+    iconName:   "IconObjectives",
     title:      ["why.titleObjective"],
     text:       ["why.objective"],
-    fontWeight: '500'
+    fontWeight: '400',
   },
   {
-    iconName:   "IconWorld",
+    iconName:   "IconResults",
     title:      ["why.titleResults"],
     text:       ["why.results"],
-    fontWeight: '500'
+    fontWeight: '400',
   },
 ]
 
@@ -51,50 +51,48 @@ const cardInfo: Array<{
   <div>
     <NavBar></NavBar>
     <HeaderComponent></HeaderComponent>
+
+    <section class="section">
+      <div class="section__box">
+        <div class="section__card">
+          <TitleComponent 
+            tag="h2" 
+            :texts="whyLanguage" 
+            :textSize="2"
+            font-type="uppercase" 
+            :line-height="1"/>
+        </div>
+        <div class="section__card" v-for="(info, index) in cardInfo" :key="index">
+          <IconCard v-bind="info" />
+        </div>
+      </div>
+    </section>
   </div>
-  <section class="section">
-    <div class="section__box">
-      <div class="section__card">
-        <TitleComponent tag="h2" :texts="whyLanguage" :text-size="1.5" />
-      </div>
-      <div class="section__card" 
-        v-for="(info, index) in cardInfo" 
-        :key="index">
-        <IconCard v-bind="info"/>
-      </div>
-    </div>
-  </section>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
 </template>
 
 <style scoped>
 .section {
-  display: flex;
   background-color: var(--primary-color);
+  display: flex;
   padding: 0 35px;
+  padding-bottom: 165px;
+  padding-top: 165px;
 }
 
 .section__box {
-  background-color: red;
-  width: 1420px;
   display: flex;
   flex-wrap: wrap;
+  gap: 50px;
+  width: 1420px;
 }
 
 .section__card {
   flex-grow: 1;
   flex-shrink: 1;
-  border: 2px solid black;
+}
+
+.section__card::v-deep > h2 {
+  font-size: clamp(1.8rem, 8vw - 1.75rem, 2.5rem);
 }
 
 @media screen and (min-width:768px) {
@@ -105,5 +103,4 @@ const cardInfo: Array<{
     flex-basis: 33.3%;
   }
 }
-
 </style>

@@ -89,7 +89,7 @@ const { currentMessageIndex, currentMessage } = useMessagesRotator(props.message
     3.8rem
   );
   font-weight: 600;
-  line-height: 1;
+  line-height: var(--line-height-titles);
   text-transform: uppercase;
 }
 

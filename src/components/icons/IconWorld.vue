@@ -1,6 +1,6 @@
 <template>
   <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-  <svg fill="#000000" height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+  <svg height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
     <path d="M236.3,65.6c1.2,0,2.7,0.6,4,2.4c-5.8-8.3,6.5-4.7,7.2-12.6c7-5.2,4.5-8.6,6.5-8.8l2.2-1.8c-4.3,1.6-5.8,1.9-7,1.9
 	c-0.3,0-0.6,0-0.9,0c-0.3,0-0.7,0-1.1,0c-1.5,0-4,0.3-9.9,2.1c-13.5,1-23.2,15.6-27.8,16c-4.7,2.5-4.5,3-3.4,3
 	c0.3,0,0.7-0.1,1.1-0.1c0.4,0,0.7-0.1,1-0.1c1.1,0,0.8,0.5-5.6,3.5c1.5,0.4-11.2,6-11.3,14.8c-0.4,3.4,1,5.7,3.3,5.7
