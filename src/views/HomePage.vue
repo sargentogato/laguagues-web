@@ -17,31 +17,31 @@ const cardInfo: Array<{
     iconName:   "IconWorld",
     title:      ["why.titleLanguage"],
     text:       ["why.languageTeam"],
-    fontWeight: '400',
+    fontWeight: '500',
   },
   {
     iconName:   "IconMethod",
     title:      ["why.titleTransversal"],
     text:       ["why.transversalMethods"],
-    fontWeight: '400',
+    fontWeight: '500',
   },
   {
     iconName:   "IconForWho",
     title:      ["why.titleForWhom"],
     text:       ["why.forWhom"],
-    fontWeight: '400',
+    fontWeight: '500',
   },
   {
     iconName:   "IconObjectives",
     title:      ["why.titleObjective"],
     text:       ["why.objective"],
-    fontWeight: '400',
+    fontWeight: '500',
   },
   {
     iconName:   "IconResults",
     title:      ["why.titleResults"],
     text:       ["why.results"],
-    fontWeight: '400',
+    fontWeight: '500',
   },
 ]
 
