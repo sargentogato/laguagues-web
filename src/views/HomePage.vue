@@ -91,7 +91,7 @@ const cardInfo: Array<{
   flex-shrink: 1;
 }
 
-.section__card::v-deep > h2 {
+.section__card:deep(h2) {
   font-size: clamp(1.8rem, 8vw - 1.75rem, 2.5rem);
 }
 
