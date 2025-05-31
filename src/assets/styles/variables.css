@@ -4,7 +4,7 @@
   --black: hsl(0, 0%, 0%);
   --primary-color: hsl(260, 70%, 15%);
   --secondary-color: hsl(174, 80%, 45%);
-  --tertiary-color: hsl(260, 70%, 30%);
+  --tertiary-color: hsl(260, 70%, 17%);
 
   /* Transform */
   --menu-translate-y: -20px;
@@ -18,10 +18,11 @@
   --logo-padding-left: 16px;
   --padding-menu-items: 5px 25px 25px 25px;
 
-  /* images size */
+  /* images size && icons*/
   --flags-width-size: 20px;
   --flags-height-size: 15px;
   --logo-size: 40px;
+  --icon-size:28px;
 
   /* Fonts */
   --header-title-mobile:2.2rem;
@@ -32,4 +33,5 @@
   --image-caption-size-mobile:0.8rem;
   --image-caption-size-tablet:0.9rem;
   --image-caption-size-desktop:1.4rem;
+  --line-height-titles:1;
 }
