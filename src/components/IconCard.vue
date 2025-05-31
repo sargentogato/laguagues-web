@@ -58,11 +58,11 @@ const props = defineProps({
   min-width: 85px;
 }
 
-.card-text::v-deep > h3{
+.card-text:deep(h3){
   font-size:clamp(1.2rem, 8vw - 1.4rem, 1.5rem);
 }
 
-.card-text::v-deep > p{
+.card-text:deep(p){
   font-size:clamp(0.8rem, 8vw - 1.4rem, 1rem);
 }
 </style>
