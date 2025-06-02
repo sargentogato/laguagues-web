@@ -57,9 +57,8 @@ const cardInfo: Array<{
         <div class="section__card">
           <TitleComponent 
             tag="h2" 
-            :texts="whyLanguage" 
-            :textSize="2"
-            font-type="uppercase" 
+            :texts="whyLanguage"
+            text-transform="uppercase" 
             :line-height="1"/>
         </div>
         <div class="section__card" v-for="(info, index) in cardInfo" :key="index">

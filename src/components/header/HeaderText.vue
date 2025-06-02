@@ -90,7 +90,7 @@ const { currentMessageIndex, currentMessage } = useMessagesRotator(props.message
 .header__subtitle {
   font-weight: normal;
   padding-top: var(--padding-header-y);
-  font-size:clamp(0.8rem, 8vw - 1.75rem, 1.1rem);
+  font-size:clamp(1rem, 8vw - 1.75rem, 1.1rem);
 }
 
 /* Text Effect */
