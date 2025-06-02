@@ -13,7 +13,6 @@
         {{ $t(`${subtitle}`) }}
       </h3>
     </div>
-
   </div>
 </template>
 
@@ -121,6 +120,18 @@ const { currentMessageIndex, currentMessage } = useMessagesRotator(props.message
 
   [class^='header__title'] {
     font-size: var(--header-title-desktop);
+  }
+}
+
+/* Animations */
+.header__text-box {
+  animation-name: header__text-box;
+  animation-duration: var(--duration);
+}
+
+@keyframes header__text-box {
+  from {
+    transform: translateY(100%);
   }
 }
 </style>
