@@ -57,9 +57,8 @@ const cardInfo: Array<{
         <div class="section__card">
           <TitleComponent 
             tag="h2" 
-            :texts="whyLanguage" 
-            :textSize="2"
-            font-type="uppercase" 
+            :texts="whyLanguage"
+            text-transform="uppercase" 
             :line-height="1"/>
         </div>
         <div class="section__card" v-for="(info, index) in cardInfo" :key="index">
@@ -91,7 +90,7 @@ const cardInfo: Array<{
   flex-shrink: 1;
 }
 
-.section__card::v-deep > h2 {
+.section__card:deep(h2) {
   font-size: clamp(1.8rem, 8vw - 1.75rem, 2.5rem);
 }
 

@@ -32,8 +32,8 @@ const props = defineProps({
       </div>
     </div>
     <div class="card-text">
-      <TitleComponent tag="h3" :texts="title" textTransform="uppercase"/>
-      <TitleComponent tag="p" :texts="text" :fontWeight="fontWeight" />
+      <TitleComponent tag="h3" :texts="title" text-transform="uppercase" />
+      <TitleComponent tag="p" :texts="text" :font-weight="fontWeight" text-color="var(--secondary-color)" />
     </div>
   </div>
 </template>
@@ -59,10 +59,10 @@ const props = defineProps({
 }
 
 .card-text:deep(h3){
-  font-size:clamp(1.2rem, 8vw - 1.4rem, 1.5rem);
+  font-size:clamp(1.2rem, 8vw - 1.4rem, 1.2rem);
 }
 
 .card-text:deep(p){
-  font-size:clamp(1rem, 8vw - 1.4rem, 1.2rem);
+  font-size:clamp(1rem, 8vw - 1.4rem, 1.1rem);
 }
 </style>

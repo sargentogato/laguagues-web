@@ -6,7 +6,6 @@
     <div class="image__items-box">
       <div v-for="(image, index) in props.images" :key="index" class="image__item">
         <img :src="image.src" alt="" class="image__picture" />
-
         <div class="image__caption-box">
           <p class="image__caption" :style="{ color: textColor }">
             {{ $t(`${image.caption}`) }}
@@ -115,4 +114,17 @@ const props = defineProps({
     top:70%;
   }
 }
+
+/* Animations */
+.header__image-box {
+  animation-name:header__image-box;
+  animation-duration: var(--duration);
+}
+
+@keyframes header__image-box {
+  from {
+    transform: translateX(100%);
+  }
+}
+
 </style>
