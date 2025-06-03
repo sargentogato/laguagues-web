@@ -2,7 +2,6 @@
 import HeaderComponent from '@/components/header/HeaderComponent.vue';
 import IconCard from '@/components/IconCard.vue';
 import type { IconName } from "@/components/icons/IconBase.vue";
-import NavBar from '@/components/menu/NavBar.vue';
 import TitleComponent from '@/components/TitleComponent.vue';
 
 const whyLanguage = ["why.title"];
@@ -49,7 +48,6 @@ const cardInfo: Array<{
 
 <template>
   <div>
-    <NavBar></NavBar>
     <HeaderComponent></HeaderComponent>
 
     <section class="section">
