@@ -42,14 +42,13 @@ const cardInfo: Array<{
     text:       ["why.results"],
     fontWeight: '500',
   },
-]
+  ]
 
 </script>
 
 <template>
-  <div>
     <HeaderComponent></HeaderComponent>
-
+    
     <section class="section">
       <div class="section__box">
         <div class="section__card">
@@ -64,7 +63,6 @@ const cardInfo: Array<{
         </div>
       </div>
     </section>
-  </div>
 </template>
 
 <style scoped>

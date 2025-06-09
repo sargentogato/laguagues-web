@@ -1,8 +1,8 @@
 <template>
-  <div class="header">
+  <header class="header">
     <HeaderText :title="title" :subtitle="subtitle" :messages="messages" :interval="interval" />
     <HeaderImages :images="images" :textImageBox="textImageBox" />
-  </div>
+  </header>
 </template>
 
 <script setup lang="ts">

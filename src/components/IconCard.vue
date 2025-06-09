@@ -2,6 +2,8 @@
 import type { IconName } from './icons/IconBase.vue';
 import IconBase from "./icons/IconBase.vue";
 import TitleComponent from './TitleComponent.vue';
+import { useScrollAnimation } from '../composables/useScrollAnimation';
+import { ref, onMounted } from 'vue';
 
 const props = defineProps({
   iconName: {
@@ -22,10 +24,22 @@ const props = defineProps({
   },
 })
 
+/* Ref on template */
+const animateSection = ref<HTMLElement | null>(null);
+const { registerElements } = useScrollAnimation();
+
+onMounted(() => {
+  if (animateSection.value instanceof HTMLElement) {
+    registerElements(animateSection.value);
+  } else {
+    console.warn("Element no yet available for animation", animateSection.value)
+  }
+})
+
 </script>
 
 <template>
-  <div class="card-box">
+  <div ref="animateSection" class="card-box appear-animation">
     <div class="card__icon">
       <div class="icon-box">
         <IconBase :iconName="iconName" />
