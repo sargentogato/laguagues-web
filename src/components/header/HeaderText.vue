@@ -9,11 +9,10 @@
           {{ $t(`${currentMessage}`) }}
         </h1>
       </Transition>
-      <h3 class="header__subtitle" :style="{ color: subtitleColor }">
+      <h3 class="header__subtitle" :style="{ color: textColor }">
         {{ $t(`${subtitle}`) }}
       </h3>
     </div>
-
   </div>
 </template>
 
@@ -44,10 +43,6 @@ const props = defineProps({
     type:    String,
     default: '#ffff'
   },
-  subtitleColor: {
-    type:    String,
-    default: '#ffff'
-  }
 });
 
 if (import.meta.env.DEV) {
@@ -59,7 +54,6 @@ if (import.meta.env.DEV) {
     console.error('Interval must be at least 2000ms');
   }
 }
-
 
 const { currentMessageIndex, currentMessage } = useMessagesRotator(props.messages, props.interval);
 </script>
@@ -96,6 +90,7 @@ const { currentMessageIndex, currentMessage } = useMessagesRotator(props.message
 .header__subtitle {
   font-weight: normal;
   padding-top: var(--padding-header-y);
+  font-size:clamp(1rem, 8vw - 1.75rem, 1.1rem);
 }
 
 /* Text Effect */
@@ -125,6 +120,18 @@ const { currentMessageIndex, currentMessage } = useMessagesRotator(props.message
 
   [class^='header__title'] {
     font-size: var(--header-title-desktop);
+  }
+}
+
+/* Animations */
+.header__text-box {
+  animation-name: header__text-box;
+  animation-duration: var(--duration);
+}
+
+@keyframes header__text-box {
+  from {
+    transform: translateY(100%);
   }
 }
 </style>

@@ -122,7 +122,7 @@ const cleanEventListener = () => {
   position: absolute;
   top: 100%;
   visibility: hidden;
-  width: 100vw;
+  width: 100%;
   transform: translateY(var(--translate-y));
   font-weight: 500;
 }

@@ -2,6 +2,8 @@
 import type { IconName } from './icons/IconBase.vue';
 import IconBase from "./icons/IconBase.vue";
 import TitleComponent from './TitleComponent.vue';
+import { useScrollAnimation } from '../composables/useScrollAnimation';
+import { ref, onMounted } from 'vue';
 
 const props = defineProps({
   iconName: {
@@ -22,18 +24,30 @@ const props = defineProps({
   },
 })
 
+/* Ref on template */
+const animateSection = ref<HTMLElement | null>(null);
+const { registerElements } = useScrollAnimation();
+
+onMounted(() => {
+  if (animateSection.value instanceof HTMLElement) {
+    registerElements(animateSection.value);
+  } else {
+    console.warn("Element no yet available for animation", animateSection.value)
+  }
+})
+
 </script>
 
 <template>
-  <div class="card-box">
+  <div ref="animateSection" class="card-box appear-animation">
     <div class="card__icon">
       <div class="icon-box">
         <IconBase :iconName="iconName" />
       </div>
     </div>
     <div class="card-text">
-      <TitleComponent tag="h3" :texts="title" textTransform="uppercase"/>
-      <TitleComponent tag="p" :texts="text" :fontWeight="fontWeight" />
+      <TitleComponent tag="h3" :texts="title" text-transform="uppercase" />
+      <TitleComponent tag="p" :texts="text" :font-weight="fontWeight" text-color="var(--secondary-color)" />
     </div>
   </div>
 </template>
@@ -59,10 +73,10 @@ const props = defineProps({
 }
 
 .card-text:deep(h3){
-  font-size:clamp(1.2rem, 8vw - 1.4rem, 1.5rem);
+  font-size:clamp(1.2rem, 8vw - 1.4rem, 1.2rem);
 }
 
 .card-text:deep(p){
-  font-size:clamp(1rem, 8vw - 1.4rem, 1.2rem);
+  font-size:clamp(1rem, 8vw - 1.4rem, 1.1rem);
 }
 </style>

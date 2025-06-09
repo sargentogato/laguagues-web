@@ -2,7 +2,6 @@
 import HeaderComponent from '@/components/header/HeaderComponent.vue';
 import IconCard from '@/components/IconCard.vue';
 import type { IconName } from "@/components/icons/IconBase.vue";
-import NavBar from '@/components/menu/NavBar.vue';
 import TitleComponent from '@/components/TitleComponent.vue';
 
 const whyLanguage = ["why.title"];
@@ -43,23 +42,20 @@ const cardInfo: Array<{
     text:       ["why.results"],
     fontWeight: '500',
   },
-]
+  ]
 
 </script>
 
 <template>
-  <div>
-    <NavBar></NavBar>
     <HeaderComponent></HeaderComponent>
-
+    
     <section class="section">
       <div class="section__box">
         <div class="section__card">
           <TitleComponent 
             tag="h2" 
-            :texts="whyLanguage" 
-            :textSize="2"
-            font-type="uppercase" 
+            :texts="whyLanguage"
+            text-transform="uppercase" 
             :line-height="1"/>
         </div>
         <div class="section__card" v-for="(info, index) in cardInfo" :key="index">
@@ -67,7 +63,6 @@ const cardInfo: Array<{
         </div>
       </div>
     </section>
-  </div>
 </template>
 
 <style scoped>

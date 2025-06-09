@@ -4,7 +4,7 @@
   --black: hsl(0, 0%, 0%);
   --primary-color: hsl(260, 70%, 15%);
   --secondary-color: hsl(174, 80%, 45%);
-  --tertiary-color: hsl(260, 70%, 17%);
+  --tertiary-color: hsl(260, 70%, 20%);
 
   /* Transform */
   --menu-translate-y: -20px;
@@ -34,4 +34,7 @@
   --image-caption-size-tablet:0.9rem;
   --image-caption-size-desktop:1.4rem;
   --line-height-titles:1;
+  
+  /* Animations */
+  --duration:1s;
 }
