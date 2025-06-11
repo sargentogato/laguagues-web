@@ -39,9 +39,11 @@ export const useMessagesRotator = (messages: string[], interval: number) => {
     () => messages,
     (newMessages) => {
       if (newMessages.length === 0) {
-        stopRotation(); // Detiene si no hay mensajes
+        stopRotation(); // Stop if there are not messages
+        console.log("INTERVA", intervalRotation);
+        
       } else if (newMessages.length > 1 && !intervalRotation) {
-        startRotation(); // Inicia solo si hay >1 mensaje y todavía no se ha inciado el intervalo
+        startRotation(); // Start only if there are more than 1 messages and the interval still not started
       }
     },
   );

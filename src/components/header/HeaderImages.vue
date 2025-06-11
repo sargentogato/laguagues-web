@@ -118,7 +118,7 @@ const props = defineProps({
 /* Animations */
 .header__image-box {
   animation-name:header__image-box;
-  animation-duration: var(--duration);
+  animation-duration: var(--animation-duration);
 }
 
 @keyframes header__image-box {

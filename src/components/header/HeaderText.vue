@@ -1,29 +1,12 @@
-<template>
-  <div class="header__text-box">
-    <div class="header__text">
-      <h1 class="header__title-top" :style="{ color: textColor }">
-        {{ $t(`${title}`) }}
-      </h1>
-      <Transition name="slide-fade" mode="out-in" :style="{ color: textColor }">
-        <h1 :key="currentMessageIndex" role="status" aria-live="polite" class="header__title-bottom">
-          {{ $t(`${currentMessage}`) }}
-        </h1>
-      </Transition>
-      <h3 class="header__subtitle" :style="{ color: textColor }">
-        {{ $t(`${subtitle}`) }}
-      </h3>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
-import { useMessagesRotator } from '@/composables/useMessagesRotator';
 import type { PropType } from 'vue';
+import DynamicBanner from '../atoms/DynamicText.vue';
+
 
 const props = defineProps({
   title: {
     type:     String,
-    default:  "",
+    default:  "Write a Title",
     required: true
   },
   subtitle: {
@@ -35,28 +18,27 @@ const props = defineProps({
     type:    Array as PropType<string[]>,
     default: () => [],
   },
-  interval: {
-    type:    Number,
-    default: 2000,
-  },
   textColor: {
     type:    String,
     default: '#ffff'
   },
 });
 
-if (import.meta.env.DEV) {
-  if (props.messages.length === 0) {
-    console.warn('Messages props is empty');
-  }
-
-  if (props.interval < 2000) {
-    console.error('Interval must be at least 2000ms');
-  }
-}
-
-const { currentMessageIndex, currentMessage } = useMessagesRotator(props.messages, props.interval);
 </script>
+
+<template>
+  <div class="header__text-box">
+    <div class="header__text">
+      <h1 class="header__title-top" :style="{ color: textColor }">
+        {{ $t(`${title}`) }}
+      </h1>
+      <DynamicBanner tag="h1" :messages="messages" font-weight="600" line-height="var(--line-height-titles)" text-transform="uppercase" :interval="2000" />
+      <h3 class="header__subtitle" :style="{ color: textColor }">
+        {{ $t(`${subtitle}`) }}
+      </h3>
+    </div>
+  </div>
+</template>
 
 <style scoped>
 .header__text-box {
@@ -76,35 +58,20 @@ const { currentMessageIndex, currentMessage } = useMessagesRotator(props.message
   transition: translate 0.3s ease;
 }
 
-[class^='header__title'] {
+
+:deep([class^='header__title'])
+ {
   font-size: clamp(
     2.2rem,
     8vw - 1.75rem,
     3.8rem
   );
-  font-weight: 600;
-  line-height: var(--line-height-titles);
-  text-transform: uppercase;
 }
 
 .header__subtitle {
   font-weight: normal;
   padding-top: var(--padding-header-y);
-  font-size:clamp(1rem, 8vw - 1.75rem, 1.1rem);
-}
-
-/* Text Effect */
-.slide-fade-enter-from,
-.slide-fade-leave-to {
-  opacity: 0;
-}
-
-.slide-fade-enter-active {
-  transition: opacity 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-.slide-fade-leave-active {
-  transition: opacity 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+  font-size: clamp(1rem, 8vw - 1.75rem, 1.1rem);
 }
 
 @media screen and (min-width:772px) {
@@ -123,10 +90,10 @@ const { currentMessageIndex, currentMessage } = useMessagesRotator(props.message
   }
 }
 
-/* Animations */
+/* Animations - Loading pages*/
 .header__text-box {
   animation-name: header__text-box;
-  animation-duration: var(--duration);
+  animation-duration: var(--animation-duration);
 }
 
 @keyframes header__text-box {

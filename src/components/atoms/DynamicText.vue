@@ -3,7 +3,6 @@ import { useMessagesRotator } from '@/composables/useMessagesRotator';
 import type { PropType } from 'vue';
 import { computed } from 'vue';
 
-
 const props = defineProps({
   tag: {
     type:     String,
@@ -53,7 +52,6 @@ const dynamicStyles = computed(() => ({
 }))
 
 const { currentMessageIndex, currentMessage } = useMessagesRotator(props.messages, props.interval);
-
 
 </script>
 

@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import TitlesTextComponent from '@/components/atoms/TitlesTextComponent.vue';
 import HeaderComponent from '@/components/header/HeaderComponent.vue';
 import IconCard from '@/components/IconCard.vue';
 import type { IconName } from "@/components/icons/IconBase.vue";
-import TitleComponent from '@/components/TitleComponent.vue';
 
 const whyLanguage = ["why.title"];
 
@@ -52,7 +52,7 @@ const cardInfo: Array<{
     <section class="section">
       <div class="section__box">
         <div class="section__card">
-          <TitleComponent 
+          <TitlesTextComponent 
             tag="h2" 
             :texts="whyLanguage"
             text-transform="uppercase" 
