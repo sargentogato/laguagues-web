@@ -25,7 +25,7 @@
 
 <script setup lang="ts">
 import type { PropType } from 'vue';
-import TitlesParagraph from '../atoms/TitlesParagraph.vue';
+import TitlesParagraph from '../sharedComponents/TitlesParagraph.vue';
 
 const fontWeightCaption = "500";
 const textTransformCaption = "uppercase";
@@ -90,9 +90,9 @@ const props = defineProps({
 }
 
 .image__caption {
+  font-size: var(--image-caption-size-mobile);
   font-weight: 500;
   text-transform: uppercase;
-  font-size: var(--image-caption-size-mobile);
 }
 
 @media screen and (min-width:400px) {
@@ -131,7 +131,6 @@ const props = defineProps({
   .image__caption-box:deep(p) {
     font-size: var(--image-caption-size-desktop);
   }
-
 }
 
 @media screen and (min-width:1300px) {
@@ -142,8 +141,8 @@ const props = defineProps({
 
 /* Animations */
 .header__image-box {
-  animation-name: header__image-box;
   animation-duration: var(--animation-duration);
+  animation-name: header__image-box;
 }
 
 @keyframes header__image-box {

@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import type { PropType } from 'vue';
-import DynamicBanner from '../atoms/DynamicText.vue';
-import TitlesParagraph from '../atoms/TitlesParagraph.vue';
+import DynamicBanner from '../sharedComponents/DynamicText.vue';
+import TitlesParagraph from '../sharedComponents/TitlesParagraph.vue';
 
-const intervalTime = 2500;
+const intervalTime = 2300;
 const textColor = '#fff'
 
 const props = defineProps({
@@ -76,9 +76,9 @@ const props = defineProps({
 }
 
 .header__text:deep(p) {
+  font-size: clamp(1rem, 8vw - 1.75rem, 1.1rem);
   font-weight: normal;
   padding-top: var(--padding-header-y);
-  font-size: clamp(1rem, 8vw - 1.75rem, 1.1rem);
 }
 
 @media screen and (min-width:772px) {
@@ -95,8 +95,8 @@ const props = defineProps({
 
 /* Animations - Loading pages*/
 .header__text-box {
-  animation-name: header__text-box;
   animation-duration: var(--animation-duration);
+  animation-name: header__text-box;
 }
 
 @keyframes header__text-box {

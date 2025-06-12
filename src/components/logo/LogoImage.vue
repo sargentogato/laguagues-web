@@ -20,9 +20,9 @@
 
 <style scoped>
 .logo {
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
   position: relative;
 
   .logo__world {
@@ -31,11 +31,11 @@
   }
 
   .logo__users {
-    position: absolute;
-    color: var(--white);
-    width: 20px;
-    right: 0;
     bottom: 0;
+    color: var(--white);
+    position: absolute;
+    right: 0;
+    width: 20px;
   }
 }
 </style>

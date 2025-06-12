@@ -77,9 +77,7 @@ const cleanEventListener = () => {
       </li>
       <li class="menu__item">
         <a href="#" class="menu__item-link">
-          <p class="menu__item-text" data-text="Sobre Nosotros">
-            {{ $t('menu.aboutUs') }}
-          </p>
+          <p class="menu__item-text" data-text="Sobre Nosotros">{{ $t('menu.aboutUs') }} </p>
         </a>
       </li>
     </ul>
@@ -93,11 +91,11 @@ const cleanEventListener = () => {
 .menu {
   align-items: center;
   background-color: var(--white);
+  background-color: var(--primary-color);
   display: flex;
   justify-content: space-between;
   max-height: 56px;
   position: relative;
-  background-color: var(--primary-color);
 }
 .menu-top {
   position: sticky;
@@ -116,15 +114,15 @@ const cleanEventListener = () => {
   animation: grow 1s;
   display: flex;
   flex-direction: column;
+  font-weight: 500;
   gap: 20px;
   opacity: 0;
   padding: var(--padding-menu-items);
   position: absolute;
   top: 100%;
+  transform: translateY(var(--translate-y));
   visibility: hidden;
   width: 100%;
-  transform: translateY(var(--translate-y));
-  font-weight: 500;
 }
 
 .menu__item {
@@ -133,30 +131,31 @@ const cleanEventListener = () => {
 }
 
 .menu__item-link {
+
   color: var(--white)
 }
 
 .menu__item-text:hover {
+
   color: var(--secondary-color)
 }
 
 .menu--hidden {
   background-color: var(--white);
+  background-color: var(--tertiary-color);
   transform: translateY(var(--translate-y));
   transition: var(--menu-animation);
   z-index: 1;
-  background-color: var(--tertiary-color);
-
 }
 
 .menu--visible {
-  transition: var(--menu-animation);
   background-color: var(--white);
+  background-color: var(--tertiary-color);
   opacity: 1;
   transform: translateY(0);
+  transition: var(--menu-animation);
   visibility: visible;
   z-index: 3;
-  background-color: var(--tertiary-color);
 }
 
 @media screen and (min-width: 768px) {
@@ -167,7 +166,6 @@ const cleanEventListener = () => {
 
   .menu__logo {
     padding-left: 0;
-
   }
 
   .menu--hidden {
@@ -175,8 +173,6 @@ const cleanEventListener = () => {
   }
 
   .menu__items {
-    transform: translateY(var(--translate-y));
-    transition: var(--menu-animation);
     animation: unset;
     flex-direction: row;
     gap: 28px;
@@ -184,7 +180,9 @@ const cleanEventListener = () => {
     padding: 0;
     position: unset;
     top: 0;
+    transform: translateY(var(--translate-y));
     transform: unset;
+    transition: var(--menu-animation);
     visibility: visible;
     width: unset;
   }
