@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <HeaderText :title="title" :subtitle="subtitle" :messages="messages" :interval="interval" />
+    <HeaderText :title="title" :subtitle="subtitle" :messages="messages"/>
     <HeaderImages :images="images" :textImageBox="textImageBox" />
   </header>
 </template>
@@ -9,10 +9,9 @@
 import HeaderImages from './HeaderImages.vue';
 import HeaderText from './HeaderText.vue';
 
-const title = "header.title";
-const subtitle = "header.subtitle"
+const title = ["header.title"];
+const subtitle = ["header.subtitle"]
 const messages = ["header.headerMessage1", "header.headerMessage2", "header.headerMessage3"];
-const interval = 3000;
 
 const images = [
   {

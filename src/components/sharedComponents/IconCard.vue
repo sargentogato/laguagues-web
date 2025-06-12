@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { IconName } from './icons/IconBase.vue';
-import IconBase from "./icons/IconBase.vue";
-import TitleComponent from './TitleComponent.vue';
-import { useScrollAnimation } from '../composables/useScrollAnimation';
-import { ref, onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
+import { useScrollAnimation } from '../../composables/useScrollAnimation';
+import type { IconName } from '@/components/icons/IconBase.vue';
+import IconBase from '@/components/icons/IconBase.vue';
+import TitleComponent from '@/components/sharedComponents/TitlesParagraph.vue';
 
 const props = defineProps({
   iconName: {

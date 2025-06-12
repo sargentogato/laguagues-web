@@ -22,9 +22,8 @@ const flags = reactive<Record<string, string>>({
 const changeLang = (lang: string) => {
   locale.value = lang;
 }
-
-
 </script>
+
 <style scoped>
 .btn__box {
   display: flex;
@@ -32,10 +31,10 @@ const changeLang = (lang: string) => {
 }
 
 .btn {
-  width: var(--flags-width-size);
-  height: var(--flags-height-size);
-  border: none;
   background-color: transparent;
+  border: none;
+  height: var(--flags-height-size);
+  width: var(--flags-width-size);
 
   .btn__img {
     height: var(--flags-height-size);

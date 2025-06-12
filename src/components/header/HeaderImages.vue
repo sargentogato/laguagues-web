@@ -4,12 +4,19 @@
       {{ $t(`${textImageBox}`) }}
     </div>
     <div class="image__items-box">
-      <div v-for="(image, index) in props.images" :key="index" class="image__item">
+      <div 
+        v-for="(image, index) in props.images" 
+        :key="index" 
+        class="image__item"
+      >
         <img :src="image.src" alt="" class="image__picture" />
         <div class="image__caption-box">
-          <p class="image__caption" :style="{ color: textColor }">
-            {{ $t(`${image.caption}`) }}
-          </p>
+          <TitlesParagraph 
+            tag="p" 
+            :texts="[`${image.caption}`]" 
+            :font-weight="fontWeightCaption" 
+            :text-transform="textTransformCaption" 
+          />
         </div>
       </div>
     </div>
@@ -18,6 +25,10 @@
 
 <script setup lang="ts">
 import type { PropType } from 'vue';
+import TitlesParagraph from '../sharedComponents/TitlesParagraph.vue';
+
+const fontWeightCaption = "500";
+const textTransformCaption = "uppercase";
 
 interface IImagesItems {
   src: string,
@@ -72,12 +83,16 @@ const props = defineProps({
   right: 0;
   top: 60%;
   width: 80%;
+}
 
-  .image__caption {
-    font-size: var(--image-caption-size-mobile);
-    font-weight: 500;
-    text-transform: uppercase;
-  }
+.image__caption-box:deep(p) {
+  font-size: var(--image-caption-size-mobile);
+}
+
+.image__caption {
+  font-size: var(--image-caption-size-mobile);
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
 @media screen and (min-width:400px) {
@@ -85,6 +100,10 @@ const props = defineProps({
     .image__caption {
       font-size: var(--image-caption-size-tablet);
     }
+  }
+
+  .image__caption-box:deep(p) {
+    font-size: var(--image-caption-size-tablet);
   }
 }
 
@@ -103,22 +122,27 @@ const props = defineProps({
 @media screen and (min-width:1200px) {
   .image__caption-box {
     top: 60%;
+
     .image__caption {
       font-size: var(--image-caption-size-desktop);
     }
+  }
+
+  .image__caption-box:deep(p) {
+    font-size: var(--image-caption-size-desktop);
   }
 }
 
 @media screen and (min-width:1300px) {
   .image__caption-box {
-    top:70%;
+    top: 70%;
   }
 }
 
 /* Animations */
 .header__image-box {
-  animation-name:header__image-box;
-  animation-duration: var(--duration);
+  animation-duration: var(--animation-duration);
+  animation-name: header__image-box;
 }
 
 @keyframes header__image-box {
@@ -126,5 +150,4 @@ const props = defineProps({
     transform: translateX(100%);
   }
 }
-
 </style>

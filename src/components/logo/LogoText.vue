@@ -12,8 +12,8 @@
 <style scoped>
 .logo__text-box {
   display: flex;
-  gap: 5px;
   font-weight: 600;
+  gap: 5px;
 }
 
 .logo__text-one {
@@ -27,7 +27,6 @@
 span[class^="logo__text"] {
   display: none;
 }
-
 
 @media screen and (min-width: 768px) {
   span[class^="logo__text"] {

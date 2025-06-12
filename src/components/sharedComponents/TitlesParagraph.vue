@@ -17,7 +17,7 @@ const props = defineProps({
   tag: {
     type:     String,
     required: true,
-    default:  'div'
+    default:  'h1'
   },
   texts: {
     type:     Array as PropType<string[]>,
@@ -29,15 +29,15 @@ const props = defineProps({
   },
   fontWeight: {
     type:    String,
-    default: '500',
+    default: 'normal',
   },
   textTransform: {
     type: String,
   },
   lineHeight: {
-    type:    Number,
-    default: 1.5,
-  }
+    type:    String,
+    default: '1.5',
+  },
 })
 
 /* return implicito, por eso los ({}) */
