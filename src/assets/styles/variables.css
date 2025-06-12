@@ -25,8 +25,6 @@
   --icon-size:28px;
 
   /* Fonts */
-  --header-title-mobile:2.2rem;
-  --header-title-desktop: 3.8rem;
   --image-header-title-mobile:1.2rem;
   --padding-header-x:35px;
   --padding-header-y:50px;
@@ -34,7 +32,11 @@
   --image-caption-size-tablet:0.9rem;
   --image-caption-size-desktop:1.4rem;
   --line-height-titles:1;
+  --title-sections: clamp(1.8rem, 8vw - 1.75rem, 2.5rem);
   
   /* Animations */
   --animation-duration:1s;
+  
+  /* Sections Width */
+  --section-width:1200px;
 }

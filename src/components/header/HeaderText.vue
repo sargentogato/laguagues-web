@@ -4,7 +4,6 @@ import DynamicBanner from '../sharedComponents/DynamicText.vue';
 import TitlesParagraph from '../sharedComponents/TitlesParagraph.vue';
 
 const intervalTime = 2300;
-const textColor = '#fff'
 
 const props = defineProps({
   title: {
@@ -29,7 +28,6 @@ const props = defineProps({
     <div class="header__text">
       <TitlesParagraph 
         tag="h1" :texts="title" 
-        :text-color="textColor" 
         font-weight="600" 
         text-transform="uppercase" 
         line-height="var(--line-height-titles)" 
@@ -47,8 +45,7 @@ const props = defineProps({
       <TitlesParagraph 
         tag="p" 
         :texts="subtitle" 
-        :text-color="textColor"
-      ><slot/></TitlesParagraph>
+      />
     </div>
   </div>
 </template>
@@ -56,7 +53,7 @@ const props = defineProps({
 <style scoped>
 .header__text-box {
   display: flex;
-  flex-basis: 40%;
+  flex-basis: 48.5%;
   flex-grow: 1;
   justify-content: flex-start;
   padding-left: var(--padding-header-x);
