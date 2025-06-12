@@ -1,26 +1,24 @@
 <script setup lang="ts">
 import type { PropType } from 'vue';
 import DynamicBanner from '../atoms/DynamicText.vue';
+import TitlesParagraph from '../atoms/TitlesParagraph.vue';
 
+const intervalTime = 2500;
+const textColor = '#fff'
 
 const props = defineProps({
   title: {
-    type:     String,
-    default:  "Write a Title",
+    type:     Array as PropType<string[]>,
+    default:  () => ["Write a Title"],
     required: true
   },
   subtitle: {
-    type:      String,
-    default:   "Add a subtitle",
-    reequired: true,
+    type:    Array as PropType<string[]>,
+    default: () => [],
   },
   messages: {
     type:    Array as PropType<string[]>,
     default: () => [],
-  },
-  textColor: {
-    type:    String,
-    default: '#ffff'
   },
 });
 
@@ -29,13 +27,28 @@ const props = defineProps({
 <template>
   <div class="header__text-box">
     <div class="header__text">
-      <h1 class="header__title-top" :style="{ color: textColor }">
-        {{ $t(`${title}`) }}
-      </h1>
-      <DynamicBanner tag="h1" :messages="messages" font-weight="600" line-height="var(--line-height-titles)" text-transform="uppercase" :interval="2000" />
-      <h3 class="header__subtitle" :style="{ color: textColor }">
-        {{ $t(`${subtitle}`) }}
-      </h3>
+      <TitlesParagraph 
+        tag="h1" :texts="title" 
+        :text-color="textColor" 
+        font-weight="600" 
+        text-transform="uppercase" 
+        line-height="var(--line-height-titles)" 
+      />
+
+      <DynamicBanner
+        tag="h1"
+        :messages="messages"
+        fontWeight="600"
+        textTransform="uppercase"
+        line-height="var(--line-height-titles)"
+        :interval="intervalTime"
+      />
+
+      <TitlesParagraph 
+        tag="p" 
+        :texts="subtitle" 
+        :text-color="textColor"
+      ><slot/></TitlesParagraph>
     </div>
   </div>
 </template>
@@ -54,13 +67,7 @@ const props = defineProps({
   max-width: 500px;
 }
 
-.header__title-bottom {
-  transition: translate 0.3s ease;
-}
-
-
-:deep([class^='header__title'])
- {
+.header__text:deep(h1) {
   font-size: clamp(
     2.2rem,
     8vw - 1.75rem,
@@ -68,7 +75,7 @@ const props = defineProps({
   );
 }
 
-.header__subtitle {
+.header__text:deep(p) {
   font-weight: normal;
   padding-top: var(--padding-header-y);
   font-size: clamp(1rem, 8vw - 1.75rem, 1.1rem);
@@ -83,10 +90,6 @@ const props = defineProps({
 @media screen and (min-width: 1200px) {
   .header__text-box {
     justify-content: flex-end;
-  }
-
-  [class^='header__title'] {
-    font-size: var(--header-title-desktop);
   }
 }
 

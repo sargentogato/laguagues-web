@@ -21,12 +21,12 @@ const props = defineProps({
     type:    String,
     default: '500',
   },
+  textTransform: {
+    type: String,
+  },
   lineHeight: {
     type:    String,
     default: '1.5',
-  },
-  textTransform: {
-    type: String,
   },
   interval: {
     type:    Number,
@@ -39,7 +39,7 @@ if (import.meta.env.DEV) {
     console.warn('Messages props is empty');
   }
 
-  if (props.interval < 2000) {
+  if (props.interval < 1000) {
     console.error('Interval must be at least 2000ms');
   }
 }
@@ -57,13 +57,17 @@ const { currentMessageIndex, currentMessage } = useMessagesRotator(props.message
 
 <template>
   <Transition name="slide-fade" mode="out-in">
-    <component :is="tag" :key="currentMessageIndex" role="status" aria-live="polite" class="header__title-bottom" :style="dynamicStyles">
+    <component 
+      :is="tag" 
+      :key="currentMessageIndex" 
+      role="status" aria-live="polite" 
+      :style="dynamicStyles">
       {{ $t(`${currentMessage}`) }}
     </component>
   </Transition>
 </template> 
 
-<style scoped>
+<style>
 /* Text Effect */
 .slide-fade-enter-from,
 .slide-fade-leave-to {

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 import { useScrollAnimation } from '../composables/useScrollAnimation';
-import TitleComponent from './atoms/TitlesTextComponent.vue';
+import TitleComponent from './atoms/TitlesParagraph.vue';
 import type { IconName } from './icons/IconBase.vue';
 import IconBase from "./icons/IconBase.vue";
 

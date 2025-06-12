@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import TitlesTextComponent from '@/components/atoms/TitlesTextComponent.vue';
+import TitlesTextComponent from '@/components/atoms/TitlesParagraph.vue';
 import HeaderComponent from '@/components/header/HeaderComponent.vue';
 import IconCard from '@/components/IconCard.vue';
 import type { IconName } from "@/components/icons/IconBase.vue";
@@ -56,7 +56,7 @@ const cardInfo: Array<{
             tag="h2" 
             :texts="whyLanguage"
             text-transform="uppercase" 
-            :line-height="1"/>
+            :line-height="'1'"/>
         </div>
         <div class="section__card" v-for="(info, index) in cardInfo" :key="index">
           <IconCard v-bind="info" />
