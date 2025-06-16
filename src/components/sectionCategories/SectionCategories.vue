@@ -72,49 +72,6 @@ const dataCard = [
           font-weight="600"
           />
       </template>
-      
-      <!-- <div class="card">
-        <div class="card__image">
-          <img src="../../../public/images/categories/language-team-Germany.webp" alt="">
-        </div>
-        <div class="card__title">{{ $t(`${cardTitle}`) }}</div>
-        <div class="card__text">{{ $t(`${cardText}`) }}</div>
-      </div>
-      <div class="card">
-        <div class="card__image">
-          <img src="../../../public/images/categories/language-team-Germany.webp" alt="">
-        </div>
-        <div class="card__title">{{ $t(`${cardTitle}`) }}</div>
-        <div class="card__text">{{ $t(`${cardText}`) }}</div>
-      </div>
-      <div class="card">
-        <div class="card__image">
-          <img src="../../../public/images/categories/language-team-Germany.webp" alt="">
-        </div>
-        <div class="card__title">{{ $t(`${cardTitle}`) }}</div>
-        <div class="card__text">{{ $t(`${cardText}`) }}</div>
-      </div>
-      <div class="card">
-        <div class="card__image">
-          <img src="../../../public/images/categories/language-team-Germany.webp" alt="">
-        </div>
-        <div class="card__title">{{ $t(`${cardTitle}`) }}</div>
-        <div class="card__text">{{ $t(`${cardText}`) }}</div>
-      </div>
-      <div class="card">
-        <div class="card__image">
-          <img src="../../../public/images/categories/language-team-Germany.webp" alt="">
-        </div>
-        <div class="card__title">{{ $t(`${cardTitle}`) }}</div>
-        <div class="card__text">{{ $t(`${cardText}`) }}</div>
-      </div>
-      <div class="card">
-        <div class="card__image">
-          <img src="../../../public/images/categories/language-team-Germany.webp" alt="">
-        </div>
-        <div class="card__title">{{ $t(`${cardTitle}`) }}</div>
-        <div class="card__text">{{ $t(`${cardText}`) }}</div>
-      </div> -->
     </div>
   </div>
   </section>
@@ -136,7 +93,7 @@ const dataCard = [
 }
 
 .category__title {
-  width: 45%;
+  width: 55%;
 }
 
 .category__title:deep(h2){
@@ -148,9 +105,5 @@ const dataCard = [
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-}
-
-.category__cards:deep(.card__title) {
-  /* background-color: yellow; */
 }
 </style>
