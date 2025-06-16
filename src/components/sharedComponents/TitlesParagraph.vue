@@ -29,7 +29,7 @@ const props = defineProps({
   },
   fontWeight: {
     type:    String,
-    default: 'normal',
+    default: '300',
   },
   textTransform: {
     type: String,

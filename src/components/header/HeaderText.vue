@@ -98,7 +98,7 @@ const props = defineProps({
 
 @keyframes header__text-box {
   from {
-    transform: translateY(100%);
+    transform: translateX(-100%);
   }
 }
 </style>
