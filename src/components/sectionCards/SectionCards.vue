@@ -5,12 +5,7 @@ import TitlesTextComponent from '@/components/sharedComponents/TitlesParagraph.v
 
 const whyLanguage = ["why.title"];
 
-const cardInfo: Array<{
-  iconName: IconName;
-  title: string[];
-  text: string[];
-  fontWeight: string;
-}> = [
+const cardInfo: Array<{iconName: IconName; title: string[]; text: string[]; fontWeight: string;}> = [
   {
     iconName:   "IconWorld",
     title:      ["why.titleLanguage"],
