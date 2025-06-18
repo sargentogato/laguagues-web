@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import IconBase from '@/components/icons/IconBase.vue';
-import TitlesParagraph from './TitlesParagraph.vue';
 import { useScrollAnimation } from '@/composables/useScrollAnimation';
 import { onMounted, ref } from 'vue';
+import TitlesParagraph from './TitlesParagraph.vue';
 
 const endOfWeb = ref();
 const titleSectionLinks = ["footer.links"];
