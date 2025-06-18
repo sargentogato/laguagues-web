@@ -75,7 +75,6 @@ onMounted(() => {
 }
 
 .footer__info {
-  border: 3px solid red;
   display: flex;
   flex-basis: 100%;
   flex-wrap: wrap;
@@ -85,7 +84,6 @@ onMounted(() => {
 .footer__links,
 .footer__rs,
 .footer__contact {
-  border: 3px solid greenyellow;
   flex-basis: 100%;
 }
 
@@ -120,6 +118,7 @@ onMounted(() => {
   margin-top: 5px;
   text-align: center;
   color: var(--white);
+  font-size: 0.8rem;
 }
 
 @media screen and (min-width:576px) {
