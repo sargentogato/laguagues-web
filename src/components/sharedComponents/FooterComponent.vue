@@ -1,21 +1,22 @@
 <script setup lang="ts">
 import IconBase from '@/components/icons/IconBase.vue';
 import TitlesParagraph from './TitlesParagraph.vue';
-import { useScrollAnimation } from '@/composables/useScrollAnimation';
-import { onMounted, ref } from 'vue';
+// import { useScrollAnimation } from '@/composables/useScrollAnimation';
+// import { onMounted, ref } from 'vue';
 
-const endOfWeb = ref();
+// const endOfWeb = ref();
 const titleSectionLinks = ["footer.links"];
 const titleSocialMedia = ["footer.followUs"];
 const titleContact = ["footer.contact"];
 const textContact = ["footer.help", "footer.writeUs"];
 const emailContact = "marlonjvelasquez@gmail.com"
-const { registerElements } = useScrollAnimation()
-const iconBgColor = ref('hsl(200, 80%, 50%)');
+// const iconBgColor = ref('hsl(200, 80%, 50%)');
 
-onMounted(() => {
-  registerElements(endOfWeb.value);
-})
+// const { registerElements } = useScrollAnimation()
+// 
+// onMounted(() => {
+//   registerElements(endOfWeb.value);
+// })
 
 </script>
 
@@ -72,6 +73,11 @@ onMounted(() => {
   justify-content: center;
   min-height: 300px;
   padding: 35px;
+  
+  animation: aparecerFooter 1s forwards; 
+  animation-delay: 2s;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
 .footer__info {
@@ -127,5 +133,15 @@ onMounted(() => {
   .footer__contact {
     flex-basis: 33.3%;
   }
+}
+
+/* Animation*/
+@keyframes aparecerFooter {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 </style>
