@@ -5,6 +5,8 @@ import type { IconName } from '@/components/icons/IconBase.vue';
 import IconBase from '@/components/icons/IconBase.vue';
 import TitleComponent from '@/components/sharedComponents/TitlesParagraph.vue';
 
+const iconBgColor = ref('var(--secondary-color)')
+
 const props = defineProps({
   iconName: {
     type:     String as () => IconName,
@@ -42,7 +44,7 @@ onMounted(() => {
   <div ref="animateSection" class="card-box appear-animation">
     <div class="card__icon">
       <div class="icon-box">
-        <IconBase :iconName="iconName" />
+        <IconBase :icon-name="iconName" :icon-bg-color="iconBgColor" />
       </div>
     </div>
     <div class="card-text">

@@ -1,128 +1,115 @@
 <script setup lang="ts">
-import TitlesParagraph from '../sharedComponents/TitlesParagraph.vue';
-import { ref } from 'vue';
-import categories from '../../locales/es/categories';
+  import { ref } from 'vue';
+  import TitlesParagraph from '../sharedComponents/TitlesParagraph.vue';
+  import CardCategory from './CardCategory.vue';
 
-const title = ref(['categories.title']);
-const cardTitle = ref(['categories.cardTitle'])
-const cardText = ref(['categories.cardText'])
+  const title = ref(['categories.title']);
 
+  const dataCard = [
+    {
+      srcImages: 'images/categories/language-team-Germany.webp',
+      title: 'categories.title',
+      text: 'categories.cardText',
+      altImages: 'Poner un descripción en los locales',
+    },
+    {
+      srcImages: 'images/categories/language-team-Itali.webp',
+      title: 'categories.title',
+      text: 'categories.cardText',
+      altImages: 'Poner un descripción en los locales',
+    },
+    {
+      srcImages: 'images/categories/language-team-Spain.webp',
+      title: 'categories.title',
+      text: 'categories.cardText',
+      altImages: 'Poner un descripción en los locales',
+    },
+    {
+      srcImages: 'images/categories/language-team-England.webp',
+      title: 'categories.title',
+      text: 'categories.cardText',
+      altImages: 'Poner un descripción en los locales',
+    },
+    {
+      srcImages: 'images/categories/language-team-workshop.jpg',
+      title: 'categories.title',
+      text: 'categories.cardText',
+      altImages: 'Poner un descripción en los locales',
+    },
+    {
+      srcImages: 'images/categories/language-team-Germany.webp',
+      title: 'categories.title',
+      text: 'categories.cardText',
+      altImages: 'Poner un descripción en los locales',
+    },
+  ];
 </script>
-
 
 <template>
   <section class="category">
     <div class="category__box">
-    <div class="category__title">
-      <TitlesParagraph 
-        tag="h2"
-        :texts="title"
-        :text-color="'var(--black)'"
-        font-weight="600"
-        text-transform="uppercase"
-        line-height="var(--line-height-titles)"
-      />
-    </div>
-    <div class="category__cards">
-      <div class="card">
-        <div class="card__image">
-          <img src="../../../public/images/categories/language-team-Germany.webp" alt="">
-        </div>
-        <div class="card__title">{{ $t(`${cardTitle}`) }}</div>
-        <div class="card__text">{{ $t(`${cardText}`) }}</div>
+      <div class="category__title">
+        <TitlesParagraph
+          tag="h2"
+          :texts="title"
+          :text-color="'var(--black)'"
+          font-weight="600"
+          text-transform="uppercase"
+          line-height="var(--line-height-titles)"
+        />
       </div>
-      <div class="card">
-        <div class="card__image">
-          <img src="../../../public/images/categories/language-team-Germany.webp" alt="">
-        </div>
-        <div class="card__title">{{ $t(`${cardTitle}`) }}</div>
-        <div class="card__text">{{ $t(`${cardText}`) }}</div>
-      </div>
-      <div class="card">
-        <div class="card__image">
-          <img src="../../../public/images/categories/language-team-Germany.webp" alt="">
-        </div>
-        <div class="card__title">{{ $t(`${cardTitle}`) }}</div>
-        <div class="card__text">{{ $t(`${cardText}`) }}</div>
-      </div>
-      <div class="card">
-        <div class="card__image">
-          <img src="../../../public/images/categories/language-team-Germany.webp" alt="">
-        </div>
-        <div class="card__title">{{ $t(`${cardTitle}`) }}</div>
-        <div class="card__text">{{ $t(`${cardText}`) }}</div>
-      </div>
-      <div class="card">
-        <div class="card__image">
-          <img src="../../../public/images/categories/language-team-Germany.webp" alt="">
-        </div>
-        <div class="card__title">{{ $t(`${cardTitle}`) }}</div>
-        <div class="card__text">{{ $t(`${cardText}`) }}</div>
-      </div>
-      <div class="card">
-        <div class="card__image">
-          <img src="../../../public/images/categories/language-team-Germany.webp" alt="">
-        </div>
-        <div class="card__title">{{ $t(`${cardTitle}`) }}</div>
-        <div class="card__text">{{ $t(`${cardText}`) }}</div>
+      <div class="category__cards">
+        <template
+          v-for="(card, index) in dataCard"
+          :key="index"
+        >
+          <CardCategory
+            :src-image="card.srcImages"
+            :imageAlt="card.altImages"
+            :title="card.title"
+            :text="card.text"
+            font-weight="600"
+          />
+        </template>
       </div>
     </div>
-  </div>
   </section>
 </template>
 
-
 <style scoped>
-.category {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  padding: 0 20px;
-  padding-bottom: 60px;
-  padding-top: 60px;
-}
-
-.category__box {
-  flex-basis:var(--section-width);
-}
-
-.category__title:deep(h2){
-  font-size: var(--title-sections);
-  padding-bottom: 50px;
-}
-
-.category__cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.card {
-  width: 100%;
-  flex-grow: 1;
-}
-
-.card__title {
-  padding: 20px 0;
-  text-transform: uppercase;
-}
-
-@media screen and (min-width:576px) {
-  .card {
-    width: 45%;
+  .category {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+    padding-bottom: 60px;
+    padding-top: 60px;
   }
-}
 
-@media screen and (min-width:992px) {
-  .card {
-    width: 25%;
+  .category__box {
+    flex-basis: var(--section-width);
   }
-}
+  
+  .category__title {
+    text-align: center;
+  }
 
-@media screen and (min-width:1200px) {
-  .card {
-    flex-grow: 0;
-    width: 23%;;
+  .category__title:deep(h2) {
+    font-size: var(--title-sections);
+    padding-bottom: 50px;
   }
-}
+
+  .category__cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  @media screen and (min-width: 992px) {
+    .category__title {
+      width: 55%;
+      text-align: left;
+    }
+  }
 </style>
