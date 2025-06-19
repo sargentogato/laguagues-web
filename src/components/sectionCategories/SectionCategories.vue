@@ -1,46 +1,46 @@
 <script setup lang="ts">
   import { ref } from 'vue';
-  import TitlesParagraph from '../sharedComponents/TitlesParagraph.vue';
-  import CardCategory from './CardCategory.vue';
+import TitlesParagraph from '../sharedComponents/TitlesParagraph.vue';
+import CardCategory from './CardCategory.vue';
 
-  const title = ref(['categories.title']);
+  const title = ref(['categories.sectionTitle']);
 
   const dataCard = [
     {
-      srcImages: 'images/categories/language-team-Germany.webp',
-      title: 'categories.title',
-      text: 'categories.cardText',
-      altImages: 'Poner un descripción en los locales',
+      srcImages:      'images/categories/language-team-Germany.webp',
+      sectionTitle:   'categories.cardTitle',
+      cardTextGerman: 'categories.cardTextGerman',
+      altImages:      'Poner un descripción en los locales',
     },
     {
-      srcImages: 'images/categories/language-team-Itali.webp',
-      title: 'categories.title',
-      text: 'categories.cardText',
-      altImages: 'Poner un descripción en los locales',
+      srcImages:      'images/categories/language-team-Itali.webp',
+      sectionTitle:   'categories.cardTitle',
+      cardTextGerman: 'categories.cardTextGerman',
+      altImages:      'Poner un descripción en los locales',
     },
     {
-      srcImages: 'images/categories/language-team-Spain.webp',
-      title: 'categories.title',
-      text: 'categories.cardText',
-      altImages: 'Poner un descripción en los locales',
+      srcImages:      'images/categories/language-team-Spain.webp',
+      sectionTitle:   'categories.cardTitle',
+      cardTextGerman: 'categories.cardTextGerman',
+      altImages:      'Poner un descripción en los locales',
     },
     {
-      srcImages: 'images/categories/language-team-England.webp',
-      title: 'categories.title',
-      text: 'categories.cardText',
-      altImages: 'Poner un descripción en los locales',
+      srcImages:      'images/categories/language-team-England.webp',
+      sectionTitle:   'categories.cardTitle',
+      cardTextGerman: 'categories.cardTextGerman',
+      altImages:      'Poner un descripción en los locales',
     },
     {
-      srcImages: 'images/categories/language-team-workshop.jpg',
-      title: 'categories.title',
-      text: 'categories.cardText',
-      altImages: 'Poner un descripción en los locales',
+      srcImages:      'images/categories/language-team-workshop.jpg',
+      sectionTitle:   'categories.cardTitle',
+      cardTextGerman: 'categories.cardTextGerman',
+      altImages:      'Poner un descripción en los locales',
     },
     {
-      srcImages: 'images/categories/language-team-Germany.webp',
-      title: 'categories.title',
-      text: 'categories.cardText',
-      altImages: 'Poner un descripción en los locales',
+      srcImages:      'images/categories/language-team-Germany.webp',
+      sectionTitle:   'categories.cardTitle',
+      cardTextGerman: 'categories.cardTextGerman',
+      altImages:      'Poner un descripción en los locales',
     },
   ];
 </script>
@@ -66,8 +66,8 @@
           <CardCategory
             :src-image="card.srcImages"
             :imageAlt="card.altImages"
-            :title="card.title"
-            :text="card.text"
+            :title="card.sectionTitle"
+            :text="card.cardTextGerman"
             font-weight="600"
           />
         </template>
