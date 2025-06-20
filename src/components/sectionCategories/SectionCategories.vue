@@ -7,42 +7,43 @@ import CardCategory from './CardCategory.vue';
 
   const dataCard = [
     {
-      srcImages:      'images/categories/language-team-Germany.webp',
-      sectionTitle:   'categories.cardTitle',
-      cardTextGerman: 'categories.cardTextGerman',
-      altImages:      'Poner un descripción en los locales',
+      srcImages: 'images/categories/language-team-Germany.webp',
+      altImages: 'Poner un descripción en los locales',
+      titleCard: 'categories.titleGermanCard',
+      textCard:  'categories.textGermanCard',
     },
     {
-      srcImages:      'images/categories/language-team-Itali.webp',
-      sectionTitle:   'categories.cardTitle',
-      cardTextGerman: 'categories.cardTextGerman',
-      altImages:      'Poner un descripción en los locales',
+      srcImages: 'images/categories/language-team-Itali.webp',
+      altImages: 'Poner un descripción en los locales',
+      titleCard: 'categories.titleItalianCard',
+      textCard:  'categories.textItalianCard',
     },
     {
-      srcImages:      'images/categories/language-team-Spain.webp',
-      sectionTitle:   'categories.cardTitle',
-      cardTextGerman: 'categories.cardTextGerman',
-      altImages:      'Poner un descripción en los locales',
+      srcImages: 'images/categories/language-team-Spain.webp',
+      altImages: 'Poner un descripción en los locales',
+      titleCard: 'categories.titleSpanishCard',
+      textCard:  'categories.textSpanishCard',
     },
     {
-      srcImages:      'images/categories/language-team-England.webp',
-      sectionTitle:   'categories.cardTitle',
-      cardTextGerman: 'categories.cardTextGerman',
-      altImages:      'Poner un descripción en los locales',
+      srcImages: 'images/categories/language-team-England.webp',
+      altImages: 'Poner un descripción en los locales',
+      titleCard: 'categories.titleEnglishCard',
+      textCard:  'categories.textEnglishCard',
     },
     {
-      srcImages:      'images/categories/language-team-workshop.jpg',
-      sectionTitle:   'categories.cardTitle',
-      cardTextGerman: 'categories.cardTextGerman',
-      altImages:      'Poner un descripción en los locales',
+      srcImages: 'images/categories/language-team-workshop-translations.webp',
+      altImages: 'Poner un descripción en los locales',
+      titleCard: 'categories.titleGermanCard',
+      textCard:  'categories.textGermanCard',
     },
     {
-      srcImages:      'images/categories/language-team-Germany.webp',
-      sectionTitle:   'categories.cardTitle',
-      cardTextGerman: 'categories.cardTextGerman',
-      altImages:      'Poner un descripción en los locales',
+      srcImages: 'images/categories/language-team-workshop.jpg',
+      altImages: 'Poner un descripción en los locales',
+      titleCard: 'categories.titleGermanCard',
+      textCard:  'categories.textGermanCard',
     },
   ];
+
 </script>
 
 <template>
@@ -66,9 +67,10 @@ import CardCategory from './CardCategory.vue';
           <CardCategory
             :src-image="card.srcImages"
             :imageAlt="card.altImages"
-            :title="card.sectionTitle"
-            :text="card.cardTextGerman"
-            font-weight="600"
+            :title="card.titleCard"
+            :text="card.textCard"
+            font-weight-title="600"
+            font-weight-text="400"
           />
         </template>
       </div>

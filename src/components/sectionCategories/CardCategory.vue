@@ -19,15 +19,23 @@ const props = defineProps({
     type:     String,
     required: true
   },
-  fontWeight: {
+  fontWeightTitle: {
     type:    String,
     default: '300',
   },
-})
+  fontWeightText: {
+    type:    String,
+    default: '100',
+  },
+});
 
-const dynamicStyles = computed(() => ({
-  fontWeight: props.fontWeight
-}))
+const titleStylesDynamic = computed(() => ({
+  fontWeight: props.fontWeightTitle
+}));
+
+const textStylesDynamic = computed(() => {
+ return { fontWeight: props.fontWeightText }
+});
 
 /* Ref on template */
 const animateSection = ref<HTMLElement | null>(null);
@@ -50,8 +58,8 @@ onMounted(() => {
       </a>
     </div>
     <div class="card__text-box">
-      <div class="card__title" :style="dynamicStyles">{{ $t(`${title}`) }}</div>
-      <div class="card__text">{{ $t(`${text}`) }}</div>
+      <div class="card__title" :style="titleStylesDynamic">{{ $t(`${title}`) }}</div>
+      <div class="card__text" :style="textStylesDynamic">{{ $t(`${text}`) }}</div>
     </div>
   </div>
 </template>
@@ -61,7 +69,6 @@ onMounted(() => {
   border: 1px solid hsl(260, 70%, 15%, 0.1);
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
-  flex-grow: 1;
   max-width: 360px;
   overflow: hidden;
   transition: all 0.3s ease;
