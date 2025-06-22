@@ -54,6 +54,7 @@ onMounted(() => {
   <div ref="animateSection" class="card appear-animation">
     <div class="card__image">
       <a href="">
+        
         <img :src="srcImage" :alt="imageAlt">
       </a>
     </div>
