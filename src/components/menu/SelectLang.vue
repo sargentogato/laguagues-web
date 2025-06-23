@@ -18,6 +18,9 @@ const flags = reactive<Record<string, string>>({
   es: "images/langs/es.webp",
   en: "images/langs/en.webp",
   it: "images/langs/it.webp",
+  de: "images/langs/de.webp",
+  pt: "images/langs/pt.webp",
+  fr: "images/langs/fr.webp",
 });
 
 const changeLang = (lang: string) => {

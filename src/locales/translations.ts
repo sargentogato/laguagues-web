@@ -16,7 +16,23 @@ import itHeader from './it/header';
 import itMenu from './it/menu';
 import itWhyLanguageTeam from './it/whyLanguageTeam';
 
+import deCategories from './de/categories';
+import deFooter from './de/footer';
+import deHeader from './de/header';
+import deMenu from './de/menu';
+import deWhyLanguageTeam from './de/whyLanguageTeam';
 
+import ptCategories from './pt/categories';
+import ptFooter from './pt/footer';
+import ptHeader from './pt/header';
+import ptMenu from './pt/menu';
+import ptWhyLanguageTeam from './pt/whyLanguageTeam';
+
+import frCategories from './fr/categories';
+import frFooter from './fr/footer';
+import frHeader from './fr/header';
+import frMenu from './fr/menu';
+import frWhyLanguageTeam from './fr/whyLanguageTeam';
 
 type LangMessages = {
   menu: Record<keyof typeof enMenu, string>;
@@ -47,5 +63,26 @@ export const messages: Record<string, LangMessages> = {
     why:        itWhyLanguageTeam,
     categories: itCategories,
     footer:     itFooter
+  },
+  de: {
+    menu:       deMenu,
+    header:     deHeader,
+    why:        deWhyLanguageTeam,
+    categories: deCategories,
+    footer:     deFooter
+  },
+  pt: {
+    menu:       ptMenu,
+    header:     ptHeader,
+    why:        ptWhyLanguageTeam,
+    categories: ptCategories,
+    footer:     ptFooter
+  },
+  fr: {
+    menu:       frMenu,
+    header:     frHeader,
+    why:        frWhyLanguageTeam,
+    categories: frCategories,
+    footer:     frFooter
   },
 }; 
