@@ -16,7 +16,8 @@ const { locale } = useI18n();
 
 const flags = reactive<Record<string, string>>({
   es: "images/langs/es.webp",
-  en: "images/langs/en.webp"
+  en: "images/langs/en.webp",
+  it: "images/langs/it.webp",
 });
 
 const changeLang = (lang: string) => {
@@ -35,9 +36,9 @@ const changeLang = (lang: string) => {
   border: none;
   height: var(--flags-height-size);
   width: var(--flags-width-size);
+}
 
-  .btn__img {
+.btn__img {
     height: var(--flags-height-size);
   }
-}
 </style>

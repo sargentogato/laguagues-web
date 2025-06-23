@@ -1,48 +1,49 @@
 <script setup lang="ts">
   import { ref } from 'vue';
-  import TitlesParagraph from '../sharedComponents/TitlesParagraph.vue';
-  import CardCategory from './CardCategory.vue';
+import TitlesParagraph from '../sharedComponents/TitlesParagraph.vue';
+import CardCategory from './CardCategory.vue';
 
-  const title = ref(['categories.title']);
+const title = ref(['categories.sectionTitle']);
 
   const dataCard = [
     {
       srcImages: 'images/categories/language-team-Germany.webp',
-      title: 'categories.title',
-      text: 'categories.cardText',
       altImages: 'Poner un descripción en los locales',
+      titleCard: 'categories.titleGermanCard',
+      textCard:  'categories.textGermanCard',
     },
     {
       srcImages: 'images/categories/language-team-Itali.webp',
-      title: 'categories.title',
-      text: 'categories.cardText',
       altImages: 'Poner un descripción en los locales',
+      titleCard: 'categories.titleItalianCard',
+      textCard:  'categories.textItalianCard',
     },
     {
       srcImages: 'images/categories/language-team-Spain.webp',
-      title: 'categories.title',
-      text: 'categories.cardText',
       altImages: 'Poner un descripción en los locales',
+      titleCard: 'categories.titleSpanishCard',
+      textCard:  'categories.textSpanishCard',
     },
     {
       srcImages: 'images/categories/language-team-England.webp',
-      title: 'categories.title',
-      text: 'categories.cardText',
       altImages: 'Poner un descripción en los locales',
+      titleCard: 'categories.titleEnglishCard',
+      textCard:  'categories.textEnglishCard',
     },
     {
       srcImages: 'images/categories/language-team-workshop.jpg',
-      title: 'categories.title',
-      text: 'categories.cardText',
       altImages: 'Poner un descripción en los locales',
+      titleCard: 'categories.titleWorkshopCard',
+      textCard:  'categories.textWorkshopCard',
     },
     {
-      srcImages: 'images/categories/language-team-Germany.webp',
-      title: 'categories.title',
-      text: 'categories.cardText',
+      srcImages: 'images/categories/language-team-workshop-translations.webp',
       altImages: 'Poner un descripción en los locales',
+      titleCard: 'categories.titleTraductionsCard',
+      textCard:  'categories.textTraductionsCard',
     },
   ];
+
 </script>
 
 <template>
@@ -66,9 +67,12 @@
           <CardCategory
             :src-image="card.srcImages"
             :imageAlt="card.altImages"
-            :title="card.title"
-            :text="card.text"
-            font-weight="600"
+            :title="card.titleCard"
+            :text="card.textCard"
+            font-weight-title="600"
+            font-weight-text="400"
+            :image-class="index === dataCard.length - 1 ? 'last-responsive-image' : ''"
+            :card-image-correction="index === dataCard.length - 1 ? 'card__image--correction' : ''"
           />
         </template>
       </div>
@@ -106,10 +110,23 @@
     justify-content: center;
   }
 
+  :deep(.card__image--correction) {
+    display: flex;
+    justify-content: center;
+  }
+
+  :deep(.last-responsive-image) {
+    width: 80%;
+  }
+
   @media screen and (min-width: 992px) {
     .category__title {
       width: 55%;
       text-align: left;
+    }
+
+    :deep(.last-responsive-image) {
+      width: 100%;
     }
   }
 </style>

@@ -10,6 +10,12 @@ import esHeader from './es/header';
 import esMenu from './es/menu';
 import esWhyLanguageTeam from './es/whyLanguageTeam';
 
+import itCategories from './it/categories';
+import itFooter from './it/footer';
+import itHeader from './it/header';
+import itMenu from './it/menu';
+import itWhyLanguageTeam from './it/whyLanguageTeam';
+
 
 
 type LangMessages = {
@@ -34,5 +40,12 @@ export const messages: Record<string, LangMessages> = {
     why:        esWhyLanguageTeam,
     categories: esCategories,
     footer:     esFooter
+  },
+  it: {
+    menu:       itMenu,
+    header:     itHeader,
+    why:        itWhyLanguageTeam,
+    categories: itCategories,
+    footer:     itFooter
   },
 }; 
