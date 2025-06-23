@@ -27,6 +27,14 @@ const props = defineProps({
     type:    String,
     default: '100',
   },
+  cardImageCorrection: {
+    type:    String,
+    default: ''
+  },
+  imageClass: {
+    type:    String,
+    default: ''
+  }
 });
 
 const titleStylesDynamic = computed(() => ({
@@ -53,9 +61,8 @@ onMounted(() => {
 <template>
   <div ref="animateSection" class="card appear-animation">
     <div class="card__image">
-      <a href="">
-        
-        <img :src="srcImage" :alt="imageAlt">
+      <a href="" :class="cardImageCorrection">
+        <img :src="srcImage" :alt="imageAlt" :class="imageClass">
       </a>
     </div>
     <div class="card__text-box">

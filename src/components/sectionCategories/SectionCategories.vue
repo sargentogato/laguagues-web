@@ -3,7 +3,7 @@
 import TitlesParagraph from '../sharedComponents/TitlesParagraph.vue';
 import CardCategory from './CardCategory.vue';
 
-  const title = ref(['categories.sectionTitle']);
+const title = ref(['categories.sectionTitle']);
 
   const dataCard = [
     {
@@ -31,16 +31,16 @@ import CardCategory from './CardCategory.vue';
       textCard:  'categories.textEnglishCard',
     },
     {
-      srcImages: 'images/categories/language-team-workshop-translations.webp',
-      altImages: 'Poner un descripción en los locales',
-      titleCard: 'categories.titleGermanCard',
-      textCard:  'categories.textGermanCard',
-    },
-    {
       srcImages: 'images/categories/language-team-workshop.jpg',
       altImages: 'Poner un descripción en los locales',
-      titleCard: 'categories.titleGermanCard',
-      textCard:  'categories.textGermanCard',
+      titleCard: 'categories.titleWorkshopCard',
+      textCard:  'categories.textWorkshopCard',
+    },
+    {
+      srcImages: 'images/categories/language-team-workshop-translations.webp',
+      altImages: 'Poner un descripción en los locales',
+      titleCard: 'categories.titleTraductionsCard',
+      textCard:  'categories.textTraductionsCard',
     },
   ];
 
@@ -71,6 +71,8 @@ import CardCategory from './CardCategory.vue';
             :text="card.textCard"
             font-weight-title="600"
             font-weight-text="400"
+            :image-class="index === dataCard.length - 1 ? 'last-responsive-image' : ''"
+            :card-image-correction="index === dataCard.length - 1 ? 'card__image--correction' : ''"
           />
         </template>
       </div>
@@ -108,10 +110,23 @@ import CardCategory from './CardCategory.vue';
     justify-content: center;
   }
 
+  :deep(.card__image--correction) {
+    display: flex;
+    justify-content: center;
+  }
+
+  :deep(.last-responsive-image) {
+    width: 80%;
+  }
+
   @media screen and (min-width: 992px) {
     .category__title {
       width: 55%;
       text-align: left;
+    }
+
+    :deep(.last-responsive-image) {
+      width: 100%;
     }
   }
 </style>

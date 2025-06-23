@@ -18,8 +18,8 @@ const categories = {
   titleTraductionsCard: 'Legal and Certified Translations',
   textTraductionsCard:  `Our team of translators welcomes you, offering sworn translators specialized 
   in various linguistic and scientific fields.`,
-  titleWorkshopCard: 'Unique Culinary Experience!!!! Workshops with Languages',
-  textWorkshopCard:  `Culinary experience in the chosen language with our chefs specialized in 
+  titleWorkshopCard: 'Workshops with Languages',
+  textWorkshopCard:  `Unique Culinary Experience!!!! Culinary experience in the chosen language with our chefs specialized in 
   Mediterranean and Nordic cuisine, ideal for annual celebrations like Christmas, Carnival, and
   summer. Includes workshops in our physical spaces, but we also cook in the chosen language
   online and live!`,
