@@ -2,7 +2,7 @@ const categories = {
   sectionTitle:    'Soluzioni per la Formazione Linguistica',
   titleGermanCard: 'Corsi di Tedesco',
   textGermanCard:  `Lingua parlata da 100 milioni di persone, importante per lavorare a livello internazionale e immigrare in Svizzera, 
-  Germania o Austria.) Prepariamo e supportiamo in questo processo, inclusa la certificazione Goethe/Telc. Metodo di studio pratico
+  Germania o Austria. Prepariamo e supportiamo in questo processo, inclusa la certificazione Goethe/Telc. Metodo di studio pratico
   e innovativo, successo garantito.`,
   titleItalianCard: 'Corsi di Italiano',
   textItalianCard:  `Una lingua unica e romantica parlata in uno dei paesi più meravigliosi del mondo. Offriamo corsi speciali per viaggiare 
