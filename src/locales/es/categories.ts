@@ -1,10 +1,9 @@
 const categories = {
   sectionTitle:    'Soluciones de formación en idiomas',
   titleGermanCard: 'Cursos de Aleman',
-  textGermanCard:  `Preparamos y acompañamos en este proceso que incluye la certificación 
-    Goethe/Telc. Método de estudio practico e innovativo, éxito garantizado.
-    (idioma hablado por 100 millones de personas importante para trabajar en ámbito internacional e
-    inmigrar a Suiza Alemania o Austria).`,
+  textGermanCard:  `Idioma hablado por 100 millones de personas importante para trabajar en ámbito internacional e
+    inmigrar a Suiza Alemania o Austria. Preparamos y acompañamos en este proceso que incluye la certificación 
+    Goethe/Telc. Método de estudio practico e innovativo, éxito garantizado.`,
   titleItalianCard: 'Cursos de Italiano',
   textItalianCard:  `Idioma único, romántico y circunscrito a uno de los países mas maravilloso 
   del mundo,  ofrecemos cursos especiales para viajar a Italia y cocinar  junto a la didáctica

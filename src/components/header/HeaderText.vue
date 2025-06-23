@@ -68,7 +68,7 @@ const props = defineProps({
   font-size: clamp(
     2.2rem,
     8vw - 1.75rem,
-    3.63rem
+    3.5rem
   );
 }
 
