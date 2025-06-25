@@ -43,11 +43,12 @@ const cardInfo: Array<{iconName: IconName; title: string[]; text: string[]; font
   <section class="section">
     <div class="section__box">
       <div class="section__card">
-        <TitlesTextComponent 
+        <TitlesTextComponent
           tag="h2" 
           :texts="whyLanguage"
           text-transform="uppercase" 
-          :line-height="'1'"/>
+          :line-height="'1'"
+        />
       </div>
       <div class="section__card" v-for="(info, index) in cardInfo" :key="index">
         <IconCard v-bind="info" />

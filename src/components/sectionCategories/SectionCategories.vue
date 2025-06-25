@@ -37,7 +37,7 @@ const title = ref(['categories.sectionTitle']);
       textCard:  'categories.textWorkshopCard',
     },
     {
-      srcImages: 'images/categories/language-team-workshop-translations.webp',
+      srcImages: 'images/categories/language-team-translations.webp',
       altImages: 'Poner un descripción en los locales',
       titleCard: 'categories.titleTraductionsCard',
       textCard:  'categories.textTraductionsCard',
@@ -87,7 +87,7 @@ const title = ref(['categories.sectionTitle']);
     justify-content: center;
     padding: 0 20px;
     padding-bottom: 60px;
-    padding-top: 60px;
+    padding-top: 100px;
   }
 
   .category__box {

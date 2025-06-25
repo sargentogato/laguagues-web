@@ -1,11 +1,11 @@
 <template>
   <div>
-    <NavBar></NavBar>
+    <NavBar @go-to-category="handleScrollToCategory"></NavBar>
 
     <router-view v-slot="{ Component, route }">
       <transition name="fade" mode="out-in">
         <div :key="route.name">
-          <component :is="Component"></component>
+          <component :is="Component" ref="pageComponentRef"></component>
         </div>
       </transition>
     </router-view>
@@ -16,7 +16,14 @@
 
 <script setup lang="ts">
 import NavBar from '@/components/menu/NavBar.vue';
-import FooterComponent from'@/components/sharedComponents/FooterComponent.vue'
+import FooterComponent from '@/components/sharedComponents/FooterComponent.vue'
+import { ref } from 'vue';
+
+const pageComponentRef = ref();
+
+function handleScrollToCategory() {
+  pageComponentRef.value?.scrollToCategory?.()
+}
 </script>
 
 <style scoped>

@@ -75,10 +75,10 @@ const { currentMessageIndex, currentMessage } = useMessagesRotator(props.message
 }
 
 .slide-fade-enter-active {
-  transition: opacity 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  transition: opacity 0.9s cubic-bezier(.83,.04,.32,.88)
 }
 
 .slide-fade-leave-active {
-  transition: opacity 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+  transition: opacity 0.9s cubic-bezier(.83,.04,.32,.88)
 }
 </style>
