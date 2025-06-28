@@ -34,6 +34,10 @@ const props = defineProps({
   imageClass: {
     type:    String,
     default: ''
+  },
+  indexAnimationDelay: {
+    type:    Number,
+    default: 0
   }
 });
 
@@ -44,6 +48,12 @@ const titleStylesDynamic = computed(() => ({
 const textStylesDynamic = computed(() => {
  return { fontWeight: props.fontWeightText }
 });
+
+const animationStyle = computed(() => {
+  return {
+    animationDelay: `${props.indexAnimationDelay * 100}ms`
+  }
+})
 
 /* Ref on template */
 const animateSection = ref<HTMLElement | null>(null);
@@ -59,7 +69,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div ref="animateSection" class="card appear-animation">
+  <div ref="animateSection" class="card appear-animation" :style="animationStyle">
     <div class="card__image">
       <a href="" :class="cardImageCorrection">
         <img :src="srcImage" :alt="imageAlt" :class="imageClass">

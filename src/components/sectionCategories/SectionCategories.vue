@@ -73,6 +73,7 @@ const title = ref(['categories.sectionTitle']);
             font-weight-text="400"
             :image-class="index === dataCard.length - 1 ? 'last-responsive-image' : ''"
             :card-image-correction="index === dataCard.length - 1 ? 'card__image--correction' : ''"
+            :index-animation-delay="index"
           />
         </template>
       </div>
