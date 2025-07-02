@@ -20,6 +20,12 @@ const categories = {
   textWorkshopCard:  `Vivência culinária no idioma escolhido com nossos chefs especializados em cozinha mediterrânea e nórdica, ideal para 
   festas anuais como Natal, Carnaval e verão. Inclui workshops em nossos espaços físicos, mas também cozinhamos no idioma escolhido online
   e ao vivo!`,
+  altImageDe:          'Cursos de alemão',
+  altImageEs:          'Cursos de espanhol',
+  altImageFr:          'Cursos de francês',
+  altImageIt:          'Cursos de italiano',
+  altImageWshop:       'Workshops de culinária',
+  altImageTraductions: 'Traduções legais e juramentadas',
 } as const;
 
 export default categories;

@@ -8,37 +8,37 @@ const title = ref(['categories.sectionTitle']);
   const dataCard = [
     {
       srcImages: 'images/categories/language-team-Germany.webp',
-      altImages: 'Poner un descripción en los locales',
+      altImages: 'categories.altImageDe',
       titleCard: 'categories.titleGermanCard',
       textCard:  'categories.textGermanCard',
     },
     {
       srcImages: 'images/categories/language-team-Itali.webp',
-      altImages: 'Poner un descripción en los locales',
+      altImages: 'categories.altImageEs',
       titleCard: 'categories.titleItalianCard',
       textCard:  'categories.textItalianCard',
     },
     {
       srcImages: 'images/categories/language-team-Spain.webp',
-      altImages: 'Poner un descripción en los locales',
+      altImages: 'categories.altImageFr',
       titleCard: 'categories.titleSpanishCard',
       textCard:  'categories.textSpanishCard',
     },
     {
       srcImages: 'images/categories/language-team-England.webp',
-      altImages: 'Poner un descripción en los locales',
+      altImages: 'categories.altImageIt',
       titleCard: 'categories.titleEnglishCard',
       textCard:  'categories.textEnglishCard',
     },
     {
       srcImages: 'images/categories/language-team-workshop.jpg',
-      altImages: 'Poner un descripción en los locales',
+      altImages: 'categories.altImageWshop',
       titleCard: 'categories.titleWorkshopCard',
       textCard:  'categories.textWorkshopCard',
     },
     {
       srcImages: 'images/categories/language-team-translations.webp',
-      altImages: 'Poner un descripción en los locales',
+      altImages: 'categories.altImageTraductions',
       titleCard: 'categories.titleTraductionsCard',
       textCard:  'categories.textTraductionsCard',
     },
@@ -66,7 +66,7 @@ const title = ref(['categories.sectionTitle']);
         >
           <CardCategory
             :src-image="card.srcImages"
-            :imageAlt="card.altImages"
+            :alt-image="card.altImages"
             :title="card.titleCard"
             :text="card.textCard"
             font-weight-title="600"

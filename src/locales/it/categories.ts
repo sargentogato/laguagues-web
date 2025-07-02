@@ -19,6 +19,12 @@ const categories = {
   textWorkshopCard:  `Esperienza Culinaria Unica!!!! Esperienza culinaria nella lingua scelta con i nostri chef specializzati in cucina mediterranea e nordica, 
   ideale per celebrazioni annuali come Natale, Carnevale e estate. Include workshop nei nostri spazi fisici, ma cuciniamo anche
   nella lingua scelta online e in diretta!`,
+  altImageDe:          'Corsi di tedesco',
+  altImageEs:          'Corsi di spagnolo',
+  altImageFr:          'Corsi di francese',
+  altImageIt:          'Corsi di italiano',
+  altImageWshop:       'Workshop di cucina',
+  altImageTraductions: 'Traduzioni legali e giurate',
 } as const;
 
 export default categories;

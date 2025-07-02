@@ -22,6 +22,12 @@ const categories = {
   méditerranéenne et nordique, idéale pour les fêtes annuelles comme Noël, le Carnaval et l'été. Comprend des ateliers dans nos espaces
   physiques, mais nous cuisinons également dans la langue choisie en ligne et en direct !
 !`,
+  altImageDe:          "Cours d'allemand",
+  altImageEs:          "Cours d'espagnol",
+  altImageFr:          'Cours de français',
+  altImageIt:          "Cours d'italien",
+  altImageWshop:       'Ateliers de cuisine',
+  altImageTraductions: 'Traductions légales et assermentées',
 } as const;
 
 export default categories;

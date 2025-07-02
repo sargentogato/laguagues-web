@@ -7,7 +7,7 @@ const props = defineProps({
     type:     String,
     required: true
   },
-  imageAlt: {
+  altImage: {
     type:     String,
     required: true
   },
@@ -72,7 +72,7 @@ onMounted(() => {
   <div ref="animateSection" class="card appear-animation" :style="animationStyle">
     <div class="card__image">
       <a href="" :class="cardImageCorrection">
-        <img :src="srcImage" :alt="imageAlt" :class="imageClass">
+        <img :src="srcImage" :alt="$t(`${altImage}`)" :class="imageClass">
       </a>
     </div>
     <div class="card__text-box">
