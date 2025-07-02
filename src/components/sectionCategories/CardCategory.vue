@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue';
 import { useScrollAnimation } from '../../composables/useScrollAnimation';
+import IconCircleArrow from '@/components/icons/IconCircleArrow.vue'
 
 const props = defineProps({
   srcImage: {
@@ -72,6 +73,7 @@ onMounted(() => {
   <div ref="animateSection" class="card appear-animation" :style="animationStyle">
     <div class="card__image">
       <a href="" :class="cardImageCorrection">
+        <IconCircleArrow class="card__icon-circle-arrow"/>
         <img :src="srcImage" :alt="$t(`${altImage}`)" :class="imageClass">
       </a>
     </div>
@@ -107,6 +109,10 @@ onMounted(() => {
   padding-bottom: 12px;
   text-align: center;
   text-transform: uppercase;
+}
+
+.card__image {
+  position: relative;
 }
 
 .card__image img {

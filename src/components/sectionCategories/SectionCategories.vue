@@ -119,6 +119,25 @@ const title = ref(['categories.sectionTitle']);
   :deep(.last-responsive-image) {
     width: 80%;
   }
+  
+  :deep(.card__icon-circle-arrow ) {
+    width: 30px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+
+  :deep(.card__icon-circle-arrow) circle {
+    stroke-width: 2px;
+    stroke: var(--secondary-color);
+    fill: var(--secondary-color);
+  }
+  
+  :deep(.card__icon-circle-arrow) path {
+    stroke-width: 1.5px;
+    stroke:var(--white);    
+  }
+
 
   @media screen and (min-width: 992px) {
     .category__title {
