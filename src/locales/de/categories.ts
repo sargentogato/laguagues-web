@@ -20,6 +20,12 @@ const categories = {
   textWorkshopCard:  `Kulinarisches Erlebnis in der gewählten Sprache mit unseren Köchen, die auf mediterrane und nordische Küche 
   spezialisiert sind, ideal für jährliche Feierlichkeiten wie Weihnachten, Karneval und Sommer. Beinhaltet Workshops in unseren
   physischen Räumen, aber wir kochen auch in der gewählten Sprache online und live!`,
+  altImageDe:          'Deutschkurse',
+  altImageEs:          'Spanischkurse',
+  altImageEn:          'Englischkurse',
+  altImageIt:          'Italienischkurse',
+  altImageWshop:       'Kochworkshops',
+  altImageTraductions: 'Juristische und beglaubigte Übersetzungen',
 } as const;
 
 export default categories;

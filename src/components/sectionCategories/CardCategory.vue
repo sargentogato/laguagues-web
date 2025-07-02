@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import IconCircleArrow from '@/components/icons/IconCircleArrow.vue';
 import { computed, onMounted, ref } from 'vue';
 import { useScrollAnimation } from '../../composables/useScrollAnimation';
 
@@ -7,9 +8,13 @@ const props = defineProps({
     type:     String,
     required: true
   },
-  imageAlt: {
+  altImage: {
     type:     String,
     required: true
+  },
+  link: {
+    type:    String,
+    require: true
   },
   title: {
     type:     String,
@@ -34,6 +39,10 @@ const props = defineProps({
   imageClass: {
     type:    String,
     default: ''
+  },
+  indexAnimationDelay: {
+    type:    Number,
+    default: 0
   }
 });
 
@@ -44,6 +53,12 @@ const titleStylesDynamic = computed(() => ({
 const textStylesDynamic = computed(() => {
  return { fontWeight: props.fontWeightText }
 });
+
+const animationStyle = computed(() => {
+  return {
+    animationDelay: `${props.indexAnimationDelay * 100}ms`
+  }
+})
 
 /* Ref on template */
 const animateSection = ref<HTMLElement | null>(null);
@@ -59,11 +74,12 @@ onMounted(() => {
 </script>
 
 <template>
-  <div ref="animateSection" class="card appear-animation">
+  <div ref="animateSection" class="card appear-animation" :style="animationStyle">
     <div class="card__image">
-      <a href="" :class="cardImageCorrection">
-        <img :src="srcImage" :alt="imageAlt" :class="imageClass">
-      </a>
+      <RouterLink :class="cardImageCorrection" :to="{name: `${link}`}">
+          <IconCircleArrow class="card__icon-circle-arrow"/>
+          <img :src="srcImage" :alt="$t(`${altImage}`)" :class="imageClass">
+      </RouterLink>
     </div>
     <div class="card__text-box">
       <div class="card__title" :style="titleStylesDynamic">{{ $t(`${title}`) }}</div>
@@ -97,6 +113,10 @@ onMounted(() => {
   padding-bottom: 12px;
   text-align: center;
   text-transform: uppercase;
+}
+
+.card__image {
+  position: relative;
 }
 
 .card__image img {

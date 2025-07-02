@@ -6,14 +6,14 @@ import SelectLang from './SelectLang.vue';
 import ToggleButton from './ToggleButton.vue';
 
 const isOpen = ref(false);
-const classToApply = ref("");
+const classToApply = ref('');
 const menu = ref<HTMLElement | null>();
 const listeningEvent = ref<((e: MouseEvent) => void) | null>(null);
 const childRef = ref();
 
 const avoidTransitionMediaQueries = () => {
   setTimeout(() => {
-    classToApply.value = "";
+    classToApply.value = '';
   }, 500);
 };
 
@@ -21,16 +21,16 @@ const openCloseMenu = () => {
   isOpen.value = !isOpen.value;
 
   if (isOpen.value) {
-    classToApply.value = "menu--visible";
+    classToApply.value = 'menu--visible';
     startEventListenerToCloseMenu();
   } else {
-    classToApply.value = "menu--hidden";
+    classToApply.value = 'menu--hidden';
     avoidTransitionMediaQueries();
     cleanEventListener();
   }
 };
 
-function handerlClickOutside(eventTriggered: MouseEvent) {
+function handerlClickOutsideMenu(eventTriggered: MouseEvent) {
   if (menu.value && !menu.value.contains(eventTriggered.target as Node)) {
     openCloseMenu();
     childRef.value.handleClick();
@@ -38,7 +38,7 @@ function handerlClickOutside(eventTriggered: MouseEvent) {
 }
 
 const startEventListenerToCloseMenu = () => {
-  listeningEvent.value = handerlClickOutside;
+  listeningEvent.value = handerlClickOutsideMenu;
 
   document.addEventListener('click', listeningEvent.value);
 };
@@ -48,12 +48,11 @@ const cleanEventListener = () => {
     document.removeEventListener('click', listeningEvent.value);
     listeningEvent.value = null;
   }
-}
+};
 </script>
 
 <template>
   <nav id="menu" ref="menu" aria-label="Menu principal" class="menu menu-top">
-
     <div class="menu__logo">
       <LogoImage />
       <LogoText />
@@ -61,29 +60,39 @@ const cleanEventListener = () => {
 
     <ul class="menu__items" :class="classToApply">
       <li class="menu__item">
+        <RouterLink class="menu__item-link" :to="{ name: 'Home'}" data-text="Home">
+          Home
+        </RouterLink>
+      </li>
+      <li class="menu__item">
+        <RouterLink class="menu__item-link" :to="{ name: 'Home'}" @click.prevent="$emit('goToCategory')">
+          {{ $t('menu.languageTraining') }}
+        </RouterLink>
+      </li>
+      <li class="menu__item">
         <a href="#" class="menu__item-link">
-          <p class="menu__item-text" data-text="Aventura">{{ $t("menu.adventure") }}</p>
+          <p class="menu__item-text" data-text="Destinos">
+            {{ $t('menu.destiny') }}
+          </p>
         </a>
       </li>
       <li class="menu__item">
         <a href="#" class="menu__item-link">
-          <p class="menu__item-text" data-text="Destinos">{{ $t('menu.destiny') }}</p>
+          <p class="menu__item-text" data-text="Alojamiento">
+            {{ $t('menu.ourCourses') }}
+          </p>
         </a>
       </li>
       <li class="menu__item">
         <a href="#" class="menu__item-link">
-          <p class="menu__item-text" data-text="Alojamiento">{{ $t('menu.ourCourses') }}</p>
-        </a>
-      </li>
-      <li class="menu__item">
-        <a href="#" class="menu__item-link">
-          <p class="menu__item-text" data-text="Sobre Nosotros">{{ $t('menu.aboutUs') }} </p>
+          <p class="menu__item-text" data-text="Sobre Nosotros">
+            {{ $t('menu.aboutUs') }}
+          </p>
         </a>
       </li>
     </ul>
     <SelectLang />
     <ToggleButton ref="childRef" @openClosed="openCloseMenu" />
-
   </nav>
 </template>
 
@@ -97,6 +106,7 @@ const cleanEventListener = () => {
   max-height: 56px;
   position: relative;
 }
+
 .menu-top {
   position: sticky;
   top: 0;
@@ -131,13 +141,11 @@ const cleanEventListener = () => {
 }
 
 .menu__item-link {
-
-  color: var(--white)
+  color: var(--white);
 }
 
-.menu__item-text:hover {
-
-  color: var(--secondary-color)
+.menu__item-link:hover {
+  color: var(--secondary-color);
 }
 
 .menu--hidden {

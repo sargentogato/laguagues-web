@@ -8,39 +8,45 @@ const title = ref(['categories.sectionTitle']);
   const dataCard = [
     {
       srcImages: 'images/categories/language-team-Germany.webp',
-      altImages: 'Poner un descripción en los locales',
+      altImages: 'categories.altImageDe',
       titleCard: 'categories.titleGermanCard',
       textCard:  'categories.textGermanCard',
+      link:      'GermanCourses'
     },
     {
       srcImages: 'images/categories/language-team-Itali.webp',
-      altImages: 'Poner un descripción en los locales',
+      altImages: 'categories.altImageIt',
       titleCard: 'categories.titleItalianCard',
       textCard:  'categories.textItalianCard',
+      link:      'GermanCourses'
     },
     {
       srcImages: 'images/categories/language-team-Spain.webp',
-      altImages: 'Poner un descripción en los locales',
+      altImages: 'categories.altImageEs',
       titleCard: 'categories.titleSpanishCard',
       textCard:  'categories.textSpanishCard',
+      link:      'GermanCourses'
     },
     {
       srcImages: 'images/categories/language-team-England.webp',
-      altImages: 'Poner un descripción en los locales',
+      altImages: 'categories.altImageEn',
       titleCard: 'categories.titleEnglishCard',
       textCard:  'categories.textEnglishCard',
+      link:      'GermanCourses'
     },
     {
       srcImages: 'images/categories/language-team-workshop.jpg',
-      altImages: 'Poner un descripción en los locales',
+      altImages: 'categories.altImageWshop',
       titleCard: 'categories.titleWorkshopCard',
       textCard:  'categories.textWorkshopCard',
+      link:      'GermanCourses'
     },
     {
-      srcImages: 'images/categories/language-team-workshop-translations.webp',
-      altImages: 'Poner un descripción en los locales',
+      srcImages: 'images/categories/language-team-translations.webp',
+      altImages: 'categories.altImageTraductions',
       titleCard: 'categories.titleTraductionsCard',
       textCard:  'categories.textTraductionsCard',
+      link:      'GermanCourses'
     },
   ];
 
@@ -66,13 +72,15 @@ const title = ref(['categories.sectionTitle']);
         >
           <CardCategory
             :src-image="card.srcImages"
-            :imageAlt="card.altImages"
+            :alt-image="card.altImages"
             :title="card.titleCard"
             :text="card.textCard"
+            :link="card.link"
             font-weight-title="600"
             font-weight-text="400"
             :image-class="index === dataCard.length - 1 ? 'last-responsive-image' : ''"
             :card-image-correction="index === dataCard.length - 1 ? 'card__image--correction' : ''"
+            :index-animation-delay="index"
           />
         </template>
       </div>
@@ -87,7 +95,7 @@ const title = ref(['categories.sectionTitle']);
     justify-content: center;
     padding: 0 20px;
     padding-bottom: 60px;
-    padding-top: 60px;
+    padding-top: 100px;
   }
 
   .category__box {
@@ -118,6 +126,25 @@ const title = ref(['categories.sectionTitle']);
   :deep(.last-responsive-image) {
     width: 80%;
   }
+  
+  :deep(.card__icon-circle-arrow ) {
+    width: 30px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+
+  :deep(.card__icon-circle-arrow) circle {
+    stroke-width: 2px;
+    stroke: var(--secondary-color);
+    fill: var(--secondary-color);
+  }
+  
+  :deep(.card__icon-circle-arrow) path {
+    stroke-width: 1.5px;
+    stroke:var(--white);    
+  }
+
 
   @media screen and (min-width: 992px) {
     .category__title {
