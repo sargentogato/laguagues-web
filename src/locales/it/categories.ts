@@ -21,7 +21,7 @@ const categories = {
   nella lingua scelta online e in diretta!`,
   altImageDe:          'Corsi di tedesco',
   altImageEs:          'Corsi di spagnolo',
-  altImageFr:          'Corsi di francese',
+  altImageEn:          'Corsi di inglese',
   altImageIt:          'Corsi di italiano',
   altImageWshop:       'Workshop di cucina',
   altImageTraductions: 'Traduzioni legali e giurate',

@@ -24,10 +24,10 @@ const categories = {
 !`,
   altImageDe:          "Cours d'allemand",
   altImageEs:          "Cours d'espagnol",
-  altImageFr:          'Cours de français',
+  altImageEn:          "Cours d'anglais",
   altImageIt:          "Cours d'italien",
   altImageWshop:       'Ateliers de cuisine',
-  altImageTraductions: 'Traductions légales et assermentées',
+  altImageTraductions: 'Traductions juridiques et assermentées',
 } as const;
 
 export default categories;

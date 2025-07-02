@@ -22,7 +22,7 @@ const categories = {
   physischen Räumen, aber wir kochen auch in der gewählten Sprache online und live!`,
   altImageDe:          'Deutschkurse',
   altImageEs:          'Spanischkurse',
-  altImageFr:          'Französischkurse',
+  altImageEn:          'Englischkurse',
   altImageIt:          'Italienischkurse',
   altImageWshop:       'Kochworkshops',
   altImageTraductions: 'Juristische und beglaubigte Übersetzungen',

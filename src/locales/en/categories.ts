@@ -25,7 +25,7 @@ const categories = {
   online and live!`,
   altImageDe:          'German courses',
   altImageEs:          'Spanish courses',
-  altImageFr:          'French courses',
+  altImageEn:          'English courses',
   altImageIt:          'Italian courses',
   altImageWshop:       'Cooking workshops',
   altImageTraductions: 'Legal and sworn translations',

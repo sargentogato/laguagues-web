@@ -23,11 +23,11 @@ const categories = {
   en comida mediterránea y nórdica, ideal para fiestas anuales como navidades, carnaval, época estival.
   Incluye workshop en nuestros espacios en presencial, pero también cocinamos en el idioma escogido
   online y live!`,
-  altImageDe:          'Cursos de aleman',
+  altImageDe:          'Cursos de alemán',
   altImageEs:          'Cursos de español',
-  altImageFr:          'Cursos de frances',
-  altImageIt:          'Cursos de Italiano',
-  altImageWshop:       'Corkshops de cocina',
+  altImageEn:          'Cursos de inglés',
+  altImageIt:          'Cursos de italiano',
+  altImageWshop:       'Talleres de cocina',
   altImageTraductions: 'Traducciones legales y juradas',
 } as const;
 

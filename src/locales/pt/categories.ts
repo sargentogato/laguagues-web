@@ -22,10 +22,10 @@ const categories = {
   e ao vivo!`,
   altImageDe:          'Cursos de alemão',
   altImageEs:          'Cursos de espanhol',
-  altImageFr:          'Cursos de francês',
+  altImageEn:          'Cursos de inglês',
   altImageIt:          'Cursos de italiano',
   altImageWshop:       'Workshops de culinária',
-  altImageTraductions: 'Traduções legais e juramentadas',
+  altImageTraductions: 'Traduções jurídicas e juramentadas',
 } as const;
 
 export default categories;
