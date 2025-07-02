@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
-import { useScrollAnimation } from '../../composables/useScrollAnimation';
 import type { IconName } from '@/components/icons/IconBase.vue';
 import IconBase from '@/components/icons/IconBase.vue';
 import TitleComponent from '@/components/sharedComponents/TitlesParagraph.vue';
+import { onMounted, ref } from 'vue';
+import { useScrollAnimation } from '../../composables/useScrollAnimation';
 
 const iconBgColor = ref('var(--secondary-color)')
 
@@ -41,9 +41,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div ref="animateSection" class="card-box appear-animation">
+  <div ref="animateSection" class="card__box appear-animation">
     <div class="card__icon">
-      <div class="icon-box">
+      <div class="icon__box">
         <IconBase :icon-name="iconName" :icon-bg-color="iconBgColor" />
       </div>
     </div>
@@ -56,12 +56,12 @@ onMounted(() => {
 
 
 <style scoped>
-.card-box {
+.card__box {
   display: flex;
   gap: 20px;
 }
 
-.icon-box {
+.icon__box {
   width: var(--icon-size);
 }
 

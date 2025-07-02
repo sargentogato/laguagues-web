@@ -1,6 +1,7 @@
 :root {
   /* Color and Backgrounds */
   --white: hsl(0, 0%, 100%);
+  --white-light: hsl(0, 0%, 100%, 0.5);
   --black: hsl(0, 0%, 0%);
   --primary-color: hsl(260, 70%, 15%);
   --secondary-color: hsl(174, 80%, 45%);
@@ -39,4 +40,19 @@
   
   /* Sections Width */
   --section-width:1200px;
+  
+  /* Shadows */
+  --shadow-box:
+  2px 2px 2px 0 hsl(278, 100%, 70%),
+  -2px 2px 2px 0 hsl(278, 100%, 70%),
+  -2px -2px 2px 0 hsl(278, 100%, 70%), 
+  2px -2px 2px 0 hsl(278, 100%, 70%),
+  2px 2px 2px 0 hsl(278, 100%, 50%),
+  -2px 2px 2px 0 hsl(278, 100%, 50%) ,
+  -2px -2px 2px 0 hsl(278, 100%, 50%) , 
+  2px -2px 2px 0 hsl(278, 100%, 40%),
+  2px 2px 2px 0 hsl(278, 100%, 40%),
+  -2px 2px 2px 0 hsl(278, 100%, 40%) ,
+  -2px -2px 2px 0 hsl(278, 100%, 40%) , 
+  2px -2px 2px 0 hsl(278, 100%, 40%);
 }

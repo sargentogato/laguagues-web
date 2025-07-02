@@ -4,7 +4,7 @@
       {{ $t(`${textImageBox}`) }}
     </div>
     <div class="image__items-box">
-      <div 
+      <figure 
         v-for="(image, index) in props.images" 
         :key="index" 
         class="image__item"
@@ -18,7 +18,7 @@
             :text-transform="textTransformCaption" 
           />
         </div>
-      </div>
+      </figure>
     </div>
   </div>
 </template>

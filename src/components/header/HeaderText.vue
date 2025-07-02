@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import type { PropType } from 'vue';
-import DynamicBanner from '../sharedComponents/DynamicText.vue';
+import DynamicText from '../sharedComponents/DynamicText.vue';
 import TitlesParagraph from '../sharedComponents/TitlesParagraph.vue';
 
-const intervalTime = 2300;
+const intervalTime = 3500;
 
 const props = defineProps({
   title: {
@@ -33,7 +33,7 @@ const props = defineProps({
         line-height="var(--line-height-titles)" 
       />
 
-      <DynamicBanner
+      <DynamicText
         tag="h1"
         :messages="messages"
         fontWeight="600"

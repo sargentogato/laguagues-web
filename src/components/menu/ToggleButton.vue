@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineExpose, ref, type Ref } from 'vue';
+import { ref, type Ref } from 'vue';
 
 const isActive: Ref<boolean, boolean> = ref(false);
 const emit = defineEmits<{

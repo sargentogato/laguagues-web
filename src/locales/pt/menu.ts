@@ -1,8 +1,8 @@
 const menu = {
-  adventure:  'Aventure',
-  destiny:    'Destin',
-  ourCourses: 'Nos Cours',
-  aboutUs:    'À Propos de Nous',
+  languageTraining: 'Formação em idiomas',
+  destiny:          'Destino',
+  ourCourses:       'Nossos Cursos',
+  aboutUs:          'Sobre Nós',
 } as const;
 
 export default menu;

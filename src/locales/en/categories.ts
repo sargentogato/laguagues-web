@@ -23,6 +23,12 @@ const categories = {
   Mediterranean and Nordic cuisine, ideal for annual celebrations like Christmas, Carnival, and
   summer. Includes workshops in our physical spaces, but we also cook in the chosen language
   online and live!`,
+  altImageDe:          'German courses',
+  altImageEs:          'Spanish courses',
+  altImageEn:          'English courses',
+  altImageIt:          'Italian courses',
+  altImageWshop:       'Cooking workshops',
+  altImageTraductions: 'Legal and sworn translations',
 } as const;
 
 export default categories;

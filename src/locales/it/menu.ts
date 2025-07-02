@@ -1,8 +1,8 @@
 const menu = {
-  adventure:  'Adventure',
-  destiny:    'Destiny',
-  ourCourses: 'Our Courses',
-  aboutUs:    'About Us'
-} as const
+  languageTraining: 'Formazione linguistica',
+  destiny:          'Destino',
+  ourCourses:       'I Nostri Corsi',
+  aboutUs:          'Chi Siamo',
+} as const;
 
-export default menu
+export default menu;

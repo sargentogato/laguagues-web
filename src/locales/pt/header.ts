@@ -1,14 +1,14 @@
 const header = {
-  title:          'Meilleure Communication',
-  headerMessage1: 'Apprenez ce dont vous avez besoin',
-  headerMessage2: 'Débloquez votre avenir maintenant',
-  headerMessage3: 'Apprenez des meilleurs',
+  title:          'Melhor Comunicação',
+  headerMessage1: 'Aprenda o que você precisa',
+  headerMessage2: 'Desbloqueie seu futuro agora',
+  headerMessage3: 'Aprenda com os melhores',
   subtitle:
-    "Débloquez de nouvelles opportunités. Apprenez l'allemand et d'autres langues avec des cours en ligne flexibles conçus pour vous.",
-  textImageBox:     'Un monde de possibilités',
-  textImageHeader1: "L'opportunité que vous attendiez",
-  textImageHeader2: 'Préparez-vous à un avenir meilleur',
-  textImageHeader3: 'Communiquez efficacement',
+    'Desbloqueie novas oportunidades. Aprenda alemão e outros idiomas com cursos online flexíveis projetados para você.',
+  textImageBox:     'Um mundo de possibilidades',
+  textImageHeader1: 'A oportunidade que você esperava',
+  textImageHeader2: 'Prepare-se para um futuro melhor',
+  textImageHeader3: 'Comunique-se de forma eficaz',
 } as const;
 
 export default header;

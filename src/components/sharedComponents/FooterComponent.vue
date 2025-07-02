@@ -33,24 +33,9 @@
           font-weight="600"
           text-transform="uppercase"
         />
-        <RouterLink
-          class="footer__link"
-          :to="{ name: 'Home' }"
-        >
-          Home
-        </RouterLink>
-        <RouterLink
-          class="footer__link"
-          :to="{ name: 'privacyPage' }"
-        >
-          {{ $t('footer.privacy') }}
-        </RouterLink>
-        <RouterLink
-          class="footer__link"
-          :to="{ name: 'cookiesPage' }"
-        >
-          {{ $t('footer.cookies') }}
-        </RouterLink>
+        <RouterLink class="footer__link" :to="{ name: 'Home' }">Home</RouterLink>
+        <RouterLink class="footer__link" :to="{ name: 'PrivacyPage' }">{{ $t('footer.privacy') }}</RouterLink>
+        <RouterLink class="footer__link" :to="{ name: 'CookiesPage' }">{{ $t('footer.cookies') }}</RouterLink>
       </div>
       <div class="footer__rs">
         <div class="footer__icon-text">
@@ -82,10 +67,7 @@
             :texts="textContact"
           />
         </div>
-        <a
-          class="footer__email"
-          href="mailto:marlonjvelasquez@gmail.com"
-        >
+        <a class="footer__email" href="mailto:marlonjvelasquez@gmail.com">
           {{ emailContact }}
         </a>
       </div>
