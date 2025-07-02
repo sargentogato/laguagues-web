@@ -9,6 +9,8 @@
 
   defineExpose({
     scrollToCategory: () => {
+      console.log("HomePage");
+      
       sectionCategories.value?.$el?.scrollIntoView({ behavior: 'smooth' });
     },
   });

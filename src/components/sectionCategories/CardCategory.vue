@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import IconCircleArrow from '@/components/icons/IconCircleArrow.vue';
 import { computed, onMounted, ref } from 'vue';
 import { useScrollAnimation } from '../../composables/useScrollAnimation';
-import IconCircleArrow from '@/components/icons/IconCircleArrow.vue'
 
 const props = defineProps({
   srcImage: {
@@ -11,6 +11,10 @@ const props = defineProps({
   altImage: {
     type:     String,
     required: true
+  },
+  link: {
+    type:    String,
+    require: true
   },
   title: {
     type:     String,
@@ -72,10 +76,10 @@ onMounted(() => {
 <template>
   <div ref="animateSection" class="card appear-animation" :style="animationStyle">
     <div class="card__image">
-      <a href="" :class="cardImageCorrection">
-        <IconCircleArrow class="card__icon-circle-arrow"/>
-        <img :src="srcImage" :alt="$t(`${altImage}`)" :class="imageClass">
-      </a>
+      <RouterLink :class="cardImageCorrection" :to="{name: `${link}`}">
+          <IconCircleArrow class="card__icon-circle-arrow"/>
+          <img :src="srcImage" :alt="$t(`${altImage}`)" :class="imageClass">
+      </RouterLink>
     </div>
     <div class="card__text-box">
       <div class="card__title" :style="titleStylesDynamic">{{ $t(`${title}`) }}</div>

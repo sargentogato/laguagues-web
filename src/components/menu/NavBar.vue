@@ -30,7 +30,7 @@ const openCloseMenu = () => {
   }
 };
 
-function handerlClickOutside(eventTriggered: MouseEvent) {
+function handerlClickOutsideMenu(eventTriggered: MouseEvent) {
   if (menu.value && !menu.value.contains(eventTriggered.target as Node)) {
     openCloseMenu();
     childRef.value.handleClick();
@@ -38,7 +38,7 @@ function handerlClickOutside(eventTriggered: MouseEvent) {
 }
 
 const startEventListenerToCloseMenu = () => {
-  listeningEvent.value = handerlClickOutside;
+  listeningEvent.value = handerlClickOutsideMenu;
 
   document.addEventListener('click', listeningEvent.value);
 };
@@ -60,11 +60,14 @@ const cleanEventListener = () => {
 
     <ul class="menu__items" :class="classToApply">
       <li class="menu__item">
-        <a href="#" class="menu__item-link">
-          <p class="menu__item-text" data-text="Language Training" @click="$emit('goToCategory')">
-            {{ $t('menu.languageTraining') }}
-          </p>
-        </a>
+        <RouterLink class="menu__item-link" :to="{ name: 'Home'}" data-text="Home">
+          Home
+        </RouterLink>
+      </li>
+      <li class="menu__item">
+        <RouterLink class="menu__item-link" :to="{ name: 'Home'}" @click.prevent="$emit('goToCategory')">
+          {{ $t('menu.languageTraining') }}
+        </RouterLink>
       </li>
       <li class="menu__item">
         <a href="#" class="menu__item-link">
@@ -141,7 +144,7 @@ const cleanEventListener = () => {
   color: var(--white);
 }
 
-.menu__item-text:hover {
+.menu__item-link:hover {
   color: var(--secondary-color);
 }
 

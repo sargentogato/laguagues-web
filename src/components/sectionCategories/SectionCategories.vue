@@ -11,36 +11,42 @@ const title = ref(['categories.sectionTitle']);
       altImages: 'categories.altImageDe',
       titleCard: 'categories.titleGermanCard',
       textCard:  'categories.textGermanCard',
+      link:      'GermanCourses'
     },
     {
       srcImages: 'images/categories/language-team-Itali.webp',
-      altImages: 'categories.altImageEs',
+      altImages: 'categories.altImageIt',
       titleCard: 'categories.titleItalianCard',
       textCard:  'categories.textItalianCard',
+      link:      'GermanCourses'
     },
     {
       srcImages: 'images/categories/language-team-Spain.webp',
-      altImages: 'categories.altImageFr',
+      altImages: 'categories.altImageEs',
       titleCard: 'categories.titleSpanishCard',
       textCard:  'categories.textSpanishCard',
+      link:      'GermanCourses'
     },
     {
       srcImages: 'images/categories/language-team-England.webp',
-      altImages: 'categories.altImageIt',
+      altImages: 'categories.altImageEn',
       titleCard: 'categories.titleEnglishCard',
       textCard:  'categories.textEnglishCard',
+      link:      'GermanCourses'
     },
     {
       srcImages: 'images/categories/language-team-workshop.jpg',
       altImages: 'categories.altImageWshop',
       titleCard: 'categories.titleWorkshopCard',
       textCard:  'categories.textWorkshopCard',
+      link:      'GermanCourses'
     },
     {
       srcImages: 'images/categories/language-team-translations.webp',
       altImages: 'categories.altImageTraductions',
       titleCard: 'categories.titleTraductionsCard',
       textCard:  'categories.textTraductionsCard',
+      link:      'GermanCourses'
     },
   ];
 
@@ -69,6 +75,7 @@ const title = ref(['categories.sectionTitle']);
             :alt-image="card.altImages"
             :title="card.titleCard"
             :text="card.textCard"
+            :link="card.link"
             font-weight-title="600"
             font-weight-text="400"
             :image-class="index === dataCard.length - 1 ? 'last-responsive-image' : ''"
