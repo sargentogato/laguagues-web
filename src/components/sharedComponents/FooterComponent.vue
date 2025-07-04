@@ -82,16 +82,13 @@ import TitlesParagraph from './TitlesParagraph.vue';
     animation: aparecerFooter 1s forwards;
     animation-delay: 1s;
     background-color: var(--primary-color);
-    bottom: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     min-height: 300px;
     opacity: 0;
     padding: 35px;
-    position: absolute;
     transition: opacity 1s ease-in-out;
-    width: 100%;
    }
 
   .footer__info {
