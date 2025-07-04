@@ -1,8 +1,8 @@
 <script setup lang="ts">
   import IconBase from '@/components/icons/IconBase.vue';
-  import { useScrollAnimation } from '@/composables/useScrollAnimation';
-  import { onMounted, ref } from 'vue';
-  import TitlesParagraph from './TitlesParagraph.vue';
+import { useScrollAnimation } from '@/composables/useScrollAnimation';
+import { onMounted, ref } from 'vue';
+import TitlesParagraph from './TitlesParagraph.vue';
 
   const endOfWeb = ref();
   const titleSectionLinks = ['footer.links'];
@@ -82,15 +82,17 @@
     animation: aparecerFooter 1s forwards;
     animation-delay: 1s;
     background-color: var(--primary-color);
+    bottom: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     min-height: 300px;
     opacity: 0;
     padding: 35px;
-    position: relative;
+    position: absolute;
     transition: opacity 1s ease-in-out;
-  }
+    width: 100%;
+   }
 
   .footer__info {
     display: flex;
@@ -98,57 +100,57 @@
     flex-wrap: wrap;
     gap: 15px;
     justify-content: space-between;
-  }
+   }
 
   .footer__links,
   .footer__rs,
   .footer__contact {
     flex-basis: 100%;
-  }
+   }
 
   .footer__links::after {
     border-bottom: 2px solid rgb(255, 255, 255);
     border-width: 2px;
     color: transparent;
     content: '-------------';
-  }
+   }
 
   .footer__link {
     color: var(--white);
-  }
+   }
 
   .footer__rs {
     display: flex;
     flex-direction: column;
     gap: 15px;
-  }
+   }
 
   .footer__icon-box {
     display: flex;
     gap: 15px;
     width: 80px;
-  }
-  
+   }
+
   .footer__contact {
     display: flex;
     flex-direction: column;
-  }
+   }
 
   .footer__questionContact {
     display: flex;
     gap: 5px;
-  }
+   }
 
   .footer__email {
     color: var(--white);
-  }
+   }
 
   .footer__design {
     bottom: 10px;
     color: var(--white);
     font-size: 0.8rem;
     position: absolute;
-  }
+   }
 
   @media screen and (min-width: 576px) {
 
@@ -156,41 +158,39 @@
     .footer__rs,
     .footer__contact {
       flex-basis: 25%;
-    }
+     }
 
     .footer__links::after {
       content: '';
-    }
+     }
 
     .footer__rs {
       align-items: center;
-    }
-    
+     }
     .footer__contact {
       align-items: center;
-    }
-  }
-  
+     }
+   }
+
   @media screen and (min-width:768px) {
     .footer__contact {
       align-items: center;
-    }
-  }
-
-  
+     }
+   }  
   @media screen and (min-width:1200px){
+
     .footer__contact {
       align-items: flex-end;
-    }  
-  }
-  
+     }
+   }
+
   /* Animation*/
   @keyframes aparecerFooter {
     from {
       opacity: 0;
-    }
+     }
     to {
       opacity: 1;
-    }
-  }
+     }
+   }
 </style>
