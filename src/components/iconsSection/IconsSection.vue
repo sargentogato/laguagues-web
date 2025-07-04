@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { IconName } from "@/components/icons/IconBase.vue";
-import IconCard from '@/components/sharedComponents/IconCard.vue';
+import IconCard from '@/components/cards/IconCard.vue';
 import TitlesTextComponent from '@/components/sharedComponents/TitlesParagraph.vue';
 
 const whyLanguage = ["why.title"];

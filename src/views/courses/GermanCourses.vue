@@ -1,10 +1,12 @@
 <script setup lang="ts">
+import CardCoursesPack from '@/components/cards/CardCoursesPack.vue'
+
 
 </script>
 
 <template>
   <div>
-    German Courses
+    <CardCoursesPack />
   </div>
 </template>
 

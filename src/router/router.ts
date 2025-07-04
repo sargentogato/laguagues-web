@@ -20,32 +20,32 @@ const routes = [
   {
     path:      '/german-courses',
     name:      'GermanCourses',
-    component: () => import('@/views/GermanCourses.vue')
+    component: () => import('@/views/courses/GermanCourses.vue')
   },
   {
     path:      '/italian-courses',
     name:      'ItalianCourses',
-    component: () => import('@/views/ItalianCourses.vue')
+    component: () => import('@/views/courses/ItalianCourses.vue')
   },
   {
     path:      '/spanis-courses',
     name:      'SpanishCourses',
-    component: () => import ('@/views/SpanishCourses.vue')
+    component: () => import ('@/views/courses/SpanishCourses.vue')
   },
   {
     path:      '/english-courses',
     name:      'EnglishCourses',
-    component: () => import('@/views/EnglishCourses.vue')
+    component: () => import('@/views/courses/EnglishCourses.vue')
   },
   {
     path:      '/workshop-courses',
     name:      'WorkshopCourses',
-    component: () => import('@/views/WorkshopCourses.vue')
+    component: () => import('@/views/courses/WorkshopCourses.vue')
   },
   {
     path:      '/legal-translation',
     name:      'LegalTranslation',
-    component: () => import('@/views/LegalTranslations.vue')
+    component: () => import('@/views/courses/LegalTranslations.vue')
   }
 ];
 
