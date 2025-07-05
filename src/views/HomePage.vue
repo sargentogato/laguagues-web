@@ -2,7 +2,7 @@
   import HeaderComponent from '@/components/header/HeaderComponent.vue';
   import IconsSection from '@/components/iconsSection/IconsSection.vue';
   import CoursesSection from '@/components/coursesSection/coursesSection.vue';
-  import { ref, defineExpose } from 'vue';
+  import { ref } from 'vue';
   import type { ComponentPublicInstance } from 'vue';
 
   const sectionCategories = ref<ComponentPublicInstance | null>(null);
