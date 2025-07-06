@@ -95,13 +95,12 @@ onMounted(() => {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
   max-width: 360px;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: box-shadow 0.5s ease-in-out;
   width: 100%;
 }
 
 .card:hover {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.1);
-  transform: translateY(-8px);
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5), -5px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .card__text-box {

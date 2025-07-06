@@ -145,7 +145,6 @@ const title = ref(['categories.sectionTitle']);
     stroke:var(--white);    
   }
 
-
   @media screen and (min-width: 992px) {
     .category__title {
       width: 55%;

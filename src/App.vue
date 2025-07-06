@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app">
     <NavBar @go-to-category="handleScrollToCategory"></NavBar>
 
     <router-view v-slot="{ Component, route }">
@@ -27,6 +27,10 @@ function handleScrollToCategory() {
 </script>
 
 <style scoped>
+.app{
+  position: relative;
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.2s ease;
