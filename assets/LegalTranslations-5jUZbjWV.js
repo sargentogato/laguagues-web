@@ -1,0 +1,1 @@
+import{_ as e,c as n,o as a}from"./index-DJG1j_px.js";const r={};function s(o,t){return a(),n("div",null," Legal and Certified Translations Courses ")}const l=e(r,[["render",s]]);export{l as default};
