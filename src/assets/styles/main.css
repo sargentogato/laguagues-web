@@ -1,5 +1,6 @@
 @import "./reset.css";
 @import "./variables.css";
+@import "./cardsStyle.css";
 
 /* Scroll Animation */
 .appear-animation {

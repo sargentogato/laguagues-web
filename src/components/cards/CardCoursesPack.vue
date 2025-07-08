@@ -1,6 +1,6 @@
 <script setup lang="ts">
+import TitlesParagraph from '@/components/sharedComponents/TitlesParagraph.vue';
 import type { PropType } from 'vue';
-import TitlesParagraph from '../sharedComponents/TitlesParagraph.vue';
 
 
 const props = defineProps({
@@ -17,28 +17,20 @@ const props = defineProps({
     type:     Array as PropType<string[]>,
     required: true
   },
-  subtitle: {
-    type:     Array as PropType<string[]>,
-    required: true
-  },
   includedTitle: {
     type:     Array as PropType<string[]>,
     required: true
   },
   includedItems: {
-    type:     Array as PropType<string[]>,
-    required: true
+    type:     Array as PropType<{ messages: string[] }[]>,
+    required: true,
   },
   learnTitle: {
     type:     Array as PropType<string[]>,
     required: true
   },
   learnItems: {
-    type:     Array as PropType<string[]>,
-    required: true
-  },
-  priceTitle: {
-    type:     Array as PropType<string[]>,
+    type:     Array as PropType<{ messages: string[] }[]>,
     required: true
   },
   timeNumber: {
@@ -59,23 +51,12 @@ const props = defineProps({
   textBtnTwo: {
     type: String
   },
-  textColor: {
-    type:     String,
-    required: true
-  },
-  fontWeight: {
-    type:    String,
-    default: '300',
-  },
-  textTransform: {
-    type: String,
-  },
 })
 
 </script>
 
 <template>
-  <article class="package__box">
+  <article class="package__box card">
     <figure class="package__image">
       <img
         :src="srcImage"
@@ -85,61 +66,67 @@ const props = defineProps({
     <div class="package__info">
       <div class="package__info-box">
         <TitlesParagraph
-          tag="h1"
+          tag="h3"
           :texts="title"
-          :text-color="`${textColor}`"
-          :font-weight="`${fontWeight}`"
-          :text-transform="`${textTransform}`"
-
+          text-color="black"
+          font-weight="bold"
+          text-transform="uppercase"
           :custom-class="'package__title'"
         />
         <TitlesParagraph
-          tag="h3"
-          :texts="subtitle"
-          :text-color="`${textColor}`"
-          :font-weight="`${fontWeight}`"
-          :text-transform="`${textTransform}`"
+          tag="h4"
+          :texts="includedTitle"
+          text-color="black"
+          font-weight="bold"
+          text-transform="uppercase"
           :custom-class="'package__subtitle'"
         />
-        <h3 class="package__subtitle">Qué incluye el paquete</h3>
         <ul class="package__includes">
-          <li class="package__item">
+          <li class="package__item" v-for="(include, index ) in includedItems" :key="index">
             <div class="package__bullets">
               <div class="bullets"></div>
             </div>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit at eum,
-              laudantium maiores placeat nisi dolorem quibusdam id hic ratione quos minus iusto
-              cumque! Dolorem autem ea maiores quae veritatis.as fasdfa sdf asdfasdfasd fasdfas
-              res placeat nisi dolorem quibusdam id hic ratione quos minus iusto
-              cumque! Dolorem autem ea maiores quae veritatis.as fasdfa sdf asdfasdfasd fasdfas
-            </p>
+            <TitlesParagraph 
+              tag="p"
+              :texts="include.messages"
+              text-color="black"
+              font-weight="400"
+            />
           </li>
         </ul>
-        <h3 class="package__section">Qué aprenderas</h3>
+        <TitlesParagraph
+          tag="h4"
+          :texts="learnTitle"
+          text-color="black"
+          font-weight="bold"
+          text-transform="uppercase"
+        />
         <ul class="package__learn">
-          <li class="package__item">
+          <li class="package__item" v-for="(include, index ) in learnItems" :key="index">
             <div class="package__bullets">
               <div class="bullets"></div>
             </div>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit at eum,
-              laudantium maiores placeat nisi dolorem quibusdam id hic ratione quos minus iusto
-              cumque! Dolorem autem ea maiores quae veritatis.
-            </p>
+            <TitlesParagraph 
+              tag="p"
+              :texts="include.messages"
+              text-color="black"
+              font-weight="400"
+            />
           </li>
         </ul>
 
         <div class="package__pricing">
-          <h3 class="package__price">Cuanto Cuesta</h3>
           <div class="package__price-box">
-            <span class="package__price-period">3 meses</span>
-            <span class="package__price-amount"> €299</span>
+            <span class="package__price-amount"> €{{ price }}</span>
+            <div class="package__price-period">
+              <span class="package__time">{{ timeNumber }}</span>
+              <span class="package__period">{{ timeText }}</span>
+            </div>
           </div>
         </div>
         <div class="package__info">
-          <button class="package__contact">Contacta</button>
-          <button class="package__more-info">Más información</button>
+          <button class="package__contact">{{ textBtnOne }}</button>
+          <button class="package__more-info">{{ textBtnTwo }}</button>
         </div>
       </div>
     </div>
@@ -155,9 +142,15 @@ const props = defineProps({
     display: flex;
     flex-direction: column;
     gap: 25px;
+    padding: 10px 20px;
   }
 
-  .package__includes {
+ :deep(.package__title) {
+  font-size:var(--title-package-card);
+ }
+
+  .package__includes,
+  .package__learn {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -179,6 +172,30 @@ const props = defineProps({
     border: solid black;
     background-color: black;
     border-radius: 50%;
+  }
+
+  .package__price-box,
+  .package__price-period {
+    display: flex;
+  }
+
+  .package__price-period{
+    gap: 5px;
+  } 
+
+  .package__price-box{
+    justify-content: space-between;
+  }
+
+  .package__info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .package__contact, 
+  .package__more-info {
+    padding: var(--padding-buttons);
+    border-radius: var(--border-radius-buttons);
   }
 </style>
 

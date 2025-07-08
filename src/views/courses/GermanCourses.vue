@@ -1,9 +1,42 @@
 <script setup lang="ts">
-import CardCoursesPack from '@/components/cards/CardCoursesPack.vue'
+import CardCoursesPack from '@/components/cards/CardCoursesPack.vue';
 import { ref } from 'vue';
 
-const title = ref(["Principiantes(temporal Title)"])
-const subtitle = ref(["Qué incluye el paquete (temporal)"])
+const altImage = ref("Language Team")
+const title = ref(["Principiantes"]);
+const includedTitle = ref(["Qué incluye el paquete"]);
+const learnTitle = ref(["Qué aprenderas"])
+const timeNumber = ref(3)
+const timeText = ref("meses")
+const price = ref(200);
+const textBtnOne = ref("Contacta")
+const textBtnTwo = ref("Más información")
+
+const  includedItems = ref([
+  {
+    messages: [`Acceso a lecciones estructuradas con enfoque en gramática, vocabulario 
+    y desarrollo de las cuatro habilidades lingüísticas (habla, escucha, lectura y
+    escritura), adaptadas a tu nivel y objetivos.`]
+  },
+  {
+    messages: [`Recursos interactivos y material cultural como audios, videos, 
+    ejercicios prácticos y contenido sobre tradiciones, modismos y contextos sociales 
+    del idioma estudiado.`]
+  },
+])
+
+const  learnItems = ref([
+  {
+    messages: [`Dominar la gramática y el vocabulario esencial , incluyendo estructuras 
+    básicas y avanzadas, para construir oraciones correctas y expresar ideas con
+    precisión.`]
+  },
+  {
+    messages: [`Desarrollar las cuatro habilidades lingüísticas : hablar (conversación 
+    fluida), escuchar (comprensión auditiva), leer (análisis de textos) y escribir
+    (redacción clara y coherente).`]
+  },
+])
 
 </script>
 
@@ -11,8 +44,17 @@ const subtitle = ref(["Qué incluye el paquete (temporal)"])
   <div class="germanSection">
     <CardCoursesPack 
       src-image="images/courses/learGerman-language-team.webp"
+      :alt-image="altImage"
       :title="title"
-      :subtitle="subtitle"
+      :included-title="includedTitle"
+      :includedItems="includedItems"
+      :learn-title="learnTitle"
+      :learn-items="learnItems"
+      :time-number="timeNumber"
+      :time-text="timeText"
+      :price="price"
+      :text-btn-one="textBtnOne"
+      :text-btn-two="textBtnTwo"
     />
   </div>
 </template>
@@ -23,12 +65,8 @@ const subtitle = ref(["Qué incluye el paquete (temporal)"])
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-:deep(.package__title) {
-  font-size: var(--title-package-card);
+  padding: 50px 25px;
+  
 }
 
 </style>
