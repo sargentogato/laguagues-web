@@ -56,7 +56,7 @@
   }
 
   .btn--active {
-    box-shadow: var(--shadow-box);
+    box-shadow: var(--shadow-box-flags);
     transition: box-shadow 0.3s ease;
   }
 </style>
