@@ -34,6 +34,9 @@
   --image-caption-size-desktop:1.4rem;
   --line-height-titles:1;
   --title-sections: clamp(1.8rem, 8vw - 1.75rem, 2.5rem);
+  --title-package-card:clamp(1.5rem, 5vw - 1.2rem, 2rem);
+  --subtitle-package-card:clamp(1.188rem, 5vw - 1.2rem, 1.8rem);
+  --text-package-card:(1rem, 3vw - 1rem, 1.2rem)
   
   /* Animations */
   --animation-duration:1s;
@@ -42,7 +45,7 @@
   --section-width:1200px;
   
   /* Shadows */
-  --shadow-box:
+  --shadow-box-flags:
   2px 2px 2px 0 hsl(278, 100%, 70%),
   -2px 2px 2px 0 hsl(278, 100%, 70%),
   -2px -2px 2px 0 hsl(278, 100%, 70%), 
@@ -55,4 +58,12 @@
   -2px 2px 2px 0 hsl(278, 100%, 40%) ,
   -2px -2px 2px 0 hsl(278, 100%, 40%) , 
   2px -2px 2px 0 hsl(278, 100%, 40%);
+  
+  
+  /* Cards */
+  --border-radius-cards:16px;
+  
+  /* Buttons */
+  --padding-buttons: 10px 15px;
+  --border-radius-buttons:var(--border-radius-cards);
 }

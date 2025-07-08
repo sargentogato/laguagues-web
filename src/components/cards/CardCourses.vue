@@ -90,18 +90,7 @@ onMounted(() => {
 
 <style scoped>
 .card {
-  border: 1px solid hsl(260, 70%, 15%, 0.1);
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
   max-width: 360px;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  width: 100%;
-}
-
-.card:hover {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.1);
-  transform: translateY(-8px);
 }
 
 .card__text-box {

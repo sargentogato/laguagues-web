@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { ref } from 'vue';
 import TitlesParagraph from '../sharedComponents/TitlesParagraph.vue';
-import CardCategory from './CardCategory.vue';
+import CardCourses from '@/components/cards/CardCourses.vue';
 
 const title = ref(['categories.sectionTitle']);
 
@@ -70,7 +70,7 @@ const title = ref(['categories.sectionTitle']);
           v-for="(card, index) in dataCard"
           :key="index"
         >
-          <CardCategory
+          <CardCourses
             :src-image="card.srcImages"
             :alt-image="card.altImages"
             :title="card.titleCard"
@@ -144,7 +144,6 @@ const title = ref(['categories.sectionTitle']);
     stroke-width: 1.5px;
     stroke:var(--white);    
   }
-
 
   @media screen and (min-width: 992px) {
     .category__title {

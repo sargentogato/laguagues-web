@@ -4,6 +4,7 @@
     v-for="(text, index) in texts" 
     :key="index" 
     :style="dynamicStyles"
+    :class="customClass"
   >
     {{ $t(`${text}`) }}
   </component>
@@ -38,6 +39,9 @@ const props = defineProps({
     type:    String,
     default: '1.5',
   },
+  customClass: {
+    type: String
+  }
 })
 
 /* return implicito, por eso los ({}) */
