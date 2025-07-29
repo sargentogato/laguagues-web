@@ -4,13 +4,9 @@ import { ref } from 'vue';
 
 const altImage = ref("Language Team")
 const title = ref(["Principiantes"]);
-const includedTitle = ref(["Qué incluye el paquete"]);
-const learnTitle = ref(["Qué aprenderas"])
 const timeNumber = ref(3)
 const timeText = ref("meses")
 const price = ref(200);
-const textBtnOne = ref("Contacta")
-const textBtnTwo = ref("Más información")
 
 const  includedItems = ref([
   {
@@ -46,15 +42,11 @@ const  learnItems = ref([
       src-image="images/courses/learGerman-language-team.webp"
       :alt-image="altImage"
       :title="title"
-      :included-title="includedTitle"
       :includedItems="includedItems"
-      :learn-title="learnTitle"
       :learn-items="learnItems"
       :time-number="timeNumber"
       :time-text="timeText"
       :price="price"
-      :text-btn-one="textBtnOne"
-      :text-btn-two="textBtnTwo"
     />
   </div>
 </template>
