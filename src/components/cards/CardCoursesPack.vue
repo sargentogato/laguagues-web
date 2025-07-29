@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import TitlesParagraph from '@/components/sharedComponents/TitlesParagraph.vue';
 import type { PropType } from 'vue';
+import { ref } from 'vue';
 
+const includedTitle = ref(["Qué incluye el paquete"]);
+const learnTitle = ref(["Qué aprenderas"])
+const textBtnOne = ref("Contacta")
+const textBtnTwo = ref("Más información")
 
 const props = defineProps({
   srcImage: {
@@ -17,17 +22,9 @@ const props = defineProps({
     type:     Array as PropType<string[]>,
     required: true
   },
-  includedTitle: {
-    type:     Array as PropType<string[]>,
-    required: true
-  },
   includedItems: {
     type:     Array as PropType<{ messages: string[] }[]>,
     required: true,
-  },
-  learnTitle: {
-    type:     Array as PropType<string[]>,
-    required: true
   },
   learnItems: {
     type:     Array as PropType<{ messages: string[] }[]>,
@@ -44,12 +41,6 @@ const props = defineProps({
   price: {
     type:     Number,
     required: true
-  },
-  textBtnOne: {
-    type: String
-  },
-  textBtnTwo: {
-    type: String
   },
 })
 
@@ -102,13 +93,13 @@ const props = defineProps({
           text-transform="uppercase"
         />
         <ul class="package__learn">
-          <li class="package__item" v-for="(include, index ) in learnItems" :key="index">
+          <li class="package__item" v-for="(learnItem, index ) in learnItems" :key="index">
             <div class="package__bullets">
               <div class="bullets"></div>
             </div>
             <TitlesParagraph 
               tag="p"
-              :texts="include.messages"
+              :texts="learnItem.messages"
               text-color="black"
               font-weight="400"
             />
