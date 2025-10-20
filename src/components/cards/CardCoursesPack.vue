@@ -8,8 +8,6 @@ const learnTitle = ref(["Qué aprenderas"])
 const textBtnOne = ref("Contacta")
 const textBtnTwo = ref("Más información")
 
-const includedTitle = ref(["Qué incluye el paquete"]);
-
 const props = defineProps({
   srcImage: {
     type:     String,
