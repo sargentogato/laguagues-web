@@ -3,12 +3,18 @@ import TitlesParagraph from '@/components/sharedComponents/TitlesParagraph.vue';
 import type { PropType } from 'vue';
 import { ref } from 'vue';
 
-const includedTitle = ref(["Qué incluye el paquete"]);
-const learnTitle = ref(["Qué aprenderas"])
 const textBtnOne = ref("Contacta")
 const textBtnTwo = ref("Más información")
 
 const props = defineProps({
+  includedTitle: {
+    type:     Array as PropType<string[]>,
+    required: true
+  },
+  learnTitle: {
+    type:     Array as PropType<string[]>,
+    required: true
+  },
   srcImage: {
     type:     String,
     required: true
@@ -43,6 +49,9 @@ const props = defineProps({
     required: true
   },
 })
+
+console.log(props.includedTitle);
+
 
 </script>
 
@@ -117,7 +126,6 @@ const props = defineProps({
         </div>
         <div class="package__info">
           <button class="package__contact">{{ textBtnOne }}</button>
-          <button class="package__more-info">{{ textBtnTwo }}</button>
         </div>
       </div>
     </div>

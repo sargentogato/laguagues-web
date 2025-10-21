@@ -2,8 +2,10 @@
 import CardCoursesPack from '@/components/cards/CardCoursesPack.vue';
 import { ref } from 'vue';
 
+const title = ["packageTitles.basic"];
+const includedTitle = ["packageTitles.included"]
+const learnTitle = ref(["packageTitles.learning"])
 const altImage = ref("Language Team")
-const title = ref(["Principiantes"]);
 const timeNumber = ref(3)
 const timeText = ref("meses")
 const price = ref(200);
@@ -38,7 +40,9 @@ const  learnItems = ref([
 
 <template>
   <div class="germanSection">
-    <CardCoursesPack 
+    <CardCoursesPack
+      :included-title="includedTitle"
+      :learn-title="learnTitle"
       src-image="images/courses/learGerman-language-team.webp"
       :alt-image="altImage"
       :title="title"
