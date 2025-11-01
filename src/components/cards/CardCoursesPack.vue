@@ -4,7 +4,6 @@ import type { PropType } from 'vue';
 import { ref } from 'vue';
 
 const textBtnOne = ref("Contacta")
-const textBtnTwo = ref("Más información")
 
 const props = defineProps({
   includedTitle: {

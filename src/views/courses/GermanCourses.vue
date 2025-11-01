@@ -1,9 +1,29 @@
 <script setup lang="ts">
 import CardCoursesPack from '@/components/cards/CardCoursesPack.vue';
+import MetodComponent from '@/components/packagesCourses/MetodComponent.vue';
 import { ref } from 'vue';
 
-const title = ["packageTitles.basic"];
-const includedTitle = ["packageTitles.included"]
+/* Header */
+//Sustituir por las claves de i18n
+const topTitlePartOne = ref(["Con el Método Mengel®:"])
+const topTitlePartTwo = ref(["el idioma se ordena, y tú"])
+const topTitlePartThree = ref(["también"])
+const topSubtitle = ref(["Cuando el alemán deja de ser un caos y se convierte en un camino lógico y motivador"])
+const topSubtitleTwo = ref(["motivador"])
+const messageOne = ref(["El alemán es un idioma que muchos consideran difícil, denso, lleno de reglas y excepciones. Pero en realidad, es como un puzle: si colocas las piezas en el orden correcto, el resultado es claro, funcional y hasta bello."])
+const messageTwo = ref(["segundo mensaje"])
+const whyIsDifferent = ref(["porque lo dice Laura"])
+const whyChooseAs = ref(["porque somos los mejores"])
+
+/* What makes it different? Why choose us? What do you get? */
+
+
+//fuente para los títulos
+const fontFamily = "ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"
+
+/* Package */
+const title = ref(["packageTitles.basic"]);
+const includedTitle = ref(["packageTitles.included"])
 const learnTitle = ref(["packageTitles.learning"])
 const altImage = ref("Language Team")
 const timeNumber = ref(3)
@@ -12,14 +32,10 @@ const price = ref(200);
 
 const  includedItems = ref([
   {
-    messages: [`Acceso a lecciones estructuradas con enfoque en gramática, vocabulario 
-    y desarrollo de las cuatro habilidades lingüísticas (habla, escucha, lectura y
-    escritura), adaptadas a tu nivel y objetivos.`]
+    messages: [`Clases en vivo por Zoom `]
   },
   {
-    messages: [`Recursos interactivos y material cultural como audios, videos, 
-    ejercicios prácticos y contenido sobre tradiciones, modismos y contextos sociales 
-    del idioma estudiado.`]
+    messages: [`2 horas de clases teóricas a la semana`]
   },
 ])
 
@@ -39,6 +55,18 @@ const  learnItems = ref([
 </script>
 
 <template>
+  <MetodComponent 
+    :topTitlePartOne="topTitlePartOne"
+    :topTitlePartTwo="topTitlePartTwo"
+    :top-title-part-three="topTitlePartThree"
+    :topSubtitle="topSubtitle"
+    :topSubtitleTwo="topSubtitleTwo"
+    :message-one="messageOne"
+    :message-two="messageTwo"
+    :why-is-different="whyIsDifferent"
+    :why-choose-as="whyChooseAs"
+    :fontFamily="fontFamily"
+  />
   <div class="germanSection">
     <CardCoursesPack
       :included-title="includedTitle"
@@ -61,8 +89,8 @@ const  learnItems = ref([
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px 25px;
-  
+  padding: 50px 25px;  
 }
+
 
 </style>
