@@ -1,86 +1,11 @@
-<script setup lang="ts">
-  import type { PropType } from 'vue';
-import TitlesParagraph from '../sharedComponents/TitlesParagraph.vue';
-
-  const props = defineProps({
-    topTitlePartOne: {
-      type:     Array as PropType<string[]>,
-      required: true,
-    },
-    topTitlePartTwo: {
-      type:     Array as PropType<string[]>,
-      required: true,
-    },
-    topTitlePartThree: {
-      type:     Array as PropType<string[]>,
-      required: true,
-    },
-    topSubtitle: {
-      type:     Array as PropType<string[]>,
-      required: true,
-    },
-    topSubtitleTwo: {
-      type:     Array as PropType<string[]>,
-      required: true,
-    },
-    messageOne: {
-      type:     Array as PropType<string[]>,
-      required: true,
-    },
-    messageTwo: {
-      type:     Array as PropType<string[]>,
-      required: true,
-    },
-    whyIsDifferent: {
-      type:     Array as PropType<string[]>,
-      required: true,
-    },
-    whyChooseAs: {
-      type:     Array as PropType<string[]>,
-      required: true,
-    },
-    fontFamily: {
-      type: String,
-    },
-  });
-
-  const lineHeightTitles = '1';
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="metod">
     <div class="metod__box">
-      <TitlesParagraph
-        tag="h1"
-        :texts="topTitlePartOne"
-        text-color="white"
-        font-weight="bold"
-        :font-family="fontFamily"
-        :line-height="lineHeightTitles"
-      />
-      <TitlesParagraph
-        tag="h1"
-        :texts="topTitlePartTwo"
-        text-color="#FFCC33"
-        font-weight="bold"
-        :font-family="fontFamily"
-        :line-height="lineHeightTitles"
-      />
-      <TitlesParagraph
-        tag="h1"
-        :texts="topTitlePartThree"
-        text-color="#FFCC33"
-        font-weight="bold"
-        :font-family="fontFamily"
-        :line-height="lineHeightTitles"
-      />
-
+      <slot name="title"></slot>
       <div class="metod__subtitle">
-        <TitlesParagraph
-          tag="p"
-          :texts="topSubtitle"
-          :font-family="fontFamily"
-        />
+        <slot name="subtitle"></slot>
       </div>
     </div>
   </div>
@@ -88,12 +13,10 @@ import TitlesParagraph from '../sharedComponents/TitlesParagraph.vue';
   <div class="metod__text-box">
     <div class="metod__messages">
       <div class="metod__message-one">
-        Aquí va el primer mensaje
+        <slot name="messageOne"></slot>
       </div>
       <div class="metod__message-two">
-        <div class="metod__different">Qué lo hace diferente</div>
-        <div class="metod__choose">Qué lo hace diferente</div>
-        <div class="metod__get">Qué lo hace diferente</div>
+        <slot name="messageTwo"></slot>
       </div>
     </div>
   </div>
@@ -118,7 +41,6 @@ import TitlesParagraph from '../sharedComponents/TitlesParagraph.vue';
   }
   .metod__box {
     max-width: 1200px;
-    /* background-color: rgb(75, 75, 55); */
     max-height: fit-content;
     top: 80px;
     text-align: center;

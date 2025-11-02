@@ -1,91 +1,56 @@
 <script setup lang="ts">
-import TitlesParagraph from '@/components/sharedComponents/TitlesParagraph.vue';
+  import TitlesParagraph from '@/components/sharedComponents/TitlesParagraph.vue';
 import type { PropType } from 'vue';
-import { ref } from 'vue';
-
-const textBtnOne = ref("Contacta")
 
 const props = defineProps({
-  includedTitle: {
-    type:     Array as PropType<string[]>,
-    required: true
-  },
-  learnTitle: {
-    type:     Array as PropType<string[]>,
-    required: true
-  },
-  srcImage: {
-    type:     String,
-    required: true
-  },
-  altImage: {
-    type:     String,
-    default:  "Language Team",
-    required: true
-  },
-  title: {
-    type:     Array as PropType<string[]>,
-    required: true
-  },
-  includedItems: {
-    type:     Array as PropType<{ messages: string[] }[]>,
-    required: true,
-  },
-  learnItems: {
-    type:     Array as PropType<{ messages: string[] }[]>,
-    required: true
-  },
-  timeNumber: {
-    type:     Number,
-    required: true
-  },
-  timeText: {
-    type:     String,
-    required: true
-  },
-  price: {
-    type:     Number,
-    required: true
-  },
-})
-
-console.log(props.includedTitle);
-
-
+    srcImage: {
+      type:     String,
+      required: true,
+    },
+    includedItems: {
+      type:     Array as PropType<{ messages: string[] }[]>,
+      required: true,
+    },
+    learnItems: {
+      type:     Array as PropType<{ messages: string[] }[]>,
+      required: true,
+    },
+    timeNumber: {
+      type:     Number,
+      required: true,
+    },
+    timeText: {
+      type:     String,
+      required: true,
+    },
+    price: {
+      type:     Number,
+      required: true,
+    },
+  });
 </script>
 
 <template>
   <article class="package__box card">
     <figure class="package__image">
       <img
-        :src="srcImage"
-        :alt="altImage"
+        :src=srcImage
+        alt="Language Team"
       />
     </figure>
     <div class="package__info">
       <div class="package__info-box">
-        <TitlesParagraph
-          tag="h3"
-          :texts="title"
-          text-color="black"
-          font-weight="bold"
-          text-transform="uppercase"
-          :custom-class="'package__title'"
-        />
-        <TitlesParagraph
-          tag="h4"
-          :texts="includedTitle"
-          text-color="black"
-          font-weight="bold"
-          text-transform="uppercase"
-          :custom-class="'package__subtitle'"
-        />
+        <slot name="title"></slot>
         <ul class="package__includes">
-          <li class="package__item" v-for="(include, index ) in includedItems" :key="index">
+          <li
+            class="package__item"
+            v-for="(include, index) in includedItems"
+            :key="index"
+          >
             <div class="package__bullets">
               <div class="bullets"></div>
             </div>
-            <TitlesParagraph 
+            <TitlesParagraph
               tag="p"
               :texts="include.messages"
               text-color="black"
@@ -93,19 +58,17 @@ console.log(props.includedTitle);
             />
           </li>
         </ul>
-        <TitlesParagraph
-          tag="h4"
-          :texts="learnTitle"
-          text-color="black"
-          font-weight="bold"
-          text-transform="uppercase"
-        />
+        <slot name="learnTitle"></slot>
         <ul class="package__learn">
-          <li class="package__item" v-for="(learnItem, index ) in learnItems" :key="index">
+          <li
+            class="package__item"
+            v-for="(learnItem, index) in learnItems"
+            :key="index"
+          >
             <div class="package__bullets">
               <div class="bullets"></div>
             </div>
-            <TitlesParagraph 
+            <TitlesParagraph
               tag="p"
               :texts="learnItem.messages"
               text-color="black"
@@ -116,15 +79,15 @@ console.log(props.includedTitle);
 
         <div class="package__pricing">
           <div class="package__price-box">
-            <span class="package__price-amount"> €{{ price }}</span>
+            <span class="package__price-amount">€{{ price }}</span>
             <div class="package__price-period">
               <span class="package__time">{{ timeNumber }}</span>
               <span class="package__period">{{ timeText }}</span>
             </div>
           </div>
         </div>
-        <div class="package__info">
-          <button class="package__contact">{{ textBtnOne }}</button>
+        <div class="package__actions">
+          <slot name="actions"></slot>
         </div>
       </div>
     </div>
@@ -143,9 +106,9 @@ console.log(props.includedTitle);
     padding: 10px 20px;
   }
 
- :deep(.package__title) {
-  font-size:var(--title-package-card);
- }
+  :deep(.package__title) {
+    font-size: var(--title-package-card);
+  }
 
   .package__includes,
   .package__learn {
@@ -177,11 +140,11 @@ console.log(props.includedTitle);
     display: flex;
   }
 
-  .package__price-period{
+  .package__price-period {
     gap: 5px;
-  } 
+  }
 
-  .package__price-box{
+  .package__price-box {
     justify-content: space-between;
   }
 
@@ -190,10 +153,16 @@ console.log(props.includedTitle);
     justify-content: space-between;
   }
 
-  .package__contact, 
+  .package__contact,
   .package__more-info {
     padding: var(--padding-buttons);
     border-radius: var(--border-radius-buttons);
   }
-</style>
 
+  .package__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding-top: 15px;
+  }
+</style>
