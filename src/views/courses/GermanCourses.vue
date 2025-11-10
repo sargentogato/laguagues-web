@@ -1,14 +1,57 @@
 <script setup lang="ts">
   import CardCoursesPack from '@/components/cards/CardCoursesPack.vue';
-  import MethodComponent from '@/components/packagesCourses/MethodComponent.vue';
-  import MethodFeatureBoxes from '@/components/packagesCourses/MethodFeatureBoxes.vue';
-  import TitlesParagraph from '@/components/sharedComponents/TitlesParagraph.vue';
+import MethodComponent from '@/components/packagesCourses/MethodComponent.vue';
+import MethodFeatureBoxes from '@/components/packagesCourses/MethodFeatureBoxes.vue';
+import TitlesParagraph from '@/components/sharedComponents/TitlesParagraph.vue';
+import { ref } from 'vue';
 
   const lineHeightTitles = '1';
 
   //fuente para los títulos
   const fontFamily =
     "ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'";
+
+const featuresData = ref([
+  // Caja 1: Usa un icono por defecto para todos
+  {
+    title:    ['💡 ¿Qué lo hace diferente?'],
+    subtitle: [
+      `A diferencia de otros métodos que te obligan a memorizar sin entender o saltan de un tema a otro, el Método Mengel® se distingue por:`,
+    ],
+    defaultIcon: '🔹', // Icono por defecto para esta caja
+    texts:       [
+      { text: 'Un orden pedagógico específico, pensado para hispanohablantes' },
+      { text: 'Ejercicios exclusivos diseñados para fijar lo aprendido sin frustración' },
+      { text: 'Un enfoque que te permite hablar desde el día cero en un nivel superior' },
+      { text: 'Y luego, la gramática te alcanza a ti, para que consolides lo que ya usas' },
+    ],
+  },
+  // Caja 2: Usa otro icono por defecto
+  {
+    title:       ['✅ ¿Por qué elegirnos?'],
+    subtitle:    [''],
+    defaultIcon: '✔️', // Icono por defecto para esta caja
+    texts:       [
+      { text: 'Método único, desarrollado especialmente para hispanohablantes' },
+      { text: 'No te abruma: te organiza' },
+      { text: 'No te hace repetir: te hace entender' },
+      { text: 'No te deja solo: te acompaña' },
+      { text: 'Y sobre todo: te devuelve la motivación para aprender' },
+    ],
+  },
+  // Caja 3: Mezcla iconos por defecto y específicos
+  {
+    title:       ['🧩 Como un puzle perfecto'],
+    subtitle:    ['Cada pieza en su lugar correcto. Cada regla con su momento. Cada paso con su propósito.'],
+    defaultIcon: '', // Icono por defecto para esta caja
+    texts:       [
+      { icon: '📝', text: 'Resultado: seguridad y autonomía durante el aprendizaje' },
+      { icon: '🗣️', text: 'Aquí no te lanzamos al alemán, te llevamos de la mano...' },
+      { icon: '📜', text: '"Si explicas bien las reglas, juegas bien el juego."' },
+      { text: 'El alemán ordenado, tú también' },
+    ],
+  },
+]);
 
   /* Package */
   const title = ['packageTitles.basic'];
@@ -84,52 +127,10 @@
         :font-family="fontFamily"
       />
     </template>
-    <template #messageOne>Aquí va el primer mensaje</template>
-    <template #featureBoxes>
-      <MethodFeatureBoxes>
-        <template #featureLeft>
-          <TitlesParagraph
-            tag="h3"
-            :texts="['💡 ¿Qué lo hace diferente?']"
-            text-color="black"
-            font-weight="bold"
-            :font-family="fontFamily"
-            text-align="center"
-          />
-          <TitlesParagraph
-            tag="p"
-            :texts="[
-              `A diferencia de otros métodos que te obligan a memorizar sin entender o saltan de un
-            tema a otro, el Método Mengel® se distingue por:`,
-            ]"
-            text-color="black"
-            font-weight="400"
-            :font-family="fontFamily"
-          />
-          <ul>
-            <li>Un orden pedagógico específico, pensado para hispanohablantes</li>
-            <li>Ejercicios exclusivos diseñados para fijar lo aprendido sin frustración</li>
-          </ul>
-        </template>
-
-        <template #featureCenter>
-          <h3>✅ ¿Por qué elegirnos?</h3>
-          <ul>
-            <li>✔️ Método único, desarrollado especialmente para hispanohablantes</li>
-            <li>✔️ No te abruma: te organiza</li>
-          </ul>
-        </template>
-
-        <template #featureRight>
-          <p>Como un puzle perfecto</p>
-          <p>
-            Cada pieza en su lugar correcto. Cada regla con su momento. Cada paso con su propósito.
-          </p>
-          <p>El alemán ordenado, tú también</p>
-        </template>
-      </MethodFeatureBoxes>
-    </template>
   </MethodComponent>
+
+  <MethodFeatureBoxes :items="featuresData" />
+
   <div class="germanSection">
     <CardCoursesPack
       src-image="images/courses/learGerman-language-team.webp"

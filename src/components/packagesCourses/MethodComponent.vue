@@ -9,17 +9,6 @@
       </div>
     </div>
   </div>
-
-  <div class="metod__text-box">
-    <div class="metod__messages">
-      <div class="metod__message-one">
-        <slot name="messageOne"></slot>
-      </div>
-      <div class="metod__message-two">
-        <slot name="featureBoxes"></slot>
-      </div>
-    </div>
-  </div>
 </template>
 
 <style scoped>

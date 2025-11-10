@@ -1,16 +1,69 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import TitlesParagraph from '@/components/sharedComponents/TitlesParagraph.vue';
+  import type { PropType } from 'vue';
+
+// 1. Definimos la forma del objeto de TEXTO
+interface FeatureTextItem {
+  text: string;
+  icon?: string; // El icono es opcional en el objeto de texto
+}
+
+// 2. Definimos la forma de la CAJA (Item)
+interface FeatureItem {
+  title:       string;
+  subtitle:    string;
+  defaultIcon?: string; // El icono por defecto es opcional
+  texts:       FeatureTextItem[]; // 'texts' es un array de 'FeatureTextItem'
+}
+
+defineProps({
+  items: {
+    type:     Array as PropType<FeatureItem[]>,
+    required: true,
+  },
+});
+
+  const fontFamily =
+    "ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'";
+</script>
 
 <template>
   <section class="features">
-    <div class="features-container">
-      <article class="feature-box">
-        <slot name="featureLeft" />
-      </article>
-      <article class="feature-box">
-        <slot name="featureCenter" />
-      </article>
-      <article class="feature-box">
-        <slot name="featureRight" />
+    <div class="features__container">
+      <article
+        v-for="(item, index) in items"
+        :key="index"
+        class="feature__box"
+      >
+        <TitlesParagraph
+          tag="h3"
+          :texts="[item.title]"
+          text-color="black"
+          font-weight="bold"
+          :font-family="fontFamily"
+          text-align="center"
+        />
+
+        <TitlesParagraph
+          v-if="item.subtitle && item.subtitle.length > 0"
+          tag="p"
+          :texts="[item.subtitle]"
+          text-color="#877f7f"
+          font-weight="400"
+          :font-family="fontFamily"
+          text-align="center"
+        />
+
+        <ul class="feature__items">
+          <li
+            v-for="(textItem, i) in item.texts"
+            :key="i"
+            class="feature__item"
+          >
+            <span class="feature__icon">{{ textItem.icon || item.defaultIcon }}</span>
+            <span class="feature__text">{{ textItem.text }}</span>
+          </li>
+        </ul>
       </article>
     </div>
   </section>
@@ -24,15 +77,15 @@
     padding: 80px 25px;
   }
 
-  .features-container {
+  .features__container {
     display: flex;
     gap: 30px;
     justify-content: space-around;
-    max-width: 1200px;
+    max-width: 1366px;
     width: 100%;
   }
 
-  .feature-box {
+  .feature__box {
     background-color: #ffffff;
     border-color: rgba(182, 182, 182, 0.5);
     border-radius: 8px;
@@ -41,13 +94,19 @@
     flex: 1;
     padding: 20px;
 
-box-shadow:
+    box-shadow:
       0 10px 15px -3px rgb(0 0 0 / 0.1),
       0 4px 6px -4px rgb(0 0 0 / 0.1);
   }
 
+  .feature__item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
   @media (max-width: 768px) {
-    .features-container {
+    .features__container {
       flex-direction: column;
     }
   }
