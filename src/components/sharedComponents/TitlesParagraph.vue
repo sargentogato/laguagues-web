@@ -30,7 +30,7 @@ const props = defineProps({
     type:    String,
     default: '1.5',
   },
-  customClass: {
+  textAlign: {
     type: String
   }
 })
@@ -41,7 +41,8 @@ const dynamicStyles = computed(() => ({
   fontWeight:    props.fontWeight,
   textTransform: props.textTransform,
   lineHeight:    props.lineHeight,
-  fontFamily:    props.fontFamily
+  fontFamily:    props.fontFamily,
+  textAlign:     props.textAlign
 }))
 
 </script>
@@ -51,7 +52,6 @@ const dynamicStyles = computed(() => ({
     v-for="(text, index) in texts" 
     :key="index" 
     :style="dynamicStyles"
-    :class="customClass"
   >
     {{ $t(`${text}`) }}
   </component>

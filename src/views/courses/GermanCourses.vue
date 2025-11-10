@@ -1,8 +1,8 @@
 <script setup lang="ts">
   import CardCoursesPack from '@/components/cards/CardCoursesPack.vue';
-  import MetodComponent from '@/components/packagesCourses/MetodComponent.vue';
+  import MethodComponent from '@/components/packagesCourses/MethodComponent.vue';
+  import MethodFeatureBoxes from '@/components/packagesCourses/MethodFeatureBoxes.vue';
   import TitlesParagraph from '@/components/sharedComponents/TitlesParagraph.vue';
-  import { ref } from 'vue';
 
   const lineHeightTitles = '1';
 
@@ -14,22 +14,22 @@
   const title = ['packageTitles.basic'];
   const includedTitle = ['packageTitles.included'];
   const learnTitle = ['packageTitles.learning'];
-  const timeNumber = ref(3);
-  const timeText = ref('meses');
-  const price = ref(200);
+  const timeNumber = 3;
+  const timeText = 'Meses';
+  const price = 200;
   const contactButtonText = 'packageTitles.contact';
 
-/* Cards */  
-  const includedItems = ref([
+  /* Cards */
+  const includedItems = [
     {
       messages: [`Clases en vivo por Zoom `],
     },
     {
       messages: [`2 horas de clases teóricas a la semana`],
     },
-  ]);
+  ];
 
-  const learnItems = ref([
+  const learnItems = [
     {
       messages: [
         `Dominar la gramática y el vocabulario esencial , incluyendo estructuras 
@@ -44,11 +44,11 @@
     (redacción clara y coherente).`,
       ],
     },
-  ]);
+  ];
 </script>
 
 <template>
-  <MetodComponent>
+  <MethodComponent>
     <template #title>
       <TitlesParagraph
         tag="h1"
@@ -85,8 +85,51 @@
       />
     </template>
     <template #messageOne>Aquí va el primer mensaje</template>
-    <template #messageTwo>Aquí va el segundo mensaje</template>
-  </MetodComponent>
+    <template #featureBoxes>
+      <MethodFeatureBoxes>
+        <template #featureLeft>
+          <TitlesParagraph
+            tag="h3"
+            :texts="['💡 ¿Qué lo hace diferente?']"
+            text-color="black"
+            font-weight="bold"
+            :font-family="fontFamily"
+            text-align="center"
+          />
+          <TitlesParagraph
+            tag="p"
+            :texts="[
+              `A diferencia de otros métodos que te obligan a memorizar sin entender o saltan de un
+            tema a otro, el Método Mengel® se distingue por:`,
+            ]"
+            text-color="black"
+            font-weight="400"
+            :font-family="fontFamily"
+          />
+          <ul>
+            <li>Un orden pedagógico específico, pensado para hispanohablantes</li>
+            <li>Ejercicios exclusivos diseñados para fijar lo aprendido sin frustración</li>
+          </ul>
+        </template>
+
+        <template #featureCenter>
+          <h3>✅ ¿Por qué elegirnos?</h3>
+          <ul>
+            <li>✔️ Método único, desarrollado especialmente para hispanohablantes</li>
+            <li>✔️ No te abruma: te organiza</li>
+          </ul>
+        </template>
+
+        <template #featureRight>
+          <p>Como un puzle perfecto</p>
+          <p>
+            Cada pieza en su lugar correcto. Cada regla con su momento. Cada paso con su propósito.
+          </p>
+          <p>El alemán ordenado, tú también</p>
+        </template>
+      </MethodFeatureBoxes>
+    </template>
+  </MethodComponent>
   <div class="germanSection">
     <CardCoursesPack
       src-image="images/courses/learGerman-language-team.webp"
@@ -135,5 +178,11 @@
     justify-content: center;
     align-items: center;
     padding: 50px 25px;
+  }
+
+  .package__contact {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid var(--tertiary-color);
   }
 </style>

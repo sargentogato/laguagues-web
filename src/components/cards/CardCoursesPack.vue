@@ -40,7 +40,9 @@ const props = defineProps({
     </figure>
     <div class="package__info">
       <div class="package__info-box">
+        
         <slot name="title"></slot>
+        
         <ul class="package__includes">
           <li
             class="package__item"
@@ -58,7 +60,9 @@ const props = defineProps({
             />
           </li>
         </ul>
+        
         <slot name="learnTitle"></slot>
+        
         <ul class="package__learn">
           <li
             class="package__item"
@@ -161,8 +165,6 @@ const props = defineProps({
 
   .package__actions {
     display: flex;
-    justify-content: flex-end;
-    gap: 15px;
     padding-top: 15px;
   }
 </style>

@@ -16,7 +16,7 @@
         <slot name="messageOne"></slot>
       </div>
       <div class="metod__message-two">
-        <slot name="messageTwo"></slot>
+        <slot name="featureBoxes"></slot>
       </div>
     </div>
   </div>
