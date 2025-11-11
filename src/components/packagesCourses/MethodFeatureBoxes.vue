@@ -10,8 +10,8 @@ interface FeatureTextItem {
 
 // 2. Definimos la forma de la CAJA (Item)
 interface FeatureItem {
-  title:       string;
-  subtitle:    string;
+  title:       string[];
+  subtitle:    string[];
   defaultIcon?: string; // El icono por defecto es opcional
   texts:       FeatureTextItem[]; // 'texts' es un array de 'FeatureTextItem'
 }
@@ -37,7 +37,7 @@ defineProps({
       >
         <TitlesParagraph
           tag="h3"
-          :texts="[item.title]"
+          :texts="item.title"
           text-color="black"
           font-weight="bold"
           :font-family="fontFamily"
@@ -47,7 +47,7 @@ defineProps({
         <TitlesParagraph
           v-if="item.subtitle && item.subtitle.length > 0"
           tag="p"
-          :texts="[item.subtitle]"
+          :texts="item.subtitle"
           text-color="#877f7f"
           font-weight="400"
           :font-family="fontFamily"
