@@ -29,7 +29,7 @@ const featuresData = ref([
   // Caja 2: Usa otro icono por defecto
   {
     title:       ['✅ ¿Por qué elegirnos?'],
-    subtitle:    [''],
+    subtitle:    ['Frente a métodos genéricos que te dejan solo, el nuestro es un sistema único que te acompaña, te organiza y se enfoca en que entiendas de verdad:'],
     defaultIcon: '✔️', // Icono por defecto para esta caja
     texts:       [
       { text: 'Método único, desarrollado especialmente para hispanohablantes' },
@@ -43,11 +43,11 @@ const featuresData = ref([
   {
     title:       ['🧩 Como un puzle perfecto'],
     subtitle:    ['Cada pieza en su lugar correcto. Cada regla con su momento. Cada paso con su propósito.'],
-    defaultIcon: '', // Icono por defecto para esta caja
+    defaultIcon: '🔹',  // Icono por defecto para esta caja
     texts:       [
-      { icon: '📝', text: 'Resultado: seguridad y autonomía durante el aprendizaje' },
-      { icon: '🗣️', text: 'Aquí no te lanzamos al alemán, te llevamos de la mano...' },
-      { icon: '📜', text: '"Si explicas bien las reglas, juegas bien el juego."' },
+      { text: 'Resultado: seguridad y autonomía durante el aprendizaje' },
+      { text: 'Aquí no te lanzamos al alemán, te llevamos de la mano...' },
+      { text: '"Si explicas bien las reglas, juegas bien el juego."' },
       { text: 'El alemán ordenado, tú también' },
     ],
   },

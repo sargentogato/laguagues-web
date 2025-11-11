@@ -51,7 +51,8 @@ defineProps({
           text-color="#877f7f"
           font-weight="400"
           :font-family="fontFamily"
-          text-align="center"
+          text-align="left"
+          custom-property="feature__paddings"
         />
 
         <ul class="feature__items">
@@ -70,6 +71,10 @@ defineProps({
 </template>
 
 <style scoped>
+  :deep(h3) {
+    font-size: clamp(1.3rem, 8vw - 3rem, 1.8rem);
+  }
+
   .features {
     background-color: #f9f9f9;
     display: flex;
@@ -97,6 +102,11 @@ defineProps({
     box-shadow:
       0 10px 15px -3px rgb(0 0 0 / 0.1),
       0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+  
+  :deep(.feature__paddings) {
+    padding-top: 24px;
+    padding-bottom: 24px;
   }
 
   .feature__item {
