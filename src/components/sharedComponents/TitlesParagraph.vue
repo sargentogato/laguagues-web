@@ -1,15 +1,3 @@
-<template>
-  <component 
-    :is="tag" 
-    v-for="(text, index) in texts" 
-    :key="index" 
-    :style="dynamicStyles"
-    :class="customClass"
-  >
-    {{ $t(`${text}`) }}
-  </component>
-</template>
-
 <script setup lang="ts">
 import type { PropType } from 'vue';
 import { computed } from 'vue';
@@ -28,6 +16,9 @@ const props = defineProps({
     type:    String,
     default: '#fff'
   },
+  fontFamily: {
+    type: String
+  },
   fontWeight: {
     type:    String,
     default: '300',
@@ -39,7 +30,10 @@ const props = defineProps({
     type:    String,
     default: '1.5',
   },
-  customClass: {
+  textAlign: {
+    type: String
+  },
+  customProperty: {
     type: String
   }
 })
@@ -49,7 +43,20 @@ const dynamicStyles = computed(() => ({
   color:         props.textColor,
   fontWeight:    props.fontWeight,
   textTransform: props.textTransform,
-  lineHeight:    props.lineHeight
+  lineHeight:    props.lineHeight,
+  fontFamily:    props.fontFamily,
+  textAlign:     props.textAlign
 }))
 
 </script>
+<template>
+  <component 
+    :is="tag" 
+    v-for="(text, index) in texts" 
+    :key="index" 
+    :style="dynamicStyles"
+    :class="customProperty"
+  >
+    {{ $t(`${text}`) }}
+  </component>
+</template>

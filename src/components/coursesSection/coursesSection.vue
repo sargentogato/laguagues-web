@@ -1,7 +1,7 @@
 <script setup lang="ts">
-  import { ref } from 'vue';
+  import CardCourses from '@/components/cards/CardCourses.vue';
+import { ref } from 'vue';
 import TitlesParagraph from '../sharedComponents/TitlesParagraph.vue';
-import CardCourses from '@/components/cards/CardCourses.vue';
 
 const title = ref(['categories.sectionTitle']);
 

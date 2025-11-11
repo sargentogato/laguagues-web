@@ -1,4 +1,5 @@
 <script setup lang="ts">
+//imported to asign the type of IconcName on const cardInfo
 import type { IconName } from "@/components/icons/IconBase.vue";
 import IconCard from '@/components/cards/IconCard.vue';
 import TitlesTextComponent from '@/components/sharedComponents/TitlesParagraph.vue';
