@@ -1,11 +1,58 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+// 1. ¡El hijo ahora importa el átomo!
+import TitlesParagraph from '@/components/sharedComponents/TitlesParagraph.vue';
+import type { PropType } from 'vue';
+
+// 2. Define las props para recibir los datos
+defineProps({
+  mainTitle: {
+    type:     Array as PropType<string[]>,
+    required: true,
+  },
+  highlightedTitles: {
+    type: Array as PropType<string[]>,
+  },
+  subtitle: {
+    type:     Array as PropType<string[]>,
+    required: true,
+  },
+});
+
+// 3. El hijo ahora DEFINE sus propios estilos base
+const lineHeightTitles = '1';
+const fontFamily =
+  "ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'";
+</script>
 
 <template>
   <div class="metod">
     <div class="metod__box">
-      <slot name="title"></slot>
+      
+      <TitlesParagraph
+        tag="h1"
+        :texts="mainTitle"
+        text-color="white"
+        font-weight="bold"
+        :font-family="fontFamily"
+        :line-height="lineHeightTitles"
+      />
+      
+      <TitlesParagraph
+        v-for="(title, index) in highlightedTitles"
+        :key="index"
+        tag="h1"
+        :texts="[title]" text-color="#FFCC33"
+        font-weight="bold"
+        :font-family="fontFamily"
+        :line-height="lineHeightTitles"
+      />
+
       <div class="metod__subtitle">
-        <slot name="subtitle"></slot>
+        <TitlesParagraph
+          tag="p"
+          :texts="subtitle"
+          :font-family="fontFamily"
+        />
       </div>
     </div>
   </div>

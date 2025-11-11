@@ -1,18 +1,39 @@
 <script setup lang="ts">
+  // 1. ¡AHORA IMPORTA EL ÁTOMO!
   import TitlesParagraph from '@/components/sharedComponents/TitlesParagraph.vue';
 import type { PropType } from 'vue';
 
-const props = defineProps({
+interface LearningItems {
+  messages: string[]
+}
+
+  const props = defineProps({
+    title: {
+      type:     Array as PropType<string[]>,
+      required: true,
+    },
+    includedTitle: {
+      type:     Array as PropType<string[]>,
+      required: true,
+    },
+    learnTitle: {
+      type:     Array as PropType<string[]>,
+      required: true,
+    },
+    contactButtonText: {
+      type:     String,
+      required: true,
+    },
     srcImage: {
       type:     String,
       required: true,
     },
     includedItems: {
-      type:     Array as PropType<{ messages: string[] }[]>,
+      type:     Array as PropType<LearningItems[]>,
       required: true,
     },
     learnItems: {
-      type:     Array as PropType<{ messages: string[] }[]>,
+      type:     Array as PropType<LearningItems[]>,
       required: true,
     },
     timeNumber: {
@@ -34,15 +55,28 @@ const props = defineProps({
   <article class="package__box card">
     <figure class="package__image">
       <img
-        :src=srcImage
+        :src="srcImage"
         alt="Language Team"
       />
     </figure>
     <div class="package__info">
       <div class="package__info-box">
-        
-        <slot name="title"></slot>
-        
+        <TitlesParagraph
+          tag="h3"
+          :texts="title"
+          text-color="black"
+          font-weight="bold"
+          text-transform="uppercase"
+          class="package__title"
+        />
+        <TitlesParagraph
+          tag="h4"
+          :texts="includedTitle"
+          text-color="black"
+          font-weight="bold"
+          text-transform="uppercase"
+        />
+
         <ul class="package__includes">
           <li
             class="package__item"
@@ -60,9 +94,15 @@ const props = defineProps({
             />
           </li>
         </ul>
-        
-        <slot name="learnTitle"></slot>
-        
+
+        <TitlesParagraph
+          tag="h4"
+          :texts="learnTitle"
+          text-color="black"
+          font-weight="bold"
+          text-transform="uppercase"
+        />
+
         <ul class="package__learn">
           <li
             class="package__item"
@@ -81,17 +121,10 @@ const props = defineProps({
           </li>
         </ul>
 
-        <div class="package__pricing">
-          <div class="package__price-box">
-            <span class="package__price-amount">€{{ price }}</span>
-            <div class="package__price-period">
-              <span class="package__time">{{ timeNumber }}</span>
-              <span class="package__period">{{ timeText }}</span>
-            </div>
-          </div>
-        </div>
+        <div class="package__pricing"></div>
+
         <div class="package__actions">
-          <slot name="actions"></slot>
+          <button class="package__contact">{{ $t(contactButtonText) }}</button>
         </div>
       </div>
     </div>
@@ -110,8 +143,15 @@ const props = defineProps({
     padding: 10px 20px;
   }
 
-  :deep(.package__title) {
+  .package__title {
     font-size: var(--title-package-card);
+  }
+
+  .package__contact {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid var(--tertiary-color);
+    padding: var(--padding-buttons);
   }
 
   .package__includes,
