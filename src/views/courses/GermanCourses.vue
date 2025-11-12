@@ -55,41 +55,56 @@ import { ref } from 'vue';
     },
   ]);
 
-  /* Package */
-  const title = ['packageTitles.basic'];
-  const includedTitle = ['packageTitles.included'];
-  const learnTitle = ['packageTitles.learning'];
+  /* Package Card Basic*/
+  const basic = ['packageTitles.basic'];
   const timeNumber = 3;
   const timeText = 'Meses';
-  const price = 200;
-  const contactButtonText = 'packageTitles.contact';
+  const priceBasic = 200;
+  const basicIncluded = [
+    { messages: [`basicPackageIncluded.liveClasses`] },
+    { messages: [`basicPackageIncluded.timeClases`] },
+  ];
 
-  /* Cards */
-  const includedItems = [
+  /* Package Card Premium*/
+  const premium = ['packageTitles.premium'];
+  const pricePremium = 600;
+  const premiumIncluded = [
+    { messages: [`premiumPackageIncluded.liveClasses`] },
+    { messages: [`premiumPackageIncluded.teoricClasses`] },
     {
-      messages: [`Clases en vivo por Zoom `],
+      messages: ['premiumPackageIncluded.practicalClasses'],
     },
     {
-      messages: [`2 horas de clases teóricas a la semana`],
+      messages: ['premiumPackageIncluded.group'],
+    },
+    {
+      messages: ['premiumPackageIncluded.reocrdedClasses'],
     },
   ];
 
-  const learnItems = [
+  /* Package Card Platinum*/
+  const platinum = ['packageTitles.platinum'];
+  const pricePlatinum = 900;
+    const platinumIncluded = [
+    { messages: [`platinumPackageIncluded.liveClasses`] },
+    { messages: [`platinumPackageIncluded.teoricClasses`] },
     {
-      messages: [
-        `Dominar la gramática y el vocabulario esencial , incluyendo estructuras 
-    básicas y avanzadas, para construir oraciones correctas y expresar ideas con
-    precisión.`,
-      ],
+      messages: ['platinumPackageIncluded.practicalClasses'],
     },
     {
-      messages: [
-        `Desarrollar las cuatro habilidades lingüísticas : hablar (conversación 
-    fluida), escuchar (comprensión auditiva), leer (análisis de textos) y escribir
-    (redacción clara y coherente).`,
-      ],
+      messages: ['platinumPackageIncluded.groupTutoring'],
+    },
+    {
+      messages: ['platinumPackageIncluded.group'],
+    },
+    {
+      messages: ['platinumPackageIncluded.subtitledVideos'],
+    },
+    {
+      messages: ['platinumPackageIncluded.recordeClasses'],
     },
   ];
+  
 </script>
 
 <template>
@@ -102,31 +117,45 @@ import { ref } from 'vue';
 
   <div class="germanSection">
     <CardCoursesPack
-      :title="title"
-      :included-title="includedTitle"
-      :learn-title="learnTitle"
+      :title="basic"
       src-image="images/courses/learGerman-language-team.webp"
-      :includedItems="includedItems"
-      :learn-items="learnItems"
+      :includedItems="basicIncluded"
       :time-number="timeNumber"
       :time-text="timeText"
-      :price="price"
-      :contact-button-text="contactButtonText"
+      :price="priceBasic"
+    />
+    <CardCoursesPack
+      :title="premium"
+      src-image="images/courses/learGerman-language-team.webp"
+      :includedItems="premiumIncluded"
+      :time-number="timeNumber"
+      :time-text="timeText"
+      :price="pricePremium"
+    />
+    <CardCoursesPack
+      :title="platinum"
+      src-image="images/courses/learGerman-language-team.webp"
+      :includedItems="platinumIncluded"
+      :time-number="timeNumber"
+      :time-text="timeText"
+      :price="pricePlatinum"
     />
   </div>
 </template>
 
 <style scoped>
   .germanSection {
+    align-items: stretch;
     display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
     justify-content: center;
-    align-items: center;
     padding: 50px 25px;
   }
 
   .package__contact {
-    width: 100%;
-    border-radius: 5px;
     border: 1px solid var(--tertiary-color);
+    border-radius: 5px;
+    width: 100%;
   }
 </style>
