@@ -5,7 +5,7 @@ const platinumPackageIncluded = {
   groupTutoring:    'Gruppen-Tutoring 1 Stunde pro Woche',
   group:            'Private Discord-Gruppe',
   subtitledVideos:  'Videos mit Untertiteln zum Üben',
-  recordeClasses:   'Aufgezeichnete Kurse, jederzeit ansehbar',
+  recordedClasses:   'Aufgezeichnete Kurse, jederzeit ansehbar',
 } as const;
 
 export default platinumPackageIncluded;

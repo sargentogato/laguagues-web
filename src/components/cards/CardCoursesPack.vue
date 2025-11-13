@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import TitlesParagraph from '@/components/sharedComponents/TitlesParagraph.vue';
-import type { PropType } from 'vue';
+  import type { PropType } from 'vue';
 
   interface LearningItems {
     messages: string[];
@@ -8,65 +8,59 @@ import type { PropType } from 'vue';
 
   const props = defineProps({
     title: {
-      type:     Array as PropType<string[]>,
+      type: Array as PropType<string[]>,
       required: true,
     },
     srcImage: {
-      type:     String,
+      type: String,
       required: true,
     },
     includedItems: {
-      type:     Array as PropType<LearningItems[]>,
+      type: Array as PropType<LearningItems[]>,
       required: true,
     },
     timeNumber: {
-      type:     Number,
+      type: Number,
       required: true,
     },
     timeText: {
-      type:     String,
+      type: String,
       required: true,
     },
     price: {
-      type:     Number,
+      type: Number,
       required: true,
     },
   });
 
   const learnTitle = ['packageTitles.learning'];
-const includedTitle = ['packageTitles.included'];
+  const includedTitle = ['packageTitles.included'];
   const contactButtonText = 'packageTitles.contact';
-  
+
   const learnItemsOne = [
     {
-      messages: [
-        `Aprende a construir oraciones correctas.`,
-      ],
+      messages: [`Aprende a construir oraciones correctas.`],
     },
     {
-      messages: [
-        `Expresar ideas con precisión`,
-      ],
+      messages: [`Expresar ideas con precisión`],
     },
     {
-      messages: [
-        `Aprender desde estructuras básicas hasta avanzadas`,
-      ],
+      messages: [`Aprender desde estructuras básicas hasta avanzadas`],
     },
   ];
 
   const learnItemsTwo = [
     {
-      messages: [`Hablar: Logra una conversación fluida`]
+      messages: [`Hablar: Logra una conversación fluida`],
     },
     {
-      messages: [`Escuchar: Mejora tu comprensión auditiva.`]
+      messages: [`Escuchar: Mejora tu comprensión auditiva.`],
     },
     {
-      messages: ['Leer: Domina el análisis de textos.']
+      messages: ['Leer: Domina el análisis de textos.'],
     },
     {
-      messages: ['Escribir: Consigue una redacción clara y coherente.']
+      messages: ['Escribir: Consigue una redacción clara y coherente.'],
     },
   ];
 </script>
@@ -114,7 +108,7 @@ const includedTitle = ['packageTitles.included'];
             />
           </li>
         </ul>
-        
+
         <!-- What you will learn -->
         <TitlesParagraph
           tag="h4"
@@ -213,6 +207,10 @@ const includedTitle = ['packageTitles.included'];
   .package__box {
     width: 80%;
   }
+  .package__info {
+    display: flex;
+    justify-content: space-between;
+  }
 
   .package__info-box {
     display: flex;
@@ -237,6 +235,10 @@ const includedTitle = ['packageTitles.included'];
     display: flex;
     flex-direction: column;
     gap: 5px;
+  }
+  
+  .package__includes {
+    min-height: 222px;
   }
 
   .package__learn {
@@ -267,11 +269,6 @@ const includedTitle = ['packageTitles.included'];
     display: flex;
   }
 
-  .package__info {
-    display: flex;
-    justify-content: space-between;
-  }
-
   .package__timePricing,
   .package__timeBox {
     display: flex;
@@ -291,7 +288,7 @@ const includedTitle = ['packageTitles.included'];
     border-radius: var(--border-radius-buttons);
     padding: var(--padding-buttons);
   }
-  
+
   @media (min-width: 768px) {
     .package__box {
       width: 440px;

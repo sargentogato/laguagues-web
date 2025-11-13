@@ -78,7 +78,7 @@ import { ref } from 'vue';
       messages: ['premiumPackageIncluded.group'],
     },
     {
-      messages: ['premiumPackageIncluded.reocrdedClasses'],
+      messages: ['premiumPackageIncluded.recordedClasses'],
     },
   ];
 
@@ -101,7 +101,7 @@ import { ref } from 'vue';
       messages: ['platinumPackageIncluded.subtitledVideos'],
     },
     {
-      messages: ['platinumPackageIncluded.recordeClasses'],
+      messages: ['platinumPackageIncluded.recordedClasses'],
     },
   ];
   
