@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import TitlesParagraph from '@/components/sharedComponents/TitlesParagraph.vue';
-  import type { PropType } from 'vue';
+import type { PropType } from 'vue';
 
 // 1. Definimos la forma del objeto de TEXTO
 interface FeatureTextItem {
@@ -62,7 +62,7 @@ defineProps({
             class="feature__item"
           >
             <span class="feature__icon">{{ textItem.icon || item.defaultIcon }}</span>
-            <span class="feature__text">{{ textItem.text }}</span>
+            <span class="feature__text">{{ $t(textItem.text) }}</span>
           </li>
         </ul>
       </article>

@@ -8,27 +8,27 @@
 
   const props = defineProps({
     title: {
-      type: Array as PropType<string[]>,
+      type:     Array as PropType<string[]>,
       required: true,
     },
     srcImage: {
-      type: String,
+      type:     String,
       required: true,
     },
     includedItems: {
-      type: Array as PropType<LearningItems[]>,
+      type:     Array as PropType<LearningItems[]>,
       required: true,
     },
     timeNumber: {
-      type: Number,
+      type:     Number,
       required: true,
     },
     timeText: {
-      type: String,
+      type:     String,
       required: true,
     },
     price: {
-      type: Number,
+      type:     Number,
       required: true,
     },
   });
@@ -37,30 +37,38 @@
   const includedTitle = ['packageTitles.included'];
   const contactButtonText = 'packageTitles.contact';
 
-  const learnItemsOne = [
+  //section Titles
+  const methodIntroduction = ['mengelMethodIncluded.methodIntroduction'];
+  const firstPillarTitle = ['mengelMethodIncluded.firstPillarTitle'];
+
+  //section includedTitle
+  const secondPillarTitle = ['mengelMethodIncluded.secondPillarTitle'];
+
+  //section learnItemsOne
+  const grammarItems = [
     {
-      messages: [`Aprende a construir oraciones correctas.`],
+      messages: ['mengelMethodIncluded.grammarBuildSentences'],
     },
     {
-      messages: [`Expresar ideas con precisión`],
+      messages: ['mengelMethodIncluded.grammarExpressIdeas'],
     },
     {
-      messages: [`Aprender desde estructuras básicas hasta avanzadas`],
+      messages: ['mengelMethodIncluded.grammarStructuresRange'],
     },
   ];
 
-  const learnItemsTwo = [
+  const skillsItems = [
     {
-      messages: [`Hablar: Logra una conversación fluida`],
+      messages: ['mengelMethodIncluded.skillSpeaking'],
     },
     {
-      messages: [`Escuchar: Mejora tu comprensión auditiva.`],
+      messages: ['mengelMethodIncluded.skillListening'],
     },
     {
-      messages: ['Leer: Domina el análisis de textos.'],
+      messages: ['mengelMethodIncluded.skillReading'],
     },
     {
-      messages: ['Escribir: Consigue una redacción clara y coherente.'],
+      messages: ['mengelMethodIncluded.skillWriting'],
     },
   ];
 </script>
@@ -119,20 +127,16 @@
         />
         <TitlesParagraph
           tag="h5"
-          :texts="[
-            'Con el Método Mengel®, te enfocarás en dos pilares clave para lograr la fluidez:',
-          ]"
+          :texts="methodIntroduction"
           text-color="black"
           font-weight="400"
         />
 
         <div class="package__learning-points">
-          <!-- <div class="package__bullets">
-            <div class="bullets"></div>
-          </div> -->
+
           <TitlesParagraph
             tag="p"
-            :texts="['Dominar la gramática y el vocabulario']"
+            :texts="firstPillarTitle"
             text-color="black"
             font-weight="bold"
           />
@@ -141,7 +145,7 @@
         <ul class="package__learn">
           <li
             class="package__item"
-            v-for="(learnItem, index) in learnItemsOne"
+            v-for="(learnItem, index) in grammarItems"
             :key="index"
           >
             <div class="package__bullets">
@@ -158,12 +162,9 @@
         <!-- What you will learn second section -->
 
         <div class="package__learning-points">
-          <!-- <div class="package__bullets">
-            <div class="bullets"></div>
-          </div> -->
           <TitlesParagraph
             tag="p"
-            :texts="['Desarrollar las 4 habilidades lingüísticas']"
+            :texts="secondPillarTitle"
             text-color="black"
             font-weight="bold"
           />
@@ -172,7 +173,7 @@
         <ul class="package__learn">
           <li
             class="package__item"
-            v-for="(learnItem, index) in learnItemsTwo"
+            v-for="(learnItem, index) in skillsItems"
             :key="index"
           >
             <div class="package__bullets">
@@ -236,7 +237,7 @@
     flex-direction: column;
     gap: 5px;
   }
-  
+
   .package__includes {
     min-height: 222px;
   }

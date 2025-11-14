@@ -15,6 +15,8 @@ type LangMessages = {
   basicPackageIncluded: Record<keyof (typeof enMessages)['basicPackageIncluded'], string>;
   premiumPackageIncluded: Record<keyof (typeof enMessages)['premiumPackageIncluded'], string>;
   platinumPackageIncluded: Record<keyof (typeof enMessages)['platinumPackageIncluded'], string>;
+  mengelMethodIncluded: Record<keyof (typeof enMessages)['mengelMethodIncluded'], string>;
+  methodFeatures: Record<keyof (typeof enMessages)['methodFeatures'], string>;
 };
 
 export const messages: Record<string, LangMessages> = {
@@ -22,6 +24,6 @@ export const messages: Record<string, LangMessages> = {
   es: esMessages,
   it: itMessages,
   de: deMessages,
-  pt: ptMessages,
   fr: frMessages,
+  pt: ptMessages,
 }; 
