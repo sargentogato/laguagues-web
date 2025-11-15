@@ -1,10 +1,12 @@
 <script setup lang="ts">
   import CardCoursesPack from '@/components/cards/CardCoursesPack.vue';
-import MethodFeatureBoxes from '@/components/packagesCourses/MethodFeatureBoxes.vue';
-import boxesDataCourse from '@/data/boxesDataCourse';
-import cardDataCourse from '@/data/cardDataCourse';
-import headerDataCourse from '@/data/headerDataCourse';
-import MethodComponent from '@/components/packagesCourses/MethodComponent.vue';
+  import MethodComponent from '@/components/packagesCourses/MethodComponent.vue';
+  import MethodFeatureBoxes from '@/components/packagesCourses/MethodFeatureBoxes.vue';
+  import MethodPhilosophyBox from '@/components/packagesCourses/MethodPhilosophyBox.vue';
+  import boxesDataCourse from '@/data/boxesDataCourse';
+  import cardDataCourse from '@/data/cardDataCourse';
+  import headerDataCourse from '@/data/headerDataCourse';
+  import methodPhilosophy from '@/data/methodPhilosophy';
 </script>
 
 <template>
@@ -12,6 +14,13 @@ import MethodComponent from '@/components/packagesCourses/MethodComponent.vue';
     :main-title="headerDataCourse.mainTitle"
     :highlighted-titles="headerDataCourse.highlightedTitles"
     :subtitle="headerDataCourse.subtitle"
+  />
+
+  <MethodPhilosophyBox
+    :title="methodPhilosophy.philosophyTitle"
+    :subtitle="methodPhilosophy.philosophyP1"
+    :highlight-paragraph="methodPhilosophy.philosophyP2Highlight"
+    :text="methodPhilosophy.philosophyP3"
   />
   <MethodFeatureBoxes :items="boxesDataCourse" />
 

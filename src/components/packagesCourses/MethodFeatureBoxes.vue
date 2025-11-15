@@ -72,7 +72,7 @@ defineProps({
 
 <style scoped>
   :deep(h3) {
-    font-size: clamp(1.3rem, 8vw - 3rem, 1.8rem);
+    font-size: var(--titlesBoxesCourses);
   }
 
   .features {
