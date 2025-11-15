@@ -1,6 +1,5 @@
 
-import { ref } from 'vue';
-const boxesDataCourse = ref([
+const boxesDataCourse = [
   {
     title:    ['methodFeatures.featuresBox1Title'],
     subtitle: [
@@ -43,6 +42,6 @@ const boxesDataCourse = ref([
       { text: 'methodFeatures.featuresBox3Item4' },
     ],
   },
-]);
+];
 
 export default boxesDataCourse;
