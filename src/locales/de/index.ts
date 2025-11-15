@@ -8,6 +8,8 @@ import methodFeatures from './methodFeatures';
 import packageTitles from './packagesTitles';
 import premiumPackageIncluded from './platinumPackageIncluded';
 import why from './whyLanguageTeam';
+import headerDataCourse from './headerDataCourse';
+import methodPhilosophy from './methodPhilosophy';
 
 export default {
   menu,
@@ -21,4 +23,6 @@ export default {
   platinumPackageIncluded: premiumPackageIncluded,
   mengelMethodIncluded,
   methodFeatures,
+  headerDataCourse,
+  methodPhilosophy,
 };

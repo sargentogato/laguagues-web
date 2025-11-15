@@ -17,6 +17,8 @@ type LangMessages = {
   platinumPackageIncluded: Record<keyof (typeof enMessages)['platinumPackageIncluded'], string>;
   mengelMethodIncluded: Record<keyof (typeof enMessages)['mengelMethodIncluded'], string>;
   methodFeatures: Record<keyof (typeof enMessages)['methodFeatures'], string>;
+  headerDataCourse: Record<keyof (typeof enMessages)['headerDataCourse'], string>;
+  methodPhilosophy: Record<keyof (typeof enMessages)['methodPhilosophy'], string>;
 };
 
 export const messages: Record<string, LangMessages> = {

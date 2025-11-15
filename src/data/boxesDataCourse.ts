@@ -1,6 +1,5 @@
 
 import { ref } from 'vue';
-
 const boxesDataCourse = ref([
   {
     title:    ['methodFeatures.featuresBox1Title'],

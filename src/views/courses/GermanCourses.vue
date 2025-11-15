@@ -3,14 +3,16 @@
 import MethodFeatureBoxes from '@/components/packagesCourses/MethodFeatureBoxes.vue';
 import boxesDataCourse from '@/data/boxesDataCourse';
 import cardDataCourse from '@/data/cardDataCourse';
+import headerDataCourse from '@/data/headerDataCourse';
+import MethodComponent from '@/components/packagesCourses/MethodComponent.vue';
 </script>
 
 <template>
-  <!-- <MethodComponent
+  <MethodComponent
     :main-title="headerDataCourse.mainTitle"
     :highlighted-titles="headerDataCourse.highlightedTitles"
     :subtitle="headerDataCourse.subtitle"
-  /> -->
+  />
   <MethodFeatureBoxes :items="boxesDataCourse" />
 
   <div class="germanSection">
