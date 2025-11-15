@@ -52,10 +52,4 @@ import MethodComponent from '@/components/packagesCourses/MethodComponent.vue';
     justify-content: center;
     padding: 50px 25px;
   }
-
-  .package__contact {
-    border: 1px solid var(--tertiary-color);
-    border-radius: 5px;
-    width: 100%;
-  }
 </style>

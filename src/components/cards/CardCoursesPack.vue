@@ -206,7 +206,7 @@
 
 <style scoped>
   .package__box {
-    width: 80%;
+    width: 100;
   }
   .package__info {
     display: flex;
