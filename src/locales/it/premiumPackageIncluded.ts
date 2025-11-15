@@ -3,7 +3,7 @@ const premiumPackageIncluded = {
   teoricClasses:    '3 ore di lezioni teoriche a settimana',
   practicalClasses: '2 ore di lezioni pratiche a settimana',
   group:            'Gruppo privato su Discord',
-  recordedClasses:   'Lezioni registrate, disponibili per la visione fino a una settimana dopo',
+  recordedClasses:  'Lezioni registrate, disponibili per la visione fino a una settimana dopo',
 } as const;
 
 export default premiumPackageIncluded;

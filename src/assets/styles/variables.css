@@ -36,9 +36,10 @@
   --title-sections: clamp(1.8rem, 8vw - 1.75rem, 2.5rem);
   --title-package-card:clamp(1.5rem, 5vw - 1.2rem, 2rem);
   --subtitle-package-card:clamp(1.188rem, 5vw - 1.2rem, 1.8rem);
-  --text-package-card:(1rem, 3vw - 1rem, 1.2rem)
+  --text-package-card:(1rem, 3vw - 1rem, 1.2rem);
+  --titlesBoxesCourses: clamp(1.3rem, 8vw - 3rem, 1.8rem);
   --font-family-titles:'ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji"'
-  
+
   /* Animations */
   --animation-duration:1s;
   

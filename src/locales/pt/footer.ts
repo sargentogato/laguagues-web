@@ -1,12 +1,12 @@
 const footer = {
-  links:    'Liens',
-  followUs: 'Suivez-nous',
-  contact:  'Contact',
-  help:     "Besoin d'aide ?",
-  writeUs:  'Écrivez-nous',
-  privacy:  'Politique de confidentialité',
-  cookies:  'Politique de cookies',
-  desing:   'Ce site a été conçu par Sargentogato.',
+  links:    'Links',
+  followUs: 'Siga-nos',
+  contact:  'Contato',
+  help:     'Precisa de ajuda?',
+  writeUs:  'Escreva-nos',
+  privacy:  'Política de privacidade',
+  cookies:  'Política de cookies',
+  desing:   'Este site foi desenhado por Sargentogato.',
 } as const;
 
 export default footer;
