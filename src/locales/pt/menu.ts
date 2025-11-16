@@ -1,8 +1,10 @@
 const menu = {
-  languageTraining: 'Formação em idiomas',
-  destiny:          'Destino',
-  ourCourses:       'Nossos Cursos',
-  aboutUs:          'Sobre Nós',
+  german:     'Alemão',
+  english:    'Inglês',
+  italian:    'Italiano',
+  french:     'Francês',
+  spanish:    'Espanhol',
+  portuguese: 'Português',
 } as const;
 
 export default menu;

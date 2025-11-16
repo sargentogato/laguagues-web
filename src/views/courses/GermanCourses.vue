@@ -6,7 +6,7 @@
   import boxesDataCourse from '@/data/boxesDataCourse';
   import cardDataCourse from '@/data/cardDataCourse';
   import headerDataCourse from '@/data/headerDataCourse';
-  import methodPhilosophy from '@/data/methodPhilosophy';
+  import methodDataPhilosophy from '@/data/methodDataPhilosophy';
 </script>
 
 <template>
@@ -17,10 +17,10 @@
   />
 
   <MethodPhilosophyBox
-    :title="methodPhilosophy.philosophyTitle"
-    :subtitle="methodPhilosophy.philosophyP1"
-    :highlight-paragraph="methodPhilosophy.philosophyP2Highlight"
-    :text="methodPhilosophy.philosophyP3"
+    :title="methodDataPhilosophy.philosophyTitle"
+    :subtitle="methodDataPhilosophy.philosophyP1"
+    :highlight-paragraph="methodDataPhilosophy.philosophyP2Highlight"
+    :text="methodDataPhilosophy.philosophyP3"
   />
   <MethodFeatureBoxes :items="boxesDataCourse" />
 
