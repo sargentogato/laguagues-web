@@ -203,7 +203,7 @@
     z-index: 3;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1200px) {
     .menu {
       max-height: 80px;
       padding: 15px 32px;

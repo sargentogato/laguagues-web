@@ -5,8 +5,8 @@ const menu = {
   french:           'French',
   spanish:          'Spanish',
   portuguese:       'Portuguese',
-  culinaryWorkshop: 'Workshop',
-  legalTranslation: 'Legal Translation',
+  legalTranslation: 'Legal Translations',
+  culinaryWorkshop: 'Culinary Workshops',
 } as const;
 
 export default menu;
