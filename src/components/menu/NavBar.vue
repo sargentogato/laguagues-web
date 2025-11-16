@@ -65,30 +65,24 @@ const cleanEventListener = () => {
         </RouterLink>
       </li>
       <li class="menu__item">
-        <RouterLink class="menu__item-link" :to="{ name: 'Home'}" @click.prevent="$emit('goToCategory')">
-          {{ $t('menu.languageTraining') }}
+        <RouterLink class="menu__item-link" :to="{ name: 'GermanCourses'}">
+          {{ $t('menu.german') }}
         </RouterLink>
       </li>
       <li class="menu__item">
-        <a href="#" class="menu__item-link">
-          <p class="menu__item-text" data-text="Destinos">
-            {{ $t('menu.destiny') }}
-          </p>
-        </a>
+        <RouterLink class="menu__item-link" :to="{ name: 'EnglishCourses'}">
+          {{ $t('menu.english') }}
+        </RouterLink>
       </li>
       <li class="menu__item">
-        <a href="#" class="menu__item-link">
-          <p class="menu__item-text" data-text="Alojamiento">
-            {{ $t('menu.ourCourses') }}
-          </p>
-        </a>
+        <RouterLink class="menu__item-link" :to="{ name: 'ItalianCourses'}">
+          {{ $t('menu.italian') }}
+        </RouterLink>
       </li>
       <li class="menu__item">
-        <a href="#" class="menu__item-link">
-          <p class="menu__item-text" data-text="Sobre Nosotros">
-            {{ $t('menu.aboutUs') }}
-          </p>
-        </a>
+        <RouterLink class="menu__item-link" :to="{ name: 'SpanishCourses'}">
+          {{ $t('menu.spanish') }}
+        </RouterLink>
       </li>
     </ul>
     <SelectLang />
