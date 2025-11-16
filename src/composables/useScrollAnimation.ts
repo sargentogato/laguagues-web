@@ -14,19 +14,19 @@ export const useScrollAnimation = () => {
           if (entry.isIntersecting) {
             entry.target.classList.add('appear-active');
 
-            if (entry.target.ariaLabel === "end") {
-              console.log("Desconectin observer");
-              disconnectObserver()
+            if (entry.target.ariaLabel === 'end') {
+              console.log('Desconectin observer');
+              disconnectObserver();
             } else {
               observer?.unobserve(entry.target);
             }
           }
-        })
+        });
       },
       {
-        rootMargin: '0% 0% -15% 0%'
-      }
-    )
+        rootMargin: '0px 0px 50px 0px',
+      },
+    );
   }
 
   const disconnectObserver = () => {
