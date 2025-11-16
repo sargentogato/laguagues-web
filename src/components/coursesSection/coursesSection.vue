@@ -18,35 +18,35 @@ const title = ref(['categories.sectionTitle']);
       altImages: 'categories.altImageIt',
       titleCard: 'categories.titleItalianCard',
       textCard:  'categories.textItalianCard',
-      link:      'GermanCourses'
+      link:      'ItalianCourses'
     },
     {
       srcImages: 'images/categories/language-team-Spain.webp',
       altImages: 'categories.altImageEs',
       titleCard: 'categories.titleSpanishCard',
       textCard:  'categories.textSpanishCard',
-      link:      'GermanCourses'
+      link:      'SpanishCourses'
     },
     {
       srcImages: 'images/categories/language-team-England.webp',
       altImages: 'categories.altImageEn',
       titleCard: 'categories.titleEnglishCard',
       textCard:  'categories.textEnglishCard',
-      link:      'GermanCourses'
+      link:      'EnglishCourses'
     },
     {
       srcImages: 'images/categories/language-team-workshop.jpg',
       altImages: 'categories.altImageWshop',
       titleCard: 'categories.titleWorkshopCard',
       textCard:  'categories.textWorkshopCard',
-      link:      'GermanCourses'
+      link:      'WorkshopCourses'
     },
     {
       srcImages: 'images/categories/language-team-translations.webp',
       altImages: 'categories.altImageTraductions',
       titleCard: 'categories.titleTraductionsCard',
       textCard:  'categories.textTraductionsCard',
-      link:      'GermanCourses'
+      link:      'LegalTranslation'
     },
   ];
 

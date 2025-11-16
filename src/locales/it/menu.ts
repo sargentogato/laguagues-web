@@ -1,10 +1,12 @@
 const menu = {
-  german:     'Tedesco',
-  english:    'Inglese',
-  italian:    'Italiano',
-  french:     'Francese',
-  spanish:    'Spagnolo',
-  portuguese: 'Portoghese',
+  german: 'Alemão',
+  english: 'Inglês',
+  italian: 'Italiano',
+  french: 'Francês',
+  spanish: 'Espanhol',
+  portuguese: 'Português',
+  legalTranslation: 'Traduções jurídicas',
+  culinaryWorkshop: 'Workshops culinários',
 } as const;
 
 export default menu;
