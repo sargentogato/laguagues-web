@@ -1,3 +1,42 @@
+const learnTitle = ['packageTitles.learning'];
+const includedTitle = ['packageTitles.included'];
+const contactButtonText = 'packageTitles.contact';
+
+//section Titles
+const methodIntroduction = ['mengelMethodIncluded.methodIntroduction'];
+const firstPillarTitle = ['mengelMethodIncluded.firstPillarTitle'];
+
+//section includedTitle
+const secondPillarTitle = ['mengelMethodIncluded.secondPillarTitle'];
+
+//section learnItemsOne
+const grammarItems = [
+  {
+    messages: ['mengelMethodIncluded.grammarBuildSentences'],
+  },
+  {
+    messages: ['mengelMethodIncluded.grammarExpressIdeas'],
+  },
+  {
+    messages: ['mengelMethodIncluded.grammarStructuresRange'],
+  },
+];
+
+const skillsItems = [
+  {
+    messages: ['mengelMethodIncluded.skillSpeaking'],
+  },
+  {
+    messages: ['mengelMethodIncluded.skillListening'],
+  },
+  {
+    messages: ['mengelMethodIncluded.skillReading'],
+  },
+  {
+    messages: ['mengelMethodIncluded.skillWriting'],
+  },
+];
+
 /* Package Card Basic*/
 const basic = ['packageTitles.basic'];
 const timeNumber = 3;
@@ -60,4 +99,12 @@ export default {
   platinum,
   pricePlatinum,
   platinumIncluded,
+  learnTitle,
+  includedTitle,
+  contactButtonText,
+  methodIntroduction,
+  firstPillarTitle,
+  secondPillarTitle,
+  grammarItems,
+  skillsItems,
 };

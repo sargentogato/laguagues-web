@@ -1,39 +1,67 @@
 <script setup lang="ts">
   import TitlesParagraph from '@/components/sharedComponents/TitlesParagraph.vue';
 import type { PropType } from 'vue';
+import { onMounted, ref } from 'vue';
+import { useScrollAnimation } from '../../composables/useScrollAnimation';
 
-// 1. Definimos la forma del objeto de TEXTO
-interface FeatureTextItem {
-  text: string;
-  icon?: string; // El icono es opcional en el objeto de texto
-}
+  // 1. Definimos la forma del objeto de TEXTO
+  interface FeatureTextItem {
+    text: string;
+    icon?: string; // El icono es opcional en el objeto de texto
+  }
 
-// 2. Definimos la forma de la CAJA (Item)
-interface FeatureItem {
-  title:       string[];
-  subtitle:    string[];
-  defaultIcon?: string; // El icono por defecto es opcional
-  texts:       FeatureTextItem[]; // 'texts' es un array de 'FeatureTextItem'
-}
+  // 2. Definimos la forma de la CAJA (Item)
+  interface FeatureItem {
+    title: string[];
+    subtitle: string[];
+    defaultIcon?: string; // El icono por defecto es opcional
+    texts: FeatureTextItem[]; // 'texts' es un array de 'FeatureTextItem'
+  }
 
-defineProps({
-  items: {
-    type:     Array as PropType<FeatureItem[]>,
-    required: true,
-  },
-});
+  defineProps({
+    items: {
+      type:     Array as PropType<FeatureItem[]>,
+      required: true,
+    },
+  });
 
   const fontFamily =
     "ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'";
+  /* ref on template */
+  const animatedSection = ref<HTMLElement[] | null>(null);
+  const { registerElements } = useScrollAnimation();
+
+  onMounted(() => {
+    if (Array.isArray(animatedSection.value) && animatedSection.value.length > 0) {
+      //Registra todos los elementos 
+      animatedSection.value.forEach((element, index, arr) => {
+        if (element instanceof HTMLElement) {
+          // Marca el último elemento como "end" para desconectar el observer cuando aparezca
+          if (index === arr.length - 1) {
+            element.setAttribute('aria-label', 'end');
+          }
+          registerElements(element);
+        }
+      });
+    } else if (animatedSection.value instanceof HTMLElement) {
+      registerElements(animatedSection.value);
+    } else {
+      console.warn('Element no yet available for animation', animatedSection.value);
+    }
+  });
 </script>
 
 <template>
-  <section class="features">
+  <section
+    
+    class="features"
+  >
     <div class="features__container">
       <article
         v-for="(item, index) in items"
         :key="index"
-        class="feature__box"
+        class="feature__box appear-animation"
+        ref="animatedSection"
       >
         <TitlesParagraph
           tag="h3"
@@ -103,7 +131,7 @@ defineProps({
       0 10px 15px -3px rgb(0 0 0 / 0.1),
       0 4px 6px -4px rgb(0 0 0 / 0.1);
   }
-  
+
   :deep(.feature__paddings) {
     padding-top: 24px;
     padding-bottom: 24px;

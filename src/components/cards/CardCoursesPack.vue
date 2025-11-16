@@ -1,5 +1,8 @@
 <script setup lang="ts">
-  import TitlesParagraph from '@/components/sharedComponents/TitlesParagraph.vue';
+import TitlesParagraph from '@/components/sharedComponents/TitlesParagraph.vue';
+import cardDataCourse from '@/data/cardDataCourse';
+import { useScrollAnimation } from '@/composables/useScrollAnimation';
+  import { ref, onMounted} from 'vue'
   import type { PropType } from 'vue';
 
   interface LearningItems {
@@ -33,48 +36,21 @@
     },
   });
 
-  const learnTitle = ['packageTitles.learning'];
-  const includedTitle = ['packageTitles.included'];
-  const contactButtonText = 'packageTitles.contact';
+  /* Ref on template */
+const animateSection = ref<HTMLElement | null>(null);
+const { registerElements } = useScrollAnimation();
 
-  //section Titles
-  const methodIntroduction = ['mengelMethodIncluded.methodIntroduction'];
-  const firstPillarTitle = ['mengelMethodIncluded.firstPillarTitle'];
-
-  //section includedTitle
-  const secondPillarTitle = ['mengelMethodIncluded.secondPillarTitle'];
-
-  //section learnItemsOne
-  const grammarItems = [
-    {
-      messages: ['mengelMethodIncluded.grammarBuildSentences'],
-    },
-    {
-      messages: ['mengelMethodIncluded.grammarExpressIdeas'],
-    },
-    {
-      messages: ['mengelMethodIncluded.grammarStructuresRange'],
-    },
-  ];
-
-  const skillsItems = [
-    {
-      messages: ['mengelMethodIncluded.skillSpeaking'],
-    },
-    {
-      messages: ['mengelMethodIncluded.skillListening'],
-    },
-    {
-      messages: ['mengelMethodIncluded.skillReading'],
-    },
-    {
-      messages: ['mengelMethodIncluded.skillWriting'],
-    },
-  ];
+onMounted(() => {
+  if (animateSection.value instanceof HTMLElement) {
+    registerElements(animateSection.value);
+  } else {
+    console.warn("Element no yet available for animation", animateSection.value)
+  }
+})
 </script>
 
 <template>
-  <article class="package__box card">
+  <article ref="animateSection" class="package__box card appear-animation">
     <figure class="package__image">
       <img
         :src="srcImage"
@@ -93,7 +69,7 @@
         />
         <TitlesParagraph
           tag="h4"
-          :texts="includedTitle"
+          :texts="cardDataCourse.includedTitle"
           text-color="black"
           font-weight="bold"
           text-transform="uppercase"
@@ -120,14 +96,14 @@
         <!-- What you will learn -->
         <TitlesParagraph
           tag="h4"
-          :texts="learnTitle"
+          :texts="cardDataCourse.learnTitle"
           text-color="black"
           font-weight="bold"
           text-transform="uppercase"
         />
         <TitlesParagraph
           tag="h5"
-          :texts="methodIntroduction"
+          :texts="cardDataCourse.methodIntroduction"
           text-color="black"
           font-weight="400"
         />
@@ -136,7 +112,7 @@
 
           <TitlesParagraph
             tag="p"
-            :texts="firstPillarTitle"
+            :texts="cardDataCourse.firstPillarTitle"
             text-color="black"
             font-weight="bold"
           />
@@ -145,7 +121,7 @@
         <ul class="package__learn">
           <li
             class="package__item"
-            v-for="(learnItem, index) in grammarItems"
+            v-for="(learnItem, index) in cardDataCourse.grammarItems"
             :key="index"
           >
             <div class="package__bullets">
@@ -164,7 +140,7 @@
         <div class="package__learning-points">
           <TitlesParagraph
             tag="p"
-            :texts="secondPillarTitle"
+            :texts="cardDataCourse.secondPillarTitle"
             text-color="black"
             font-weight="bold"
           />
@@ -173,7 +149,7 @@
         <ul class="package__learn">
           <li
             class="package__item"
-            v-for="(learnItem, index) in skillsItems"
+            v-for="(learnItem, index) in cardDataCourse.skillsItems"
             :key="index"
           >
             <div class="package__bullets">
@@ -197,7 +173,7 @@
         </div>
 
         <div class="package__actions">
-          <button class="package__contact">{{ $t(contactButtonText) }}</button>
+          <button class="package__contact">{{ $t(cardDataCourse.contactButtonText) }}</button>
         </div>
       </div>
     </div>
