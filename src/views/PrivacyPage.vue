@@ -135,10 +135,6 @@ const fontFamily = "ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', '
 .privacy-content {
   max-width: 800px;
   width: 100%;
-  background-color: #ffffff;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 :deep(h1) {
