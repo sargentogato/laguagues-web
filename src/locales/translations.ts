@@ -20,6 +20,7 @@ type LangMessages = {
   headerDataCourse: Record<keyof (typeof enMessages)['headerDataCourse'], string>;
   methodPhilosophy: Record<keyof (typeof enMessages)['methodPhilosophy'], string>;
   cookieBanner: Record<keyof (typeof enMessages)['cookieBanner'], string>;
+  privacyPolicy: Record<keyof (typeof enMessages)['privacyPolicy'], string>;
 };
 
 export const messages: Record<string, LangMessages> = {

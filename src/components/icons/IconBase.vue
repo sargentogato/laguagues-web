@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
+import IconCircleArrow from './IconCircleArrow.vue';
 import IconFacebook from './IconFacebook.vue';
 import IconForWho from './IconForWho.vue';
 import IconInstagram from './IconInstagram.vue';
@@ -15,7 +16,8 @@ const iconMap = {
   IconObjectives,
   IconResults,
   IconFacebook,
-  IconInstagram
+  IconInstagram,
+  IconCircleArrow
 }
 
 export type IconName = keyof typeof iconMap
@@ -26,19 +28,27 @@ const props = defineProps({
     required: true,
   },
   iconBgColor: {
-    type:    String,
-    default: '#ffff'
+    type: String,
   }
 })
 
 const iconComponent = computed(() => iconMap[props.iconName] || null);
 
-const iconBgColor = computed(() => props.iconBgColor)
+const iconBgColor = computed(() => {
+  if (props.iconBgColor) {
+    return props.iconBgColor
+  }
+
+  return {}
+})
+
+defineOptions({ inheritAttrs: false })
 </script>
 
 <template>
   <component 
     :is="iconComponent"
     :style="{fill: iconBgColor}"
+    v-bind="$attrs"
   />
 </template>
