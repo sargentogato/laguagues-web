@@ -5,15 +5,3 @@
     </g>
   </svg>
 </template>
-
-<!-- <style scoped>
-  circle {
-    fill: var(--secondary-color);
-    stroke: var(--secondary-color);
-    stroke-width: 2px;
-  }
-  path {
-    stroke: var(--white);
-    stroke-width: 1.5px;
-  }
-</style> -->
