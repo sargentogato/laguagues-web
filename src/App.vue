@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import NavBar from '@/components/menu/NavBar.vue';
 import FooterComponent from '@/components/sharedComponents/FooterComponent.vue';
+import CookieBanner from '@/components/sharedComponents/CookieBanner.vue';
 </script>
 
 <template>
@@ -16,6 +17,7 @@ import FooterComponent from '@/components/sharedComponents/FooterComponent.vue';
     </router-view>
     
     <FooterComponent />
+    <CookieBanner />
   </div>
 </template>
 

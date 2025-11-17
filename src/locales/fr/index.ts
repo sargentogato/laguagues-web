@@ -11,6 +11,7 @@ import why from './whyLanguageTeam';
 import methodFeatures from './methodFeatures';
 import headerDataCourse from './headerDataCourse';
 import methodPhilosophy from './methodPhilosophy';
+import cookieBanner from './cookieBanner';
 
 export default {
   menu,
@@ -26,4 +27,5 @@ export default {
   methodFeatures,
   headerDataCourse,
   methodPhilosophy,
+  cookieBanner,
 };

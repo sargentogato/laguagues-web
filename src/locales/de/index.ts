@@ -10,6 +10,7 @@ import premiumPackageIncluded from './platinumPackageIncluded';
 import why from './whyLanguageTeam';
 import headerDataCourse from './headerDataCourse';
 import methodPhilosophy from './methodPhilosophy';
+import cookieBanner from './cookieBanner';
 
 export default {
   menu,
@@ -25,4 +26,5 @@ export default {
   methodFeatures,
   headerDataCourse,
   methodPhilosophy,
+  cookieBanner,
 };
