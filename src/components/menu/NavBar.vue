@@ -36,7 +36,7 @@
       childRef.value.handleClick();
     }
   }
-
+  
   const startEventListenerToCloseMenu = () => {
     listeningEvent.value = handerlClickOutsideMenu;
 

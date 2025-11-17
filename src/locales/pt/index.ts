@@ -12,6 +12,7 @@ import packageTitles from './packagesTitles';
 import platinumPackageIncluded from './platinumPackageIncluded';
 import premiumPackageIncluded from './premiumPackageIncluded';
 import why from './whyLanguageTeam';
+import privacyPolicy from './privacyPolicy';
 
 export default {
   menu,
@@ -28,4 +29,5 @@ export default {
   headerDataCourse,
   methodPhilosophy,
   cookieBanner,
+  privacyPolicy,
 };
