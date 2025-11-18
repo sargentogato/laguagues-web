@@ -3,17 +3,17 @@ const privacyPolicy = {
 
   // 1. Introduction
   introTitle: '1. Introduction et Responsable du traitement',
-  introP1: 'Bienvenue chez Languages Team (ci-après "Nous", "Notre" ou "la Plateforme").',
+  introP1:    'Bienvenue chez Languages Team (ci-après "Nous", "Notre" ou "la Plateforme").',
   introP2:
     'Cette Politique de confidentialité décrit comment nous collectons, utilisons, protégeons et traitons vos informations personnelles lorsque vous visitez notre site Web et utilisez nos services.',
   introP3:
     'En utilisant notre site Web, vous déclarez avoir lu, compris et accepté les termes énoncés ici.',
 
   // Responsable
-  responsibleTitle: 'Responsable du traitement : Laura Bañuls Menguel',
-  responsibleNIF: 'DNI/ID',
+  responsibleTitle:   'Responsable du traitement : Laura Bañuls Menguel',
+  responsibleNIF:     'DNI/ID',
   responsibleAddress: 'Adresse',
-  responsibleEmail: 'E-mail',
+  responsibleEmail:   'E-mail',
 
   // 2. Informations que nous collectons
   infoTitle: '2. Informations que nous collectons',
