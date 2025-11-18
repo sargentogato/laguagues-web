@@ -8,7 +8,7 @@ import { useScrollAnimation } from '../../composables/useScrollAnimation';
 
 const iconBgColor = ref('var(--secondary-color)')
 
-const props = defineProps({
+defineProps({
   iconName: {
     type:     String as () => IconName,
     required: true

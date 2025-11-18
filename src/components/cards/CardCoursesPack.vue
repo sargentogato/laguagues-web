@@ -9,7 +9,7 @@ import { useScrollAnimation } from '@/composables/useScrollAnimation';
     messages: string[];
   }
 
-  const props = defineProps({
+  defineProps({
     title: {
       type:     Array as PropType<string[]>,
       required: true,

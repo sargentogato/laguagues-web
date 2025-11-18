@@ -36,6 +36,18 @@
       childRef.value.handleClick();
     }
   }
+
+const handleMenuItemClick = (event: MouseEvent) => {
+  const target = event.target as HTMLElement;
+    // Check if the clicked element is a RouterLink or a child of one
+  if (target.closest('.menu__item-link')) {
+      //closest es una función de JS que busca en el elemento si la clase de css está presente
+      if (isOpen.value) { // Only close if the menu is open
+        openCloseMenu();
+        childRef.value.handleClick();
+      }
+    }
+  };
   
   const startEventListenerToCloseMenu = () => {
     listeningEvent.value = handerlClickOutsideMenu;
@@ -58,14 +70,17 @@
     aria-label="Menu principal"
     class="menu menu-top"
   >
+  <RouterLink :to="{name: 'Home'}">
     <div class="menu__logo">
       <LogoImage />
       <LogoText />
     </div>
+  </RouterLink>
 
     <ul
       class="menu__items"
       :class="classToApply"
+      @click="handleMenuItemClick"
     >
       <li class="menu__item">
         <RouterLink
