@@ -13,6 +13,7 @@ import headerDataCourse from './headerDataCourse';
 import methodPhilosophy from './methodPhilosophy';
 import cookieBanner from './cookieBanner';
 import privacyPolicy from './privacyPolicy';
+import cookiesPolicy from './cookiesPolicy';
 
 export default {
   menu,
@@ -30,4 +31,5 @@ export default {
   methodPhilosophy,
   cookieBanner,
   privacyPolicy,
+  cookiesPolicy
 };

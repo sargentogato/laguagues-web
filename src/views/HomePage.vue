@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import CoursesSection from '@/components/coursesSection/coursesSection.vue';
+  import CategoriesSection from '@/components/categoriesSection/CategoriesSection.vue';
 import HeaderComponent from '@/components/header/HeaderComponent.vue';
 import IconsSection from '@/components/iconsSection/IconsSection.vue';
 </script>
@@ -7,5 +7,5 @@ import IconsSection from '@/components/iconsSection/IconsSection.vue';
 <template>
   <HeaderComponent />
   <IconsSection />
-  <CoursesSection />
+  <CategoriesSection />
 </template>

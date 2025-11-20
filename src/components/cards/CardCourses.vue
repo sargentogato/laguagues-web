@@ -53,6 +53,10 @@ import IconBase from '../icons/IconBase.vue';
       type:    String,
       default: '#ffff',
     },
+    buttonText: {
+      type:     String,
+      required: true,
+    },
   });
 
   const titleStylesDynamic = computed(() => ({
@@ -122,7 +126,7 @@ import IconBase from '../icons/IconBase.vue';
       :to="{ name: `${link}` }"
       class="card__button-link"
     >
-      <button class="card__button">Más información</button>
+      <button class="card__button">{{ $t(buttonText) }}</button>
     </RouterLink>
   </div>
 </template>

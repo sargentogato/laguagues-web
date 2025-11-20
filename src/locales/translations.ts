@@ -21,6 +21,7 @@ type LangMessages = {
   methodPhilosophy: Record<keyof (typeof enMessages)['methodPhilosophy'], string>;
   cookieBanner: Record<keyof (typeof enMessages)['cookieBanner'], string>;
   privacyPolicy: Record<keyof (typeof enMessages)['privacyPolicy'], string>;
+  cookiesPolicy: Record<keyof (typeof enMessages)['cookiesPolicy'], string>;
 };
 
 export const messages: Record<string, LangMessages> = {

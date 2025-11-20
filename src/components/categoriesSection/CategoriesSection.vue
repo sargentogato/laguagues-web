@@ -1,54 +1,11 @@
 <script setup lang="ts">
-  import CardCourses from '@/components/cards/CardCourses.vue';
+import CardCourses from '@/components/cards/CardCourses.vue';
+import categoriesData from '@/data/categoriesData';
 import { ref } from 'vue';
 import TitlesParagraph from '../sharedComponents/TitlesParagraph.vue';
 
 const title = ref(['categories.sectionTitle']);
-
-  const dataCard = [
-    {
-      srcImages: 'images/categories/language-team-Germany.webp',
-      altImages: 'categories.altImageDe',
-      titleCard: 'categories.titleGermanCard',
-      textCard:  'categories.textGermanCard',
-      link:      'GermanCourses'
-    },
-    {
-      srcImages: 'images/categories/language-team-Itali.webp',
-      altImages: 'categories.altImageIt',
-      titleCard: 'categories.titleItalianCard',
-      textCard:  'categories.textItalianCard',
-      link:      'ItalianCourses'
-    },
-    {
-      srcImages: 'images/categories/language-team-Spain.webp',
-      altImages: 'categories.altImageEs',
-      titleCard: 'categories.titleSpanishCard',
-      textCard:  'categories.textSpanishCard',
-      link:      'SpanishCourses'
-    },
-    {
-      srcImages: 'images/categories/language-team-England.webp',
-      altImages: 'categories.altImageEn',
-      titleCard: 'categories.titleEnglishCard',
-      textCard:  'categories.textEnglishCard',
-      link:      'EnglishCourses'
-    },
-    {
-      srcImages: 'images/categories/language-team-workshop.jpg',
-      altImages: 'categories.altImageWshop',
-      titleCard: 'categories.titleWorkshopCard',
-      textCard:  'categories.textWorkshopCard',
-      link:      'WorkshopCourses'
-    },
-    {
-      srcImages: 'images/categories/language-team-translations.webp',
-      altImages: 'categories.altImageTraductions',
-      titleCard: 'categories.titleTraductionsCard',
-      textCard:  'categories.textTraductionsCard',
-      link:      'LegalTranslation'
-    },
-  ];
+const { dataCard } = categoriesData;
 
 </script>
 
@@ -81,6 +38,7 @@ const title = ref(['categories.sectionTitle']);
             :image-class="index === dataCard.length - 1 ? 'last-responsive-image' : ''"
             :card-image-correction="index === dataCard.length - 1 ? 'card__image--correction' : ''"
             :index-animation-delay="index"
+            :button-text="card.buttonText"
           />
         </template>
       </div>
@@ -101,7 +59,7 @@ const title = ref(['categories.sectionTitle']);
   .category__box {
     flex-basis: var(--section-width);
   }
-  
+
   .category__title {
     text-align: center;
   }
@@ -126,7 +84,7 @@ const title = ref(['categories.sectionTitle']);
   :deep(.last-responsive-image) {
     width: 80%;
   }
-  
+
   :deep(.card__icon-circle-arrow ) {
     width: 30px;
     position: absolute;
@@ -139,10 +97,10 @@ const title = ref(['categories.sectionTitle']);
     stroke: var(--secondary-color);
     fill: var(--secondary-color);
   }
-  
+
   :deep(.card__icon-circle-arrow) path {
     stroke-width: 1.5px;
-    stroke:var(--white);    
+    stroke:var(--white);
   }
 
   @media screen and (min-width: 992px) {
