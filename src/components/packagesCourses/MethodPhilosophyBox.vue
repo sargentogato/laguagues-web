@@ -3,9 +3,6 @@ import TitlesParagraph from '@/components/sharedComponents/TitlesParagraph.vue';
 import type { PropType } from 'vue';
 import IconBase from '../icons/IconBase.vue';
 
-const fontFamily =
-  "ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'";
-
 defineProps({
   title: {
     type:     Array as PropType<string[]>,
@@ -38,7 +35,7 @@ defineProps({
           :texts="title"
           text-color="black"
           font-weight="bold"
-          :font-family="fontFamily"
+          font-family="var(--font-family-titles)"
           text-align="left"
         />
       </header>
@@ -49,7 +46,7 @@ defineProps({
           :texts="subtitle"
           text-color="#877f7f"
           font-weight="400"
-          :font-family="fontFamily"
+          font-family="var(--font-family-titles)"
           text-align="left"
           custom-property="method-philosophy__subtitle"
         />
@@ -59,7 +56,7 @@ defineProps({
           :texts="highlightParagraph"
           text-color="black"
           font-weight="bold"
-          :font-family="fontFamily"
+          font-family="var(--font-family-titles)"
           text-align="left"
         />
 
@@ -68,7 +65,7 @@ defineProps({
           :texts="text"
           text-color="#877f7f"
           font-weight="400"
-          :font-family="fontFamily"
+          font-family="var(--font-family-titles)"
           text-align="left"
         />
       </div>

@@ -12,8 +12,6 @@ import type { FeatureItem } from '@/types/features';
     },
   });
 
-  const fontFamily =
-    "ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'";
   /* ref on template */
   const animatedSection = ref<HTMLElement[] | null>(null);
   const { registerElements } = useScrollAnimation();
@@ -52,7 +50,7 @@ import type { FeatureItem } from '@/types/features';
           :texts="item.title"
           text-color="black"
           font-weight="bold"
-          :font-family="fontFamily"
+          font-family="var(--font-family-titles)"
           text-align="center"
         />
 
@@ -62,7 +60,7 @@ import type { FeatureItem } from '@/types/features';
           :texts="item.subtitle"
           text-color="#877f7f"
           font-weight="400"
-          :font-family="fontFamily"
+          font-family="var(--font-family-titles)"
           text-align="left"
           custom-property="feature__paddings"
         />

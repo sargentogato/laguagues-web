@@ -3,15 +3,9 @@
 import { useScrollAnimation } from '@/composables/useScrollAnimation';
 import { onMounted, ref } from 'vue';
 import TitlesParagraph from './TitlesParagraph.vue';
+import { footerData } from '@/data/footerData';
 
   const endOfWeb = ref();
-  const titleSectionLinks = ['footer.links'];
-  const titleSocialMedia = ['footer.followUs'];
-  const titleContact = ['footer.contact'];
-  const textContact = ['footer.help', 'footer.writeUs'];
-  const emailContact = 'marlonjvelasquez@gmail.com';
-  const iconBgColor = ref('hsl(200, 80%, 50%)');
-
   const { registerElements } = useScrollAnimation();
 
   onMounted(() => {
@@ -29,7 +23,7 @@ import TitlesParagraph from './TitlesParagraph.vue';
       <div class="footer__links">
         <TitlesParagraph
           tag="h3"
-          :texts="titleSectionLinks"
+          :texts="footerData.titleSectionLinks"
           font-weight="600"
           text-transform="uppercase"
         />
@@ -41,7 +35,7 @@ import TitlesParagraph from './TitlesParagraph.vue';
         <div class="footer__icon-text">
           <TitlesParagraph
             tag="h3"
-            :texts="titleSocialMedia"
+            :texts="footerData.titleSocialMedia"
             font-weight="600"
             text-transform="uppercase"
           />
@@ -49,7 +43,7 @@ import TitlesParagraph from './TitlesParagraph.vue';
         <div class="footer__icon-box">
           <IconBase
             icon-name="IconFacebook"
-            :iconBgColor="iconBgColor"
+            :iconBgColor="footerData.iconBgColor"
           />
           <IconBase icon-name="IconInstagram" />
         </div>
@@ -57,18 +51,18 @@ import TitlesParagraph from './TitlesParagraph.vue';
       <div class="footer__contact">
         <TitlesParagraph
           tag="h3"
-          :texts="titleContact"
+          :texts="footerData.titleContact"
           font-weight="600"
           text-transform="uppercase"
         />
         <div class="footer__questionContact">
           <TitlesParagraph
             tag="p"
-            :texts="textContact"
+            :texts="footerData.textContact"
           />
         </div>
         <a class="footer__email" href="mailto:marlonjvelasquez@gmail.com">
-          {{ emailContact }}
+          {{ footerData.emailContact }}
         </a>
       </div>
     </div>
