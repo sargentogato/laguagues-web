@@ -12,6 +12,8 @@ import headerDataCourse from './headerDataCourse';
 import methodPhilosophy from './methodPhilosophy';
 import cookieBanner from './cookieBanner';
 import privacyPolicy from './privacyPolicy';
+import cookiesPolicy from './cookiesPolicy';
+import commonInfo from './commonInfo';
 
 export default {
   menu,
@@ -29,4 +31,6 @@ export default {
   methodPhilosophy,
   cookieBanner,
   privacyPolicy,
+  cookiesPolicy,
+  commonInfo,
 };

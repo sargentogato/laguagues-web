@@ -8,6 +8,7 @@ import IconMethod from './IconMethod.vue';
 import IconObjectives from './IconObjectives.vue';
 import IconResults from './IconResults.vue';
 import IconWorld from './IconWorld.vue';
+import IconLogo from './IconLogo.vue';
 
 const iconMap = {
   IconWorld,
@@ -17,7 +18,8 @@ const iconMap = {
   IconResults,
   IconFacebook,
   IconInstagram,
-  IconCircleArrow
+  IconCircleArrow,
+  IconLogo
 }
 
 export type IconName = keyof typeof iconMap

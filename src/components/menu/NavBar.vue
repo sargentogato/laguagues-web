@@ -1,66 +1,16 @@
 <script setup lang="ts">
-  import { ref } from 'vue';
   import LogoImage from '../logo/LogoImage.vue';
   import LogoText from '../logo/LogoText.vue';
   import SelectLang from './SelectLang.vue';
   import ToggleButton from './ToggleButton.vue';
+  import { useMenu } from '@/composables/useMenu';
 
-  const isOpen = ref(false);
-  const classToApply = ref('');
-  const menu = ref<HTMLElement | null>();
-  const listeningEvent = ref<((e: MouseEvent) => void) | null>(null);
-  const childRef = ref();
-
-  const avoidTransitionMediaQueries = () => {
-    setTimeout(() => {
-      classToApply.value = '';
-    }, 500);
-  };
-
-  const openCloseMenu = () => {
-    isOpen.value = !isOpen.value;
-
-    if (isOpen.value) {
-      classToApply.value = 'menu--visible';
-      startEventListenerToCloseMenu();
-    } else {
-      classToApply.value = 'menu--hidden';
-      avoidTransitionMediaQueries();
-      cleanEventListener();
-    }
-  };
-
-  function handerlClickOutsideMenu(eventTriggered: MouseEvent) {
-    if (menu.value && !menu.value.contains(eventTriggered.target as Node)) {
-      openCloseMenu();
-      childRef.value.handleClick();
-    }
-  }
-
-const handleMenuItemClick = (event: MouseEvent) => {
-  const target = event.target as HTMLElement;
-    // Check if the clicked element is a RouterLink or a child of one
-  if (target.closest('.menu__item-link')) {
-      //closest es una función de JS que busca en el elemento si la clase de css está presente
-      if (isOpen.value) { // Only close if the menu is open
-        openCloseMenu();
-        childRef.value.handleClick();
-      }
-    }
-  };
-  
-  const startEventListenerToCloseMenu = () => {
-    listeningEvent.value = handerlClickOutsideMenu;
-
-    document.addEventListener('click', listeningEvent.value);
-  };
-
-  const cleanEventListener = () => {
-    if (listeningEvent.value) {
-      document.removeEventListener('click', listeningEvent.value);
-      listeningEvent.value = null;
-    }
-  };
+const {
+  isOpen,
+  classToApply,
+  menu,
+  openCloseMenu,
+  handleMenuItemClick } = useMenu();
 </script>
 
 <template>
@@ -70,12 +20,12 @@ const handleMenuItemClick = (event: MouseEvent) => {
     aria-label="Menu principal"
     class="menu menu-top"
   >
-  <RouterLink :to="{name: 'Home'}">
-    <div class="menu__logo">
-      <LogoImage />
-      <LogoText />
-    </div>
-  </RouterLink>
+    <RouterLink :to="{ name: 'Home' }">
+      <div class="menu__logo">
+        <LogoImage />
+        <LogoText />
+      </div>
+    </RouterLink>
 
     <ul
       class="menu__items"
@@ -142,8 +92,8 @@ const handleMenuItemClick = (event: MouseEvent) => {
     </ul>
     <SelectLang />
     <ToggleButton
-      ref="childRef"
       @openClosed="openCloseMenu"
+      :is-active="isOpen"
     />
   </nav>
 </template>

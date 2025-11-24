@@ -13,6 +13,8 @@ import platinumPackageIncluded from './platinumPackageIncluded';
 import premiumPackageIncluded from './premiumPackageIncluded';
 import why from './whyLanguageTeam';
 import privacyPolicy from './privacyPolicy';
+import cookiesPolicy from './cookiesPolicy';
+import commonInfo from './commonInfo';
 
 export default {
   menu,
@@ -30,4 +32,6 @@ export default {
   methodPhilosophy,
   cookieBanner,
   privacyPolicy,
+  cookiesPolicy,
+  commonInfo,
 };

@@ -1,9 +1,7 @@
 <script setup lang="ts">
-// 1. ¡El hijo ahora importa el átomo!
 import TitlesParagraph from '@/components/sharedComponents/TitlesParagraph.vue';
 import type { PropType } from 'vue';
 
-// 2. Define las props para recibir los datos
 defineProps({
   mainTitle: {
     type:     Array as PropType<string[]>,
@@ -18,10 +16,7 @@ defineProps({
   },
 });
 
-// 3. El hijo ahora DEFINE sus propios estilos base
 const lineHeightTitles = '1';
-const fontFamily =
-  "ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'";
 </script>
 
 <template>
@@ -33,7 +28,7 @@ const fontFamily =
         :texts="mainTitle"
         text-color="white"
         font-weight="bold"
-        :font-family="fontFamily"
+        font-family="var(--font-family-titles)"
         :line-height="lineHeightTitles"
       />
       
@@ -43,7 +38,7 @@ const fontFamily =
         tag="h1"
         :texts="[title]" text-color="#FFCC33"
         font-weight="bold"
-        :font-family="fontFamily"
+        font-family="var(--font-family-titles)"
         :line-height="lineHeightTitles"
       />
 
@@ -51,7 +46,7 @@ const fontFamily =
         <TitlesParagraph
           tag="p"
           :texts="subtitle"
-          :font-family="fontFamily"
+          font-family="var(--font-family-titles)"
         />
       </div>
     </div>

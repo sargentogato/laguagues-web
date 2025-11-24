@@ -1,43 +1,7 @@
 <script setup lang="ts">
-//imported to asign the type of IconcName on const cardInfo
-import type { IconName } from "@/components/icons/IconBase.vue";
 import IconCard from '@/components/cards/IconCard.vue';
 import TitlesTextComponent from '@/components/sharedComponents/TitlesParagraph.vue';
-
-const whyLanguage = ["why.title"];
-
-const cardInfo: Array<{iconName: IconName; title: string[]; text: string[]; fontWeight: string;}> = [
-  {
-    iconName:   "IconWorld",
-    title:      ["why.titleLanguage"],
-    text:       ["why.languageTeam"],
-    fontWeight: '500',
-  },
-  {
-    iconName:   "IconMethod",
-    title:      ["why.titleTransversal"],
-    text:       ["why.transversalMethods"],
-    fontWeight: '500',
-  },
-  {
-    iconName:   "IconForWho",
-    title:      ["why.titleForWhom"],
-    text:       ["why.forWhom"],
-    fontWeight: '500',
-  },
-  {
-    iconName:   "IconObjectives",
-    title:      ["why.titleObjective"],
-    text:       ["why.objective"],
-    fontWeight: '500',
-  },
-  {
-    iconName:   "IconResults",
-    title:      ["why.titleResults"],
-    text:       ["why.results"],
-    fontWeight: '500',
-  },
-  ]
+import iconData from '@/data/iconDataSection';
 </script>
 
 <template>
@@ -46,12 +10,12 @@ const cardInfo: Array<{iconName: IconName; title: string[]; text: string[]; font
       <div class="section__card">
         <TitlesTextComponent
           tag="h2" 
-          :texts="whyLanguage"
+          :texts="iconData.whyLanguage"
           text-transform="uppercase" 
           :line-height="'1'"
         />
       </div>
-      <div class="section__card" v-for="(info, index) in cardInfo" :key="index">
+      <div class="section__card" v-for="(info, index) in iconData.cardInfo" :key="index">
         <IconCard v-bind="info" />
       </div>
     </div>

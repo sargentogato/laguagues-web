@@ -1,11 +1,6 @@
-import deMessages from './de';
 import enMessages from './en';
-import esMessages from './es';
-import frMessages from './fr';
-import itMessages from './it';
-import ptMessages from './pt';
 
-type LangMessages = {
+export type LangMessages = {
   menu: Record<keyof (typeof enMessages)['menu'], string>;
   header: Record<keyof (typeof enMessages)['header'], string>;
   why: Record<keyof (typeof enMessages)['why'], string>;
@@ -21,13 +16,5 @@ type LangMessages = {
   methodPhilosophy: Record<keyof (typeof enMessages)['methodPhilosophy'], string>;
   cookieBanner: Record<keyof (typeof enMessages)['cookieBanner'], string>;
   privacyPolicy: Record<keyof (typeof enMessages)['privacyPolicy'], string>;
+  cookiesPolicy: Record<keyof (typeof enMessages)['cookiesPolicy'], string>;
 };
-
-export const messages: Record<string, LangMessages> = {
-  en: enMessages,
-  es: esMessages,
-  it: itMessages,
-  de: deMessages,
-  fr: frMessages,
-  pt: ptMessages,
-}; 
