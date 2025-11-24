@@ -37,11 +37,14 @@ const skillsItems = [
   },
 ];
 
+/* common Info */
+const month = ['commonInfo.month'];
+
 /* Package Card Basic*/
 const basic = ['packageTitles.basic'];
-const timeNumber = 3;
+const timeNumber = 5;
 const timeText = 'Meses';
-const priceBasic = 200;
+const priceBasic = 60;
 const basicIncluded = [
   { messages: [`basicPackageIncluded.liveClasses`] },
   { messages: [`basicPackageIncluded.timeClases`] },
@@ -49,7 +52,7 @@ const basicIncluded = [
 
 /* Package Card Premium*/
 const premium = ['packageTitles.premium'];
-const pricePremium = 600;
+const pricePremium = 200;
 const premiumIncluded = [
   { messages: [`premiumPackageIncluded.liveClasses`] },
   { messages: [`premiumPackageIncluded.teoricClasses`] },
@@ -66,7 +69,7 @@ const premiumIncluded = [
 
 /* Package Card Platinum*/
 const platinum = ['packageTitles.platinum'];
-const pricePlatinum = 900;
+const pricePlatinum = 432;
 const platinumIncluded = [
   { messages: [`platinumPackageIncluded.liveClasses`] },
   { messages: [`platinumPackageIncluded.teoricClasses`] },
@@ -107,4 +110,5 @@ export default {
   secondPillarTitle,
   grammarItems,
   skillsItems,
+  month,
 };

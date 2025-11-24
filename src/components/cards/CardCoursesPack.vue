@@ -165,7 +165,7 @@ onMounted(() => {
         </ul>
 
         <div class="package__timePricing">
-          <div class="package__pricing">{{ price }}</div>
+          <div class="package__pricing">{{ price }}€ / {{ $t('commonInfo.month') }}</div>
           <div class="package__timeBox">
             <div class="package__timeText">{{ timeText }}:</div>
             <div class="package__timeNumber">{{ timeNumber }}</div>
