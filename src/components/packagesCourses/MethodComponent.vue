@@ -17,8 +17,6 @@ defineProps({
 });
 
 const lineHeightTitles = '1';
-const fontFamily =
-  "ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'";
 </script>
 
 <template>
@@ -30,7 +28,7 @@ const fontFamily =
         :texts="mainTitle"
         text-color="white"
         font-weight="bold"
-        :font-family="fontFamily"
+        font-family="var(--font-family-titles)"
         :line-height="lineHeightTitles"
       />
       
@@ -40,7 +38,7 @@ const fontFamily =
         tag="h1"
         :texts="[title]" text-color="#FFCC33"
         font-weight="bold"
-        :font-family="fontFamily"
+        font-family="var(--font-family-titles)"
         :line-height="lineHeightTitles"
       />
 
@@ -48,7 +46,7 @@ const fontFamily =
         <TitlesParagraph
           tag="p"
           :texts="subtitle"
-          :font-family="fontFamily"
+          font-family="var(--font-family-titles)"
         />
       </div>
     </div>

@@ -3,20 +3,7 @@
 import type { PropType } from 'vue';
 import { onMounted, ref } from 'vue';
 import { useScrollAnimation } from '../../composables/useScrollAnimation';
-
-  // 1. Definimos la forma del objeto de TEXTO
-  interface FeatureTextItem {
-    text: string;
-    icon?: string; // El icono es opcional en el objeto de texto
-  }
-
-  // 2. Definimos la forma de la CAJA (Item)
-  interface FeatureItem {
-    title: string[];
-    subtitle: string[];
-    defaultIcon?: string; // El icono por defecto es opcional
-    texts: FeatureTextItem[]; // 'texts' es un array de 'FeatureTextItem'
-  }
+import type { FeatureItem } from '@/types/features';
 
   defineProps({
     items: {
@@ -52,10 +39,7 @@ import { useScrollAnimation } from '../../composables/useScrollAnimation';
 </script>
 
 <template>
-  <section
-    
-    class="features"
-  >
+  <section class="features">
     <div class="features__container">
       <article
         v-for="(item, index) in items"

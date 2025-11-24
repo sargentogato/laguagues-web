@@ -1,42 +1,56 @@
+<script lang="ts" setup>
+  import { useI18n } from 'vue-i18n';
+  import { reactive, ref, watch } from 'vue';
+  // 1. Importamos la nueva función y la lista de idiomas
+  import { loadLocaleMessages, supportedLocales } from '@/locales/i18n';
+
+  const { locale } = useI18n();
+  const activeLocale = ref(locale.value);
+
+  const flags = reactive<Record<string, string>>({
+    de: 'images/langs/de.webp',
+    es: 'images/langs/es.webp',
+    en: 'images/langs/en.webp',
+    it: 'images/langs/it.webp',
+    pt: 'images/langs/pt.webp',
+    fr: 'images/langs/fr.webp',
+  });
+
+  // 2. La función ahora es asíncrona y llama a nuestro cargador
+  const changeLang = async (lang: string) => {
+    // Si el idioma ya es el activo, no hacemos nada
+    if (activeLocale.value === lang) return;
+    
+    await loadLocaleMessages(lang);
+    activeLocale.value = lang;
+  };
+
+  // 3. (Opcional pero recomendado) Un watcher para mantener la UI sincronizada 
+  // si el idioma cambia desde otra parte de la app.
+  watch(locale, (newLocale) => {
+    activeLocale.value = newLocale;
+  });
+</script>
+
 <template>
   <div class="btn__box">
+    <!-- Iteramos sobre la lista de idiomas soportados que exportamos desde i18n.ts -->
     <button
-      v-for="locale in $i18n.availableLocales"
-      :key="`locale-${locale}`"
-      @click="changeLang(locale)"
+      v-for="lang in supportedLocales"
+      :key="`locale-${lang}`"
+      @click="changeLang(lang)"
       class="btn"
-      :class="{ 'btn--active': locale === activeLocale }"
+      :class="{ 'btn--active': lang === activeLocale }"
     >
       <img
-        :src="flags[locale]"
-        :alt="locale"
+        :src="flags[lang]"
+        :alt="lang"
         class="btn__img"
       />
     </button>
   </div>
 </template>
 
-<script lang="ts" setup>
-  import { useI18n } from 'vue-i18n';
-  import { reactive, ref } from 'vue';
-
-  const { locale } = useI18n();
-  const activeLocale = ref(locale.value);
-
-  const flags = reactive<Record<string, string>>({
-    es: 'images/langs/es.webp',
-    en: 'images/langs/en.webp',
-    it: 'images/langs/it.webp',
-    de: 'images/langs/de.webp',
-    pt: 'images/langs/pt.webp',
-    fr: 'images/langs/fr.webp',
-  });
-
-  const changeLang = (lang: string) => {
-    locale.value = lang;
-    activeLocale.value = lang;
-  };
-</script>
 
 <style scoped>
   .btn__box {

@@ -2,8 +2,6 @@
 import IconCard from '@/components/cards/IconCard.vue';
 import TitlesTextComponent from '@/components/sharedComponents/TitlesParagraph.vue';
 import iconData from '@/data/iconDataSection';
-
-
 </script>
 
 <template>
