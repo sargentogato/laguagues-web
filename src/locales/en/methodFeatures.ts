@@ -3,7 +3,7 @@ const methodFeatures = {
   featuresBox1Title: '💡 What makes it different?',
   featuresBox1Subtitle:
     'Unlike other methods that force you to memorize without understanding or jump from one topic to another, the Mengel Method® is distinguished by:',
-  featuresBox1Item1: 'A specific pedagogical order, designed for Spanish speakers',
+  featuresBox1Item1: 'A specific pedagogical order that accelerates your learning.',
   featuresBox1Item2:
     "Exclusive exercises designed to retain what you've learned without frustration",
   featuresBox1Item3: 'An approach that allows you to speak at a higher level from day zero',

@@ -3,7 +3,7 @@ const methodFeatures = {
   featuresBox1Title: '💡 O que o torna diferente?',
   featuresBox1Subtitle:
     'Ao contrário de outros métodos que o forçam a memorizar sem entender ou saltam de um tópico para outro, o Método Mengel® distingue-se por:',
-  featuresBox1Item1: 'Uma ordem pedagógica específica, pensada para falantes de espanhol',
+  featuresBox1Item1: 'Uma ordem pedagógica específica que acelera o seu aprendizado.',
   featuresBox1Item2:
     'Exercícios exclusivos projetados para fixar o que foi aprendido sem frustração',
   featuresBox1Item3:
