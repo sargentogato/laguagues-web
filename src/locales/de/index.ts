@@ -15,6 +15,8 @@ import packageTitles from './packagesTitles';
 import premiumPackageIncluded from './platinumPackageIncluded';
 import privacyPolicy from './privacyPolicy';
 import why from './whyLanguageTeam';
+import italianCourse from './italianCourse';
+import spanishCourse from './spanishCourse';
 
 export default {
   menu,
@@ -35,4 +37,6 @@ export default {
   cookiesPolicy,
   commonInfo,
   englishCourse,
+  italianCourse,
+  spanishCourse,
 };
