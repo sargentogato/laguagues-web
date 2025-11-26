@@ -1,6 +1,9 @@
 import basicPackageIncluded from './basicPackageIncluded';
 import categories from './categories';
+import commonInfo from './commonInfo';
 import cookieBanner from './cookieBanner';
+import cookiesPolicy from './cookiesPolicy';
+import englishCourse from './englishCourse';
 import footer from './footer';
 import header from './header';
 import headerDataCourse from './headerDataCourse';
@@ -11,10 +14,10 @@ import methodPhilosophy from './methodPhilosophy';
 import packageTitles from './packagesTitles';
 import platinumPackageIncluded from './platinumPackageIncluded';
 import premiumPackageIncluded from './premiumPackageIncluded';
-import why from './whyLanguageTeam';
 import privacyPolicy from './privacyPolicy';
-import cookiesPolicy from './cookiesPolicy';
-import commonInfo from './commonInfo';
+import why from './whyLanguageTeam';
+import italianCourse from './italianCourse';
+import spanishCourse from './spanishCourse';
 
 export default {
   menu,
@@ -34,4 +37,7 @@ export default {
   privacyPolicy,
   cookiesPolicy,
   commonInfo,
+  englishCourse,
+  italianCourse,
+  spanishCourse,
 };

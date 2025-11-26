@@ -4,6 +4,7 @@
   import SelectLang from './SelectLang.vue';
   import ToggleButton from './ToggleButton.vue';
   import { useMenu } from '@/composables/useMenu';
+import router from '../../router/router';
 
 const {
   isOpen,
@@ -148,6 +149,11 @@ const {
 
   .menu__item-link:hover {
     color: var(--secondary-color);
+  }
+  
+  .menu__item-link.router-link-active {
+    font-weight: bold;
+    color: #FACC15;
   }
 
   .menu--hidden {

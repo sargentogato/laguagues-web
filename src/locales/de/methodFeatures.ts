@@ -3,8 +3,7 @@ const methodFeatures = {
   featuresBox1Title: '💡 Was macht ihn anders?',
   featuresBox1Subtitle:
     'Im Gegensatz zu otheren Methoden, die dich zwingen, ohne Verständnis auswendig zu lernen oder von einem Thema zum nächsten springen, zeichnet sich die Mengel-Methode® aus durch:',
-  featuresBox1Item1:
-    'Eine spezifische pädagogische Reihenfolge, die für Spanischsprachige entwickelt wurde',
+  featuresBox1Item1: 'Eine spezifische pädagogische Ordnung, die dein Lernen beschleunigt.',
   featuresBox1Item2:
     'Exklusive Übungen, die darauf ausgelegt sind, das Gelernte ohne Frustration zu festigen',
   featuresBox1Item3:

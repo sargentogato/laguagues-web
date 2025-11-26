@@ -3,7 +3,7 @@ const methodFeatures = {
   featuresBox1Title: "💡 Qu'est-ce qui le rend différent ?",
   featuresBox1Subtitle:
     "Contrairement à d'autres méthodes qui vous obligent à mémoriser sans comprendre ou à sauter d'un sujet à l'autre, la Méthode Mengel® se distingue par :",
-  featuresBox1Item1: 'Un ordre pédagogique spécifique, conçu pour les hispanophones',
+  featuresBox1Item1: 'Un ordre pédagogique spécifique qui accélère votre apprentissage.',
   featuresBox1Item2:
     'Des exercices exclusifs conçus pour consolider ce qui a été appris sans frustration',
   featuresBox1Item3:
