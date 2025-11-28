@@ -6,7 +6,7 @@ const why = {
   titleObjective:   'Obiettivo',
   titleResults:     'Risultati',
   languageTeam:
-    'Siamo un gruppo di insegnanti madrelingua certificati, attori e cuochi uniti per insegnare nel modo più pratico possibile.',
+    'Siamo un gruppo di insegnanti madrelingua, traduttori certificati e cuochi uniti per insegnare nel modo più pratico ed efficace possibile. Il tuo successo è la nostra passione.',
   transversalMethods: `Da un classico corso di lingua a lezioni di cucina e teatro nella lingua scelta, 
     tutto nella stessa ora. Si tratta di immergersi nella lingua. Lezioni individuali, di gruppo o personalizzate.`,
   forWhom:   'Tutti, tutte le età, nessun limite.',

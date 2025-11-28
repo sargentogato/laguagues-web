@@ -163,7 +163,8 @@ onMounted(() => {
             />
           </li>
         </ul>
-
+        
+        <div class="package__levels"><span class="package__levels-text">{{ $t('commonInfo.availableLevels') }} </span><span>: A1, A2, B1 y B2</span></div>
         <div class="package__timePricing">
           <div class="package__pricing">{{ price }}€ / {{ $t('commonInfo.month') }}</div>
           <div class="package__timeBox">
@@ -171,7 +172,6 @@ onMounted(() => {
             <div class="package__timeNumber">{{ timeNumber }}</div>
           </div>
         </div>
-
         <div class="package__actions">
           <button class="package__contact">{{ $t(cardDataCourse.contactButtonText) }}</button>
         </div>
@@ -181,6 +181,10 @@ onMounted(() => {
 </template>
 
 <style scoped>
+  .package__image > img {
+    max-height: 245px;
+  }
+  
   .package__box {
     width: 100;
   }
@@ -241,6 +245,10 @@ onMounted(() => {
     width: 5px;
   }
 
+  .package__levels-text {
+    font-weight: bold;
+  }
+  
   .package__price-box,
   .package__price-period {
     display: flex;
@@ -254,6 +262,11 @@ onMounted(() => {
 
   .package__timePricing {
     justify-content: space-between;
+    font-weight: bold;
+  }
+  
+  .package__pricing, .package__timeText, .package__timeNumber {
+    font-size: 1.2rem;
   }
 
   .package__actions {
@@ -264,8 +277,15 @@ onMounted(() => {
   .package__contact {
     border-radius: var(--border-radius-buttons);
     padding: var(--padding-buttons);
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-weight: bold;
   }
 
+  .package__contact:hover {
+    background-color: var(--secondary-color);
+    color: var(--black);
+  }
   @media (min-width: 768px) {
     .package__box {
       width: 440px;

@@ -35,7 +35,7 @@
     />
     <CardCoursesPack
       :title="cardDataCourse.premium"
-      src-image="images/courses/learGerman-language-team.webp"
+      src-image="images/courses/learn-German-language-team-premium.webp"
       :includedItems="cardDataCourse.premiumIncluded"
       :time-number="cardDataCourse.timeNumber"
       :time-text="cardDataCourse.timeText"
@@ -43,7 +43,7 @@
     />
     <CardCoursesPack
       :title="cardDataCourse.platinum"
-      src-image="images/courses/learGerman-language-team.webp"
+      src-image="images/courses/learn-German-language-team-platinum.webp"
       :includedItems="cardDataCourse.platinumIncluded"
       :time-number="cardDataCourse.timeNumber"
       :time-text="cardDataCourse.timeText"

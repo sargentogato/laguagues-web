@@ -6,7 +6,7 @@ const why = {
   titleObjective:   'Ziel',
   titleResults:     'Ergebnisse',
   languageTeam:
-    'Wir sind eine Gruppe von zertifizierten Muttersprachlern, Schauspielern und Köchen, die sich zusammengeschlossen haben, um auf die praktischste Art und Weise zu unterrichten.',
+    'Wir sind eine Gruppe von muttersprachlichen Lehrern, zertifizierten Übersetzern und Köchen, die vereint sind, um auf die praktischste und effektivste Weise zu unterrichten. Ihr Erfolg ist unsere Leidenschaft.',
   transversalMethods: `Von einem klassischen Sprachkurs bis hin zu Koch- und Theaterkursen in der gewählten Sprache, alles innerhalb derselben Stunde. 
     Es geht darum, in die Sprache einzutauchen. Einzel-, Gruppen- oder personalisierte Kurse.`,
   forWhom:   'Jeder, alle Altersgruppen, keine Grenzen.',
