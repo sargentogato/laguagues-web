@@ -264,8 +264,15 @@ onMounted(() => {
   .package__contact {
     border-radius: var(--border-radius-buttons);
     padding: var(--padding-buttons);
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-weight: bold;
   }
 
+  .package__contact:hover {
+    background-color: var(--secondary-color);
+    color: var(--black);
+  }
   @media (min-width: 768px) {
     .package__box {
       width: 440px;
