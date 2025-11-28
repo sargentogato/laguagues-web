@@ -6,7 +6,7 @@ const why = {
   titleObjective:   'Objetivos',
   titleResults:     'Resultados',
   languageTeam:
-    'Somos un grupo de profesores nativos certificados, actores y cocineros unidos para enseñar de la manera más práctica posible.',
+    'Somos un grupo de profesores nativos, traductores certificados y cocineros unidos para enseñar de la manera más práctica y efectiva posible. Nuestra pasión es tu éxito.',
   transversalMethods: `desde un curso clásico de idiomas hasta clases de cocina y teatro en el idioma escogido en una misma hora. 
     Se trata de impregnarse del idioma. clases individuales, de grupo o personalizadas.`,
   forWhom:   'Todo el mundo, todas las edades, sin limites ',
