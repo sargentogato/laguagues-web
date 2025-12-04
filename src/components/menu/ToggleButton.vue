@@ -28,6 +28,8 @@ defineProps({
       @click="
         handlerEmits();
       "
+      :aria-label="isActive ? 'Close menu' : 'Open menu'" 
+      :aria-expanded="isActive"
     >
       <span class="hamburger-box">
         <span class="hamburger-inner"></span>
