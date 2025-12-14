@@ -4,7 +4,6 @@
   import SelectLang from './SelectLang.vue';
   import ToggleButton from './ToggleButton.vue';
   import { useMenu } from '@/composables/useMenu';
-import router from '../../router/router';
 
 const {
   isOpen,
