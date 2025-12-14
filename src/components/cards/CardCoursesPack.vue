@@ -2,14 +2,16 @@
 import TitlesParagraph from '@/components/sharedComponents/TitlesParagraph.vue';
 import cardDataCourse from '@/data/cardDataCourse';
 import { useScrollAnimation } from '@/composables/useScrollAnimation';
-  import { ref, onMounted} from 'vue'
+  import { ref, onMounted, computed } from 'vue'
   import type { PropType } from 'vue';
+  import ModalComponent from '@/components/sharedComponents/ModalComponent.vue';
+  import { useI18n } from 'vue-i18n';
 
   interface LearningItems {
     messages: string[];
   }
 
-  defineProps({
+  const props = defineProps({
     title: {
       type:     Array as PropType<string[]>,
       required: true,
@@ -35,6 +37,23 @@ import { useScrollAnimation } from '@/composables/useScrollAnimation';
       required: true,
     },
   });
+
+  const isModalOpen = ref(false);
+  const { t, locale } = useI18n();
+
+  const mailToLink = computed(() => {
+    const email = 'contact@language-team.com';
+    const subjectKey = 'contactModal.emailSubject';
+    const level = t(props.title[0]);
+    const language = locale.value.toUpperCase();
+    
+    const subject = t(subjectKey, { level, language });
+    console.log(subject);
+    
+    
+    return `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+  });
+
 
   /* Ref on template */
 const animateSection = ref<HTMLElement | null>(null);
@@ -173,10 +192,30 @@ onMounted(() => {
           </div>
         </div>
         <div class="package__actions">
-          <button class="package__contact">{{ $t(cardDataCourse.contactButtonText) }}</button>
+          <button class="package__contact" @click="isModalOpen = true">
+            {{ $t(cardDataCourse.contactButtonText) }}
+          </button>
         </div>
       </div>
     </div>
+
+    <ModalComponent :show="isModalOpen" @close="isModalOpen = false">
+      <template #header>
+        <h2>{{ $t('contactModal.title') }}</h2>
+      </template>
+      <template #default>
+        <p>{{ $t('contactModal.text') }}</p>
+        <p>
+          {{ $t('contactModal.emailText') }}
+          <a href="mailto:contact@language-team.com">contact@language-team.com</a>
+        </p>
+      </template>
+      <template #footer>
+        <a :href="mailToLink" class="package__contact modal-contact-button">
+          {{ $t('contactModal.buttonText') }}
+        </a>
+      </template>
+    </ModalComponent>
   </article>
 </template>
 
@@ -286,6 +325,13 @@ onMounted(() => {
     background-color: var(--secondary-color);
     color: var(--black);
   }
+
+  .modal-contact-button {
+    text-decoration: none;
+    display: block;
+    text-align: center;
+  }
+
   @media (min-width: 768px) {
     .package__box {
       width: 440px;

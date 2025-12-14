@@ -18,6 +18,7 @@ import privacyPolicy from './privacyPolicy';
 import why from './whyLanguageTeam';
 import italianCourse from './italianCourse';
 import spanishCourse from './spanishCourse';
+import contactModal from './contactModal';
 
 export default {
   menu,
@@ -40,4 +41,5 @@ export default {
   englishCourse,
   italianCourse,
   spanishCourse,
+  contactModal,
 };

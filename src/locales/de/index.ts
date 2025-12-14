@@ -12,11 +12,13 @@ import menu from './menu';
 import methodFeatures from './methodFeatures';
 import methodPhilosophy from './methodPhilosophy';
 import packageTitles from './packagesTitles';
-import premiumPackageIncluded from './platinumPackageIncluded';
+import premiumPackageIncluded from './premiumPackageIncluded';
 import privacyPolicy from './privacyPolicy';
 import why from './whyLanguageTeam';
 import italianCourse from './italianCourse';
 import spanishCourse from './spanishCourse';
+import platinumPackageIncluded from './platinumPackageIncluded';
+import contactModal from './contactModal';
 
 export default {
   menu,
@@ -27,7 +29,7 @@ export default {
   packageTitles,
   basicPackageIncluded,
   premiumPackageIncluded,
-  platinumPackageIncluded: premiumPackageIncluded,
+  platinumPackageIncluded,
   mengelMethodIncluded,
   methodFeatures,
   headerDataCourse,
@@ -39,4 +41,5 @@ export default {
   englishCourse,
   italianCourse,
   spanishCourse,
+  contactModal,
 };
