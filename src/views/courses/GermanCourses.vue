@@ -32,6 +32,7 @@
       :time-number="cardDataCourse.timeNumber"
       :time-text="cardDataCourse.timeText"
       :price="cardDataCourse.priceBasic"
+      course-language="German"
     />
     <CardCoursesPack
       :title="cardDataCourse.premium"
@@ -40,6 +41,7 @@
       :time-number="cardDataCourse.timeNumber"
       :time-text="cardDataCourse.timeText"
       :price="cardDataCourse.pricePremium"
+      course-language="German"
     />
     <CardCoursesPack
       :title="cardDataCourse.platinum"
@@ -48,6 +50,7 @@
       :time-number="cardDataCourse.timeNumber"
       :time-text="cardDataCourse.timeText"
       :price="cardDataCourse.pricePlatinum"
+      course-language="German"
     />
   </div>
 </template>

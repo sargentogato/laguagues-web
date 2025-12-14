@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import TitlesParagraph from '@/components/sharedComponents/TitlesParagraph.vue';
-import cardDataCourse from '@/data/cardDataCourse';
-import { useScrollAnimation } from '@/composables/useScrollAnimation';
-  import { ref, onMounted, computed } from 'vue'
-  import type { PropType } from 'vue';
   import ModalComponent from '@/components/sharedComponents/ModalComponent.vue';
-  import { useI18n } from 'vue-i18n';
+import TitlesParagraph from '@/components/sharedComponents/TitlesParagraph.vue';
+import { useScrollAnimation } from '@/composables/useScrollAnimation';
+import cardDataCourse from '@/data/cardDataCourse';
+import type { PropType } from 'vue';
+import { computed, onMounted, ref } from 'vue';
+import { useI18n } from 'vue-i18n';
 
   interface LearningItems {
     messages: string[];
@@ -36,40 +36,43 @@ import { useScrollAnimation } from '@/composables/useScrollAnimation';
       type:     Number,
       required: true,
     },
+    courseLanguage: {
+      type:     String,
+      required: true,
+    },
   });
 
   const isModalOpen = ref(false);
-  const { t, locale } = useI18n();
+  const { t } = useI18n();
 
   const mailToLink = computed(() => {
     const email = 'contact@language-team.com';
     const subjectKey = 'contactModal.emailSubject';
     const level = t(props.title[0]);
-    const language = locale.value.toUpperCase();
-    
-    const subject = t(subjectKey, { level, language });
-    console.log(subject);
-    
-    
+
+    const subject = t(subjectKey, { level, language: props.courseLanguage });
+
     return `mailto:${email}?subject=${encodeURIComponent(subject)}`;
   });
 
-
   /* Ref on template */
-const animateSection = ref<HTMLElement | null>(null);
-const { registerElements } = useScrollAnimation();
+  const animateSection = ref<HTMLElement | null>(null);
+  const { registerElements } = useScrollAnimation();
 
-onMounted(() => {
-  if (animateSection.value instanceof HTMLElement) {
-    registerElements(animateSection.value);
-  } else {
-    console.warn("Element no yet available for animation", animateSection.value)
-  }
-})
+  onMounted(() => {
+    if (animateSection.value instanceof HTMLElement) {
+      registerElements(animateSection.value);
+    } else {
+      console.warn('Element no yet available for animation', animateSection.value);
+    }
+  });
 </script>
 
 <template>
-  <article ref="animateSection" class="package__box card appear-animation">
+  <article
+    ref="animateSection"
+    class="package__box card appear-animation"
+  >
     <figure class="package__image">
       <img
         :src="srcImage"
@@ -128,7 +131,6 @@ onMounted(() => {
         />
 
         <div class="package__learning-points">
-
           <TitlesParagraph
             tag="p"
             :texts="cardDataCourse.firstPillarTitle"
@@ -182,8 +184,11 @@ onMounted(() => {
             />
           </li>
         </ul>
-        
-        <div class="package__levels"><span class="package__levels-text">{{ $t('commonInfo.availableLevels') }} </span><span>: A1, A2, B1 y B2</span></div>
+
+        <div class="package__levels">
+          <span class="package__levels-text">{{ $t('commonInfo.availableLevels') }}</span>
+          <span>: A1, A2, B1 y B2</span>
+        </div>
         <div class="package__timePricing">
           <div class="package__pricing">{{ price }}€ / {{ $t('commonInfo.month') }}</div>
           <div class="package__timeBox">
@@ -192,14 +197,20 @@ onMounted(() => {
           </div>
         </div>
         <div class="package__actions">
-          <button class="package__contact" @click="isModalOpen = true">
+          <button
+            class="package__contact"
+            @click="isModalOpen = true"
+          >
             {{ $t(cardDataCourse.contactButtonText) }}
           </button>
         </div>
       </div>
     </div>
 
-    <ModalComponent :show="isModalOpen" @close="isModalOpen = false">
+    <ModalComponent
+      :show="isModalOpen"
+      @close="isModalOpen = false"
+    >
       <template #header>
         <h2>{{ $t('contactModal.title') }}</h2>
       </template>
@@ -211,7 +222,10 @@ onMounted(() => {
         </p>
       </template>
       <template #footer>
-        <a :href="mailToLink" class="package__contact modal-contact-button">
+        <a
+          :href="mailToLink"
+          class="package__contact modal-contact-button"
+        >
           {{ $t('contactModal.buttonText') }}
         </a>
       </template>
@@ -223,7 +237,7 @@ onMounted(() => {
   .package__image > img {
     max-height: 245px;
   }
-  
+
   .package__box {
     width: 100;
   }
@@ -287,7 +301,7 @@ onMounted(() => {
   .package__levels-text {
     font-weight: bold;
   }
-  
+
   .package__price-box,
   .package__price-period {
     display: flex;
@@ -303,8 +317,10 @@ onMounted(() => {
     justify-content: space-between;
     font-weight: bold;
   }
-  
-  .package__pricing, .package__timeText, .package__timeNumber {
+
+  .package__pricing,
+  .package__timeText,
+  .package__timeNumber {
     font-size: 1.2rem;
   }
 
