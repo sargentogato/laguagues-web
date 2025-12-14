@@ -36,6 +36,7 @@ modifiedBoxesData[2].texts[3].text = 'englishCourse.orderedEnglish';
       :time-number="cardDataCourse.timeNumber"
       :time-text="cardDataCourse.timeText"
       :price="cardDataCourse.priceBasic"
+      course-language="English"
     />
     <CardCoursesPack
       :title="cardDataCourse.premium"
@@ -44,6 +45,7 @@ modifiedBoxesData[2].texts[3].text = 'englishCourse.orderedEnglish';
       :time-number="cardDataCourse.timeNumber"
       :time-text="cardDataCourse.timeText"
       :price="cardDataCourse.pricePremium"
+      course-language="English"
     />
     <CardCoursesPack
       :title="cardDataCourse.platinum"
@@ -52,6 +54,7 @@ modifiedBoxesData[2].texts[3].text = 'englishCourse.orderedEnglish';
       :time-number="cardDataCourse.timeNumber"
       :time-text="cardDataCourse.timeText"
       :price="cardDataCourse.pricePlatinum"
+      course-language="English"
     />
   </div>
 </template>
