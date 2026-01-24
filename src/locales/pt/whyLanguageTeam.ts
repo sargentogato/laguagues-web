@@ -6,7 +6,7 @@ const why = {
   titleObjective:   'Objectifs',
   titleResults:     'Résultats',
   languageTeam:
-    'Nous sommes un groupe de professeurs natifs certifiés, acteurs et cuisiniers unis pour enseigner de la manière la plus pratique possible.',
+    'Somos um grupo de professores nativos, tradutores certificados e cozinheiros unidos para ensinar da forma mais prática e eficaz possível. O seu sucesso é a nossa paixão.',
   transversalMethods: `D'un cours de langue classique aux cours de cuisine et de théâtre dans la langue choisie, le tout en une seule heure. 
     Il s'agit de s'imprégner de la langue. Cours individuels, en groupe ou personnalisés.`,
   forWhom:   'Tout le monde, tous les âges, sans limites.',

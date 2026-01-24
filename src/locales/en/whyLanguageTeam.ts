@@ -6,7 +6,7 @@ const why = {
   titleObjective:   'Objective',
   titleResults:     'Results',
   languageTeam:
-    'We are a group of certified native teachers, actors, and cooks united to teach in the most practical way possible.',
+    'We are a group of native teachers, certified translators, and cooks united to teach in the most practical and effective way possible. Your success is our passion.',
   transversalMethods: `From a classic language course to cooking and theater classes in the chosen language, 
     all within the same hour.It's about immersing yourself in the language. Individual, group, or personalized classes.`,
   forWhom:   'Everyone, all ages, no limits.',

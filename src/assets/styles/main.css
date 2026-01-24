@@ -5,18 +5,18 @@
 /* Scroll Animation */
 .appear-animation {
   opacity: 0;
-  transform: translateY(200px);
+  transform: translateY(100px);
   will-change: opacity, transform;
 }
 
 .appear-active {
-  animation: fadeUp 0.9s cubic-bezier(.57,.21,0,1.06) forwards;
+  animation: fadeUp 0.5s cubic-bezier(.57,.21,0,1.06) forwards;
 }
 
 @keyframes fadeUp {
   0% {
     opacity: 0;
-    transform: translateY(1000px);
+    transform: translateY(500px);
   }
   100% {
     opacity: 1;

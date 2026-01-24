@@ -1,28 +1,3 @@
-<template>
-  <div class="header__image-box">
-    <div class="image__title" :style="{ color: textColor }">
-      {{ $t(`${textImageBox}`) }}
-    </div>
-    <div class="image__items-box">
-      <figure 
-        v-for="(image, index) in props.images" 
-        :key="index" 
-        class="image__item"
-      >
-        <img :src="image.src" alt="" class="image__picture" />
-        <div class="image__caption-box">
-          <TitlesParagraph 
-            tag="p" 
-            :texts="[`${image.caption}`]" 
-            :font-weight="fontWeightCaption" 
-            :text-transform="textTransformCaption" 
-          />
-        </div>
-      </figure>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 import type { PropType } from 'vue';
 import TitlesParagraph from '../sharedComponents/TitlesParagraph.vue';
@@ -51,6 +26,32 @@ const props = defineProps({
   },
 });
 </script>
+
+<template>
+  <div class="header__image-box">
+    <div class="image__title" :style="{ color: textColor }">
+      {{ $t(`${textImageBox}`) }}
+    </div>
+    <div class="image__items-box">
+      <figure 
+        v-for="(image, index) in props.images" 
+        :key="index" 
+        class="image__item"
+      >
+        <img :src="image.src" alt="" class="image__picture" />
+        <div class="image__caption-box">
+          <TitlesParagraph 
+            tag="p" 
+            :texts="[`${image.caption}`]" 
+            :font-weight="fontWeightCaption" 
+            :text-transform="textTransformCaption" 
+          />
+        </div>
+      </figure>
+    </div>
+  </div>
+</template>
+
 
 <style scoped>
 .header__image-box {

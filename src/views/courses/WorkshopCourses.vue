@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    German Courses
+    WorkShops culinary
   </div>
 </template>
 

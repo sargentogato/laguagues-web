@@ -5,7 +5,7 @@ import TitlesParagraph from '../sharedComponents/TitlesParagraph.vue';
 
 const intervalTime = 3500;
 
-const props = defineProps({
+defineProps({
   title: {
     type:     Array as PropType<string[]>,
     default:  () => ["Write a Title"],

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+//Esta importación es sólo para el tipo en la prop
 import type { IconName } from '@/components/icons/IconBase.vue';
 import IconBase from '@/components/icons/IconBase.vue';
 import TitleComponent from '@/components/sharedComponents/TitlesParagraph.vue';
@@ -7,7 +8,7 @@ import { useScrollAnimation } from '../../composables/useScrollAnimation';
 
 const iconBgColor = ref('var(--secondary-color)')
 
-const props = defineProps({
+defineProps({
   iconName: {
     type:     String as () => IconName,
     required: true
