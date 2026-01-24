@@ -1,7 +1,7 @@
 <template>
   <div class="btn__box">
     <button
-      v-for="locale in $i18n.availableLocales"
+      v-for="locale in orderedLocales"
       :key="`locale-${locale}`"
       @click="changeLang(locale)"
       class="btn"
@@ -18,10 +18,19 @@
 
 <script lang="ts" setup>
   import { useI18n } from 'vue-i18n';
-  import { reactive, ref } from 'vue';
+  import { reactive, ref, computed } from 'vue';
 
-  const { locale } = useI18n();
+  const { locale, availableLocales } = useI18n();
   const activeLocale = ref(locale.value);
+
+const customOrderLocales = ['de', 'en', 'fr', 'es', 'it', 'pt'];
+
+const orderedLocales = computed(() => {
+  return [...availableLocales].sort((a, b) => {
+    return customOrderLocales.indexOf(a) - customOrderLocales.indexOf(b)
+  })
+})
+
 
   const flags = reactive<Record<string, string>>({
     es: 'images/langs/es.webp',
